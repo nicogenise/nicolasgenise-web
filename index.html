@@ -115,15 +115,14 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B4F72' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
-        /* About section photo styles - Teal gradient */
-        .about-photo-container {
-            background: linear-gradient(135deg, rgba(27, 79, 114, 0.95) 0%, rgba(40, 116, 166, 0.9) 50%, rgba(93, 173, 226, 0.85) 100%);
+        /* OPCIÓN 5: Match con el Traje - Gradiente Gris a Azul */
+        .suit-match-gradient {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f0f5 25%, #c8d9e6 50%, #506b8c 75%, #3d5266 100%);
         }
         
-        .about-photo-image {
-            filter: drop-shadow(0 0 30px rgba(93, 173, 226, 0.4));
-            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
+        /* About section photo styles for Option 5 */
+        .about-photo-image-suit {
+            filter: drop-shadow(0 25px 50px rgba(0,0,0,0.3));
         }
         
         /* Card hover effect */
@@ -308,51 +307,51 @@
         </div>
     </section>
     
-    <!-- Sobre Mí Section -->
-    <section id="sobre-mi" class="py-20 md:py-28 pattern-bg">
+    <!-- ============================================ -->
+    <!-- OPCIÓN 5: MATCH CON TRAJE (Gradiente Sutil) -->
+    <!-- ============================================ -->
+    <section id="sobre-mi" class="py-20 md:py-28 suit-match-gradient">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <!-- Image -->
                 <div class="relative">
-                    <div class="about-photo-container aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl flex items-end justify-center">
-                        <img src="nicolas-genise-hero.png" 
+                    <div class="aspect-[4/5] rounded-3xl overflow-hidden flex items-end justify-center">
+                        <img src="nicolas-nobg.png" 
                              alt="Dr. Nicolás Genise - Especialista en Psicopedagogía Clínica" 
-                             class="about-photo-image h-full w-auto object-contain object-bottom"
+                             class="about-photo-image-suit h-full w-auto object-contain object-bottom"
                              loading="lazy">
                     </div>
                     <!-- Decorative element -->
-                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-primary-200/40 rounded-full -z-10"></div>
-                    <!-- Additional decorative element -->
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent/20 rounded-3xl -z-10"></div>
+                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-primary-400/30 rounded-full -z-10 blur-2xl"></div>
                 </div>
                 
                 <!-- Content -->
                 <div>
-                    <p class="text-primary-500 font-medium tracking-wider uppercase mb-3">Sobre mí</p>
-                    <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold mb-6">Dr. Nicolás Genise</h2>
-                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
-                        Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong>Ackerman Institute de Nueva York</strong>.
+                    <p class="text-primary-200 font-medium tracking-wider uppercase mb-3 drop-shadow">Sobre mí</p>
+                    <h2 class="font-display text-3xl md:text-4xl text-white font-semibold mb-6 drop-shadow-lg">Dr. Nicolás Genise</h2>
+                    <p class="text-lg text-white/95 mb-6 leading-relaxed drop-shadow">
+                        Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong class="text-white">Ackerman Institute de Nueva York</strong>.
                     </p>
-                    <p class="text-gray-600 mb-6 leading-relaxed">
+                    <p class="text-white/90 mb-6 leading-relaxed drop-shadow">
                         Con más de 15 años de experiencia clínica, me especializo en el abordaje cognitivo conductual de niños, adolescentes y adultos. Actualmente me desempeño como psicoterapeuta en el Gandara Center de Boston y como Director del curso de posgrado en Clínica Psicopedagógica de la Universidad de Flores.
                     </p>
                     
                     <!-- Credentials -->
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-gradient-to-br from-primary-100 to-primary-50 p-6 rounded-xl shadow-md border border-primary-200">
-                            <p class="text-3xl font-bold text-primary-600">+15</p>
-                            <p class="text-sm text-gray-600 font-medium">Años de experiencia</p>
+                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-xl">
+                            <p class="text-3xl font-bold text-white drop-shadow">+15</p>
+                            <p class="text-sm text-white/80 font-medium">Años de experiencia</p>
                         </div>
-                        <div class="bg-gradient-to-br from-primary-100 to-primary-50 p-6 rounded-xl shadow-md border border-primary-200">
-                            <p class="text-3xl font-bold text-primary-600">6</p>
-                            <p class="text-sm text-gray-600 font-medium">Libros publicados</p>
+                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-xl">
+                            <p class="text-3xl font-bold text-white drop-shadow">6</p>
+                            <p class="text-sm text-white/80 font-medium">Libros publicados</p>
                         </div>
                     </div>
                     
                     <!-- Books highlight -->
-                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-md border-2 border-primary-200">
-                        <p class="font-semibold text-gray-800 mb-2 flex items-center"><span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>Publicaciones destacadas:</p>
-                        <ul class="text-sm text-gray-600 space-y-1">
+                    <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/25 shadow-lg">
+                        <p class="font-semibold text-white mb-2 flex items-center drop-shadow"><span class="w-2 h-2 bg-accent rounded-full mr-2"></span>Publicaciones destacadas:</p>
+                        <ul class="text-sm text-white/85 space-y-1">
                             <li>• Manual de psicoterapia y psicopatología de niños y adolescentes</li>
                             <li>• Fonzo está furioso: Fichas para trabajar la ira</li>
                             <li>• Margarita la temerosa: Fichas para trabajar la ansiedad</li>
@@ -471,7 +470,6 @@
         </div>
     </section>
     
-    <!-- Testimonials Section -->
     <!-- Blog Section -->
     <section id="blog" class="py-20 md:py-28 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -491,8 +489,7 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Blog Post 1 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="blog-evaluacion.jpg" alt="Evaluación Psicopedagógica" class="w-full h-full object-cover">
+                    <div class="aspect-video overflow-hidden relative bg-primary-100">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
                     </div>
                     <div class="p-6">
@@ -505,8 +502,7 @@
                 
                 <!-- Blog Post 2 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="blog-neurociencias.jpg" alt="Neurociencias y Funciones Ejecutivas" class="w-full h-full object-cover">
+                    <div class="aspect-video overflow-hidden relative bg-primary-100">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
                     </div>
                     <div class="p-6">
@@ -519,8 +515,7 @@
                 
                 <!-- Blog Post 3 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative">
-                        <img src="blog-intervencion.jpg" alt="Trabajo Interdisciplinario" class="w-full h-full object-cover">
+                    <div class="aspect-video overflow-hidden relative bg-primary-100">
                         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
                     </div>
                     <div class="p-6">
@@ -617,54 +612,42 @@
                     <p class="text-highlight font-medium tracking-wider uppercase mb-3">Contacto</p>
                     <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold mb-6">¿Tenés preguntas?</h2>
                     <p class="text-gray-600 mb-8 leading-relaxed">
-                        Si querés más información sobre la Especialización en Psicopedagogía Clínica, requisitos de admisión, opciones de financiamiento o cualquier otra consulta, no dudes en contactarme.
+                        Estoy aquí para ayudarte a dar el próximo paso en tu carrera profesional. Completá el formulario o escribime directamente y te responderé a la brevedad.
                     </p>
                     
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                    <!-- Contact Info -->
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </div>
                             <div>
-                                <p class="font-semibold text-gray-800">Email</p>
-                                <p class="text-gray-600"><a href="/cdn-cgi/l/email-protection#9ff1f8faf1f6ecfadfebfcf2fcf0f8f1f6ebf6e9feb1fcf0f2" class="hover:text-primary-600"><span class="__cf_email__" data-cfemail="a8c6cfcdc6c1dbcde8dccbc5cbc7cfc6c1dcc1dec986cbc7c5">[email&#160;protected]</span></a></p>
+                                <p class="text-sm text-gray-500">Email</p>
+                                <a href="mailto:contacto@nicolasgenise.org" class="text-gray-800 font-medium hover:text-primary-600 transition-colors">contacto@nicolasgenise.org</a>
                             </div>
                         </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                                 </svg>
                             </div>
                             <div>
-                                <p class="font-semibold text-gray-800">Universidad de Flores</p>
-                                <p class="text-gray-600">Buenos Aires, Argentina</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
-                                <svg class="w-6 h-6 text-primary-600" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <p class="font-semibold text-gray-800">Instagram</p>
-                                <p class="text-gray-600"><a href="https://instagram.com/tcm.psic" target="_blank" rel="noopener" class="hover:text-primary-600">@tcm.psic</a></p>
+                                <p class="text-sm text-gray-500">Ubicación</p>
+                                <p class="text-gray-800 font-medium">Buenos Aires, Argentina</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+                <!-- Form -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
                     <form id="contact-form" class="space-y-4">
                         <div>
-                            <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <label for="contact-name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
                             <input type="text" id="contact-name" name="name" required
                                    class="newsletter-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary-500 transition-colors"
                                    placeholder="Tu nombre">
@@ -730,7 +713,7 @@
                 <div>
                     <p class="font-semibold text-white mb-4">Contacto</p>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="/cdn-cgi/l/email-protection#f29c95979c9b8197b286919f919d959c9b869b8493dc919d9f" class="hover:text-white transition-colors"><span class="__cf_email__" data-cfemail="83ede4e6edeaf0e6c3f7e0eee0ece4edeaf7eaf5e2ade0ecee">[email&#160;protected]</span></a></li>
+                        <li><a href="mailto:contacto@nicolasgenise.org" class="hover:text-white transition-colors">contacto@nicolasgenise.org</a></li>
                         <li>Buenos Aires, Argentina</li>
                     </ul>
                 </div>
@@ -750,7 +733,7 @@
     </footer>
     
     <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
@@ -788,7 +771,6 @@
                 }
             });
         });
-        
-        // Form submissions (placeholder - connect to Brevo/n8n)
-        document.getElementById('lead-form').addEventListener('submit', function(e) {
-          
+    </script>
+</body>
+</html>
