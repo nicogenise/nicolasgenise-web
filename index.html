@@ -115,14 +115,22 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B4F72' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
-        /* OPCIÓN 5: Match con el Traje - Gradiente Gris a Azul */
-        .suit-match-gradient {
-            background: linear-gradient(135deg, #f8fafc 0%, #e8f0f5 25%, #c8d9e6 50%, #506b8c 75%, #3d5266 100%);
+        /* OPCIÓN 1: Gradient Mesh para Sobre Mí */
+        .gradient-mesh-about {
+            background: 
+                radial-gradient(at 40% 20%, #5DADE2 0px, transparent 50%),
+                radial-gradient(at 80% 0%, #1B4F72 0px, transparent 50%),
+                radial-gradient(at 0% 50%, #2874A6 0px, transparent 50%),
+                radial-gradient(at 80% 50%, #154360 0px, transparent 50%),
+                radial-gradient(at 0% 100%, #5DADE2 0px, transparent 50%),
+                radial-gradient(at 80% 100%, #1B4F72 0px, transparent 50%);
         }
         
-        /* About section photo styles for Option 5 */
-        .about-photo-image-suit {
-            filter: drop-shadow(0 25px 50px rgba(0,0,0,0.3));
+        /* About section photo styles */
+        .about-photo-image {
+            filter: drop-shadow(0 0 30px rgba(93, 173, 226, 0.4));
+            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
         }
         
         /* Card hover effect */
@@ -308,50 +316,51 @@
     </section>
     
     <!-- ============================================ -->
-    <!-- OPCIÓN 5: MATCH CON TRAJE (Gradiente Sutil) -->
+    <!-- OPCIÓN 1: GRADIENTE ELEGANTE (MESH) -->
     <!-- ============================================ -->
-    <section id="sobre-mi" class="py-20 md:py-28 suit-match-gradient">
+    <section id="sobre-mi" class="py-20 md:py-28 gradient-mesh-about">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <!-- Image -->
                 <div class="relative">
                     <div class="aspect-[4/5] rounded-3xl overflow-hidden flex items-end justify-center">
+                        <div class="absolute inset-0 bg-white/10 rounded-3xl blur-xl"></div>
                         <img src="nicolas-nobg.png" 
                              alt="Dr. Nicolás Genise - Especialista en Psicopedagogía Clínica" 
-                             class="about-photo-image-suit h-full w-auto object-contain object-bottom"
+                             class="about-photo-image h-full w-auto object-contain object-bottom relative z-10"
                              loading="lazy">
                     </div>
                     <!-- Decorative element -->
-                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-primary-400/30 rounded-full -z-10 blur-2xl"></div>
+                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-white/10 rounded-full -z-10 blur-2xl"></div>
                 </div>
                 
                 <!-- Content -->
                 <div>
-                    <p class="text-primary-200 font-medium tracking-wider uppercase mb-3 drop-shadow">Sobre mí</p>
-                    <h2 class="font-display text-3xl md:text-4xl text-white font-semibold mb-6 drop-shadow-lg">Dr. Nicolás Genise</h2>
-                    <p class="text-lg text-white/95 mb-6 leading-relaxed drop-shadow">
+                    <p class="text-accent font-medium tracking-wider uppercase mb-3">Sobre mí</p>
+                    <h2 class="font-display text-3xl md:text-4xl text-white font-semibold mb-6">Dr. Nicolás Genise</h2>
+                    <p class="text-lg text-white/90 mb-6 leading-relaxed">
                         Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong class="text-white">Ackerman Institute de Nueva York</strong>.
                     </p>
-                    <p class="text-white/90 mb-6 leading-relaxed drop-shadow">
+                    <p class="text-white/80 mb-6 leading-relaxed">
                         Con más de 15 años de experiencia clínica, me especializo en el abordaje cognitivo conductual de niños, adolescentes y adultos. Actualmente me desempeño como psicoterapeuta en el Gandara Center de Boston y como Director del curso de posgrado en Clínica Psicopedagógica de la Universidad de Flores.
                     </p>
                     
                     <!-- Credentials -->
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-xl">
-                            <p class="text-3xl font-bold text-white drop-shadow">+15</p>
-                            <p class="text-sm text-white/80 font-medium">Años de experiencia</p>
+                        <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                            <p class="text-3xl font-bold text-white">+15</p>
+                            <p class="text-sm text-white/70 font-medium">Años de experiencia</p>
                         </div>
-                        <div class="bg-white/20 backdrop-blur-sm p-6 rounded-xl border border-white/30 shadow-xl">
-                            <p class="text-3xl font-bold text-white drop-shadow">6</p>
-                            <p class="text-sm text-white/80 font-medium">Libros publicados</p>
+                        <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                            <p class="text-3xl font-bold text-white">6</p>
+                            <p class="text-sm text-white/70 font-medium">Libros publicados</p>
                         </div>
                     </div>
                     
                     <!-- Books highlight -->
-                    <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/25 shadow-lg">
-                        <p class="font-semibold text-white mb-2 flex items-center drop-shadow"><span class="w-2 h-2 bg-accent rounded-full mr-2"></span>Publicaciones destacadas:</p>
-                        <ul class="text-sm text-white/85 space-y-1">
+                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
+                        <p class="font-semibold text-white mb-2 flex items-center"><span class="w-2 h-2 bg-accent rounded-full mr-2"></span>Publicaciones destacadas:</p>
+                        <ul class="text-sm text-white/80 space-y-1">
                             <li>• Manual de psicoterapia y psicopatología de niños y adolescentes</li>
                             <li>• Fonzo está furioso: Fichas para trabajar la ira</li>
                             <li>• Margarita la temerosa: Fichas para trabajar la ansiedad</li>
