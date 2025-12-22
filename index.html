@@ -756,7 +756,7 @@
                                 <option value="otro">Otro</option>
                             </select>
                         </div>
-                        <button type="submit" 
+                        <button type="submit" id="lead-submit-btn"
                                 class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
                             Descargar Guía Gratuita
                         </button>
@@ -764,6 +764,18 @@
                             Al suscribirte aceptás recibir emails con contenido educativo. Podés darte de baja cuando quieras.
                         </p>
                     </form>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="lead-success" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">¡Listo! Tu guía se está descargando</h3>
+                        <p class="text-gray-600 text-sm mb-4">Si no comenzó la descarga automáticamente, <a href="https://drive.google.com/uc?export=download&id=1VF9daf0BR224VEJB1tP4Bz3fnD-re098" target="_blank" class="text-primary-600 underline font-medium">hacé click acá</a>.</p>
+                        <p class="text-gray-500 text-xs">Pronto recibirás más contenido en tu email.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -796,7 +808,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-500">Email</p>
-                                <a href="mailto:contacto@nicolasgenise.org" class="text-gray-800 font-medium hover:text-primary-600 transition-colors">contacto@nicolasgenise.org</a>
+                                <a href="mailto:ngenise@tcmcognitiva.com" class="text-gray-800 font-medium hover:text-primary-600 transition-colors">ngenise@tcmcognitiva.com</a>
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -886,7 +898,7 @@
                 <div>
                     <p class="font-semibold text-white mb-4">Contacto</p>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="mailto:contacto@nicolasgenise.org" class="hover:text-white transition-colors">contacto@nicolasgenise.org</a></li>
+                        <li><a href="mailto:ngenise@tcmcognitiva.com" class="hover:text-white transition-colors">ngenise@tcmcognitiva.com</a></li>
                         <li>Buenos Aires, Argentina</li>
                         <li>Boston, Massachusetts</li>
                     </ul>
@@ -944,6 +956,22 @@
                     });
                 }
             });
+        });
+        
+        // Lead form - download ebook
+        const leadForm = document.getElementById('lead-form');
+        const leadSuccess = document.getElementById('lead-success');
+        const downloadUrl = 'https://drive.google.com/uc?export=download&id=1VF9daf0BR224VEJB1tP4Bz3fnD-re098';
+        
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Open download in new tab
+            window.open(downloadUrl, '_blank');
+            
+            // Hide form, show success message
+            leadForm.classList.add('hidden');
+            leadSuccess.classList.remove('hidden');
         });
     </script>
 </body>
