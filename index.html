@@ -55,85 +55,159 @@
             font-family: 'Playfair Display', serif;
         }
         
-        /* Gradient overlay for hero */
+        /* ========================================
+           HERO SECTION - Mejorado
+           ======================================== */
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(27, 79, 114, 0.95) 0%, rgba(40, 116, 166, 0.9) 50%, rgba(93, 173, 226, 0.85) 100%);
+            background: linear-gradient(135deg, rgba(27, 79, 114, 0.97) 0%, rgba(40, 116, 166, 0.95) 50%, rgba(93, 173, 226, 0.9) 100%);
             position: relative;
         }
         
-        /* Enhanced background with depth */
         .hero-gradient::before {
             content: '';
             position: absolute;
             inset: 0;
             background-image: 
-                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(93, 173, 226, 0.1) 0%, transparent 60%),
+                radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(93, 173, 226, 0.15) 0%, transparent 60%),
                 radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 40%);
-            opacity: 0.6;
             pointer-events: none;
         }
         
-        /* Subtle dot pattern */
         .hero-gradient::after {
             content: '';
             position: absolute;
             inset: 0;
-            background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
-            background-size: 30px 30px;
-            opacity: 0.3;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+            background-size: 40px 40px;
+            opacity: 0.4;
             pointer-events: none;
         }
         
-        /* Hero image fusion styles */
-        .hero-image-wrapper {
+        /* ========================================
+           SOBRE MÍ - Gradiente mejorado con mejor contraste
+           ======================================== */
+        .about-section-enhanced {
+            background: linear-gradient(135deg, 
+                #1B4F72 0%, 
+                #1a5a80 25%,
+                #1d6a94 50%, 
+                #2874A6 75%,
+                #3d8ab8 100%);
             position: relative;
-            height: 100%;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
+            overflow: hidden;
         }
         
-        .hero-image {
-            filter: drop-shadow(0 0 40px rgba(93, 173, 226, 0.3));
-            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 5%, rgba(0,0,0,1) 20%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.1) 5%, rgba(0,0,0,1) 20%);
-        }
-        
-        /* Glow effect around hero image */
-        .hero-image-wrapper::before {
+        /* Overlay oscuro sutil para mejor contraste del texto */
+        .about-section-enhanced::before {
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(ellipse at center bottom, rgba(93, 173, 226, 0.4) 0%, transparent 70%);
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(93, 173, 226, 0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(27, 79, 114, 0.3) 0%, transparent 50%),
+                linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
             pointer-events: none;
         }
         
-        /* Subtle pattern background */
+        /* Elementos decorativos sutiles */
+        .about-section-enhanced::after {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(93, 173, 226, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        
+        /* Foto con mejor integración */
+        .about-photo-enhanced {
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
+            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
+        }
+        
+        /* Cards de estadísticas - más elegantes, sin borde naranja */
+        .stat-card-elegant {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card-elegant:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-2px);
+        }
+        
+        /* Card de publicaciones - más sutil */
+        .publications-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        
+        /* Texto con mejor legibilidad */
+        .text-shadow-subtle {
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+        
+        .text-shadow-strong {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* ========================================
+           TRANSICIÓN SUAVE entre secciones
+           ======================================== */
+        .section-transition-top {
+            position: relative;
+        }
+        
+        .section-transition-top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, 
+                rgba(61, 138, 184, 0.15) 0%, 
+                rgba(61, 138, 184, 0.05) 50%,
+                transparent 100%);
+            pointer-events: none;
+        }
+        
+        /* ========================================
+           ELEMENTOS DECORATIVOS
+           ======================================== */
+        .decorative-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #FF9900, #FFB84D);
+            border-radius: 2px;
+        }
+        
+        .decorative-dot {
+            width: 8px;
+            height: 8px;
+            background: #5DADE2;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        /* ========================================
+           OTROS ESTILOS
+           ======================================== */
         .pattern-bg {
             background-color: #f8fafc;
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B4F72' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
-        /* OPCIÓN 1: Gradient Mesh para Sobre Mí */
-        .gradient-mesh-about {
-            background: 
-                radial-gradient(at 40% 20%, #5DADE2 0px, transparent 50%),
-                radial-gradient(at 80% 0%, #1B4F72 0px, transparent 50%),
-                radial-gradient(at 0% 50%, #2874A6 0px, transparent 50%),
-                radial-gradient(at 80% 50%, #154360 0px, transparent 50%),
-                radial-gradient(at 0% 100%, #5DADE2 0px, transparent 50%),
-                radial-gradient(at 80% 100%, #1B4F72 0px, transparent 50%);
-        }
-        
-        /* About section photo styles */
-        .about-photo-image {
-            filter: drop-shadow(0 0 30px rgba(93, 173, 226, 0.4));
-            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
-        }
-        
-        /* Card hover effect */
         .card-hover {
             transition: all 0.3s ease;
         }
@@ -142,7 +216,6 @@
             box-shadow: 0 20px 40px rgba(27, 79, 114, 0.15);
         }
         
-        /* Fade in animation */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -163,13 +236,11 @@
         .animate-delay-3 { animation-delay: 0.3s; }
         .animate-delay-4 { animation-delay: 0.4s; }
         
-        /* Newsletter form */
         .newsletter-input:focus {
             outline: none;
             box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.3);
         }
         
-        /* Mobile menu */
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease;
@@ -178,9 +249,10 @@
             transform: translateX(0);
         }
         
-        /* Enhanced CTA section background */
         .cta-section-enhanced {
             background: linear-gradient(135deg, #1B4F72 0%, #2874A6 100%);
+            position: relative;
+            overflow: hidden;
         }
         
         .cta-section-enhanced::before {
@@ -190,19 +262,6 @@
             background: 
                 radial-gradient(ellipse at top left, rgba(93, 173, 226, 0.15) 0%, transparent 50%),
                 radial-gradient(ellipse at bottom right, rgba(255, 153, 0, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        
-        .cta-section-enhanced::after {
-            content: '';
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(60px);
             pointer-events: none;
         }
     </style>
@@ -255,115 +314,150 @@
         </div>
     </nav>
     
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center hero-gradient overflow-hidden">
+    <!-- ========================================
+         HERO SECTION - Más compacto
+         ======================================== -->
+    <section class="relative min-h-[85vh] flex items-center hero-gradient overflow-hidden">
         <!-- Background decoration -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl"></div>
             <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
         </div>
         
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-32 md:py-40">
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-28 md:py-32">
             <div class="flex justify-center">
-            <div class="max-w-2xl text-center">
-                <p class="text-accent font-medium tracking-wider uppercase mb-4 animate-fade-in opacity-0">Especialización en Psicopedagogía Clínica</p>
-                <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6 animate-fade-in opacity-0 animate-delay-1">
-                    Transformá tu práctica profesional con formación clínica de excelencia
-                </h1>
-                <p class="text-xl text-primary-100 mb-8 leading-relaxed animate-fade-in opacity-0 animate-delay-2">
-                    Desarrollá las competencias que tus consultantes necesitan. Formación basada en la evidencia científica con validez nacional y acreditación CONEAU.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-3 justify-center">
-                    <a href="#especializacion" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center">
-                        Conocer la Especialización
-                    </a>
-                    <a href="#recursos" class="bg-highlight text-primary-900 px-8 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-center shadow-lg shadow-highlight/50">
-                        Descargar Guía Gratuita
-                    </a>
+                <div class="max-w-2xl text-center">
+                    <p class="text-accent font-medium tracking-wider uppercase mb-4 animate-fade-in opacity-0">Especialización en Psicopedagogía Clínica</p>
+                    <h1 class="font-display text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-tight mb-6 animate-fade-in opacity-0 animate-delay-1">
+                        Transformá tu práctica profesional con formación clínica de excelencia
+                    </h1>
+                    <p class="text-xl text-primary-100 mb-8 leading-relaxed animate-fade-in opacity-0 animate-delay-2">
+                        Desarrollá las competencias que tus consultantes necesitan. Formación basada en la evidencia científica con validez nacional y acreditación CONEAU.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-3 justify-center">
+                        <a href="#especializacion" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center">
+                            Conocer la Especialización
+                        </a>
+                        <a href="#recursos" class="bg-highlight text-primary-900 px-8 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-center shadow-lg shadow-highlight/50">
+                            Descargar Guía Gratuita
+                        </a>
+                    </div>
+                    
+                    <!-- Trust badges -->
+                    <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-primary-200 animate-fade-in opacity-0 animate-delay-4">
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm font-medium">Acreditada CONEAU</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"/>
+                            </svg>
+                            <span class="text-sm font-medium">Universidad de Flores</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-sm font-medium">Inicio Abril 2026</span>
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Trust badges -->
-                <div class="mt-12 flex flex-wrap items-center justify-center gap-6 text-primary-200 animate-fade-in opacity-0 animate-delay-4">
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-sm font-medium">Acreditada CONEAU</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0z"/>
-                        </svg>
-                        <span class="text-sm font-medium">Universidad de Flores</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
-                        </svg>
-                        <span class="text-sm font-medium">Inicio Abril 2026</span>
-                    </div>
-                </div>
-            </div>
             </div>
         </div>
         
         <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 animate-bounce">
             <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
             </svg>
         </div>
     </section>
     
-    <!-- ============================================ -->
-    <!-- OPCIÓN 1: GRADIENTE ELEGANTE (MESH) -->
-    <!-- ============================================ -->
-    <section id="sobre-mi" class="py-20 md:py-28 gradient-mesh-about">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- Image -->
-                <div class="relative">
-                    <div class="aspect-[4/5] rounded-3xl overflow-hidden flex items-end justify-center">
-                        <div class="absolute inset-0 bg-white/10 rounded-3xl blur-xl"></div>
+    <!-- ========================================
+         SOBRE MÍ - Diseño mejorado
+         ======================================== -->
+    <section id="sobre-mi" class="py-20 md:py-28 about-section-enhanced">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- Image - Con mejor peso visual -->
+                <div class="relative order-2 md:order-1">
+                    <!-- Glow behind photo -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
+                    </div>
+                    
+                    <div class="relative aspect-[4/5] flex items-end justify-center">
                         <img src="nicolas-nobg.png" 
                              alt="Dr. Nicolás Genise - Especialista en Psicopedagogía Clínica" 
-                             class="about-photo-image h-full w-auto object-contain object-bottom relative z-10"
+                             class="about-photo-enhanced h-full w-auto object-contain object-bottom relative z-10 max-h-[500px]"
                              loading="lazy">
                     </div>
-                    <!-- Decorative element -->
-                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-white/10 rounded-full -z-10 blur-2xl"></div>
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-white/20 rounded-2xl -z-10"></div>
+                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent/30 rounded-full blur-xl"></div>
                 </div>
                 
-                <!-- Content -->
-                <div>
-                    <p class="text-accent font-medium tracking-wider uppercase mb-3">Sobre mí</p>
-                    <h2 class="font-display text-3xl md:text-4xl text-white font-semibold mb-6">Dr. Nicolás Genise</h2>
-                    <p class="text-lg text-white/90 mb-6 leading-relaxed">
-                        Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong class="text-white">Ackerman Institute de Nueva York</strong>.
+                <!-- Content - Con mejor contraste -->
+                <div class="order-1 md:order-2">
+                    <!-- Label con línea decorativa -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="decorative-line"></div>
+                        <p class="text-accent font-semibold tracking-wider uppercase text-sm">Sobre mí</p>
+                    </div>
+                    
+                    <h2 class="font-display text-3xl md:text-4xl lg:text-5xl text-white font-semibold mb-6 text-shadow-strong">
+                        Dr. Nicolás Genise
+                    </h2>
+                    
+                    <p class="text-lg text-white mb-5 leading-relaxed text-shadow-subtle">
+                        Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong class="text-accent font-semibold">Ackerman Institute de Nueva York</strong>.
                     </p>
-                    <p class="text-white/80 mb-6 leading-relaxed">
+                    
+                    <p class="text-white/90 mb-8 leading-relaxed text-shadow-subtle">
                         Con más de 15 años de experiencia clínica, me especializo en el abordaje cognitivo conductual de niños, adolescentes y adultos. Actualmente me desempeño como psicoterapeuta en el Gandara Center de Boston y como Director del curso de posgrado en Clínica Psicopedagógica de la Universidad de Flores.
                     </p>
                     
-                    <!-- Credentials -->
-                    <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                            <p class="text-3xl font-bold text-white">+15</p>
-                            <p class="text-sm text-white/70 font-medium">Años de experiencia</p>
+                    <!-- Stats Cards - Más elegantes -->
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="stat-card-elegant p-5 rounded-xl text-center">
+                            <p class="text-4xl font-bold text-white mb-1">+15</p>
+                            <p class="text-sm text-white/80 font-medium">Años de experiencia</p>
                         </div>
-                        <div class="bg-white/15 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                            <p class="text-3xl font-bold text-white">6</p>
-                            <p class="text-sm text-white/70 font-medium">Libros publicados</p>
+                        <div class="stat-card-elegant p-5 rounded-xl text-center">
+                            <p class="text-4xl font-bold text-white mb-1">6</p>
+                            <p class="text-sm text-white/80 font-medium">Libros publicados</p>
                         </div>
                     </div>
                     
-                    <!-- Books highlight -->
-                    <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/20">
-                        <p class="font-semibold text-white mb-2 flex items-center"><span class="w-2 h-2 bg-accent rounded-full mr-2"></span>Publicaciones destacadas:</p>
-                        <ul class="text-sm text-white/80 space-y-1">
-                            <li>• Manual de psicoterapia y psicopatología de niños y adolescentes</li>
-                            <li>• Fonzo está furioso: Fichas para trabajar la ira</li>
-                            <li>• Margarita la temerosa: Fichas para trabajar la ansiedad</li>
+                    <!-- Publications - Más sutil -->
+                    <div class="publications-card p-5 rounded-xl">
+                        <p class="font-semibold text-white mb-3 flex items-center text-sm">
+                            <span class="decorative-dot mr-2"></span>
+                            Publicaciones destacadas
+                        </p>
+                        <ul class="text-sm text-white/85 space-y-2">
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                                </svg>
+                                Manual de psicoterapia y psicopatología de niños y adolescentes
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                                </svg>
+                                Fonzo está furioso: Fichas para trabajar la ira
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                                </svg>
+                                Margarita la temerosa: Fichas para trabajar la ansiedad
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -371,30 +465,36 @@
         </div>
     </section>
     
-    <!-- Especialización Section -->
-    <section id="especializacion" class="py-20 md:py-28 bg-white">
+    <!-- ========================================
+         ESPECIALIZACIÓN - Con transición suave
+         ======================================== -->
+    <section id="especializacion" class="py-20 md:py-28 bg-white section-transition-top">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <!-- Header -->
+            <!-- Header con línea decorativa -->
             <div class="text-center max-w-3xl mx-auto mb-16">
-                <p class="text-highlight font-medium tracking-wider uppercase mb-3">La Especialización</p>
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="decorative-line"></div>
+                    <p class="text-highlight font-semibold tracking-wider uppercase text-sm">La Especialización</p>
+                    <div class="decorative-line"></div>
+                </div>
                 <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold mb-6">Especialización en Psicopedagogía Clínica</h2>
                 <p class="text-lg text-gray-600">
                     Una formación integral que combina solidez teórica con entrenamiento práctico intensivo, preparándote para generar cambios reales en la vida de tus consultantes.
                 </p>
             </div>
             
-            <!-- Stats -->
-            <div class="grid grid-cols-3 gap-6 mb-16">
-                <div class="bg-primary-50 p-6 rounded-xl text-center">
-                    <p class="text-3xl font-bold text-primary-600 mb-1">3</p>
+            <!-- Stats - Más elegantes -->
+            <div class="grid grid-cols-3 gap-4 md:gap-6 mb-16">
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 rounded-xl text-center border border-primary-100">
+                    <p class="text-3xl md:text-4xl font-bold text-primary-600 mb-1">3</p>
                     <p class="text-sm text-gray-600">Cuatrimestres</p>
                 </div>
-                <div class="bg-primary-50 p-6 rounded-xl text-center">
-                    <p class="text-3xl font-bold text-primary-600 mb-1">408</p>
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 rounded-xl text-center border border-primary-100">
+                    <p class="text-3xl md:text-4xl font-bold text-primary-600 mb-1">408</p>
                     <p class="text-sm text-gray-600">Horas reloj</p>
                 </div>
-                <div class="bg-primary-50 p-6 rounded-xl text-center">
-                    <p class="text-3xl font-bold text-primary-600 mb-1">100%</p>
+                <div class="bg-gradient-to-br from-primary-50 to-primary-100/50 p-6 rounded-xl text-center border border-primary-100">
+                    <p class="text-3xl md:text-4xl font-bold text-primary-600 mb-1">100%</p>
                     <p class="text-sm text-gray-600">Virtual</p>
                 </div>
             </div>
@@ -403,7 +503,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 <!-- Feature 1 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
                         </svg>
@@ -414,7 +514,7 @@
                 
                 <!-- Feature 2 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
                         </svg>
@@ -425,7 +525,7 @@
                 
                 <!-- Feature 3 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
                         </svg>
@@ -436,7 +536,7 @@
                 
                 <!-- Feature 4 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
                         </svg>
@@ -447,7 +547,7 @@
                 
                 <!-- Feature 5 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/>
                         </svg>
@@ -458,7 +558,7 @@
                 
                 <!-- Feature 6 -->
                 <div class="card-hover bg-white p-8 rounded-xl border border-gray-100 shadow-sm">
-                    <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mb-5">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-5">
                         <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                         </svg>
@@ -469,27 +569,36 @@
             </div>
             
             <!-- CTA -->
-            <div class="bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-8 md:p-12 text-center">
-                <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para dar el siguiente paso?</h3>
-                <p class="text-primary-100 mb-8 max-w-2xl mx-auto">Inscripciones abiertas para la cohorte 2026. Consultá por opciones de financiamiento y becas disponibles.</p>
-                <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
-                    Solicitar Información
-                </a>
+            <div class="bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+                <!-- Decorative elements -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                
+                <div class="relative z-10">
+                    <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para dar el siguiente paso?</h3>
+                    <p class="text-primary-100 mb-8 max-w-2xl mx-auto">Inscripciones abiertas para la cohorte 2026. Consultá por opciones de financiamiento y becas disponibles.</p>
+                    <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+                        Solicitar Información
+                    </a>
+                </div>
             </div>
         </div>
     </section>
     
     <!-- Blog Section -->
-    <section id="blog" class="py-20 md:py-28 bg-white">
+    <section id="blog" class="py-20 md:py-28 pattern-bg">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
                 <div>
-                    <p class="text-highlight font-medium tracking-wider uppercase mb-3">Blog</p>
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="decorative-line"></div>
+                        <p class="text-highlight font-semibold tracking-wider uppercase text-sm">Blog</p>
+                    </div>
                     <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold">Artículos y recursos</h2>
                 </div>
-                <a href="#" class="mt-4 md:mt-0 text-primary-600 font-medium hover:text-primary-700 flex items-center">
+                <a href="#" class="mt-4 md:mt-0 text-primary-600 font-medium hover:text-primary-700 flex items-center group">
                     Ver todos los artículos
-                    <svg class="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                     </svg>
                 </a>
@@ -498,40 +607,61 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Blog Post 1 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative bg-primary-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
+                    <div class="aspect-video overflow-hidden relative bg-gradient-to-br from-primary-100 to-primary-200">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <p class="text-sm text-highlight font-medium mb-2">Evaluación</p>
                         <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">5 errores comunes en la evaluación psicopedagógica y cómo evitarlos</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Descubrí los errores más frecuentes que cometen los profesionales durante el proceso de evaluación y las estrategias para superarlos.</p>
-                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700">Leer más →</a>
+                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700 inline-flex items-center group">
+                            Leer más 
+                            <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
                     </div>
                 </article>
                 
                 <!-- Blog Post 2 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative bg-primary-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
+                    <div class="aspect-video overflow-hidden relative bg-gradient-to-br from-primary-100 to-primary-200">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <p class="text-sm text-highlight font-medium mb-2">Neurociencias</p>
                         <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">Funciones ejecutivas: qué son y por qué importan en el aprendizaje</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Una guía práctica sobre las funciones ejecutivas y su impacto en el rendimiento académico de niños y adolescentes.</p>
-                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700">Leer más →</a>
+                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700 inline-flex items-center group">
+                            Leer más 
+                            <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
                     </div>
                 </article>
                 
                 <!-- Blog Post 3 -->
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
-                    <div class="aspect-video overflow-hidden relative bg-primary-100">
-                        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-primary-900/20"></div>
+                    <div class="aspect-video overflow-hidden relative bg-gradient-to-br from-primary-100 to-primary-200">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <svg class="w-12 h-12 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
                     </div>
                     <div class="p-6">
                         <p class="text-sm text-highlight font-medium mb-2">Intervención</p>
                         <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">El trabajo interdisciplinario en psicopedagogía: claves para una colaboración efectiva</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Cómo construir equipos de trabajo efectivos con otros profesionales de la salud y la educación.</p>
-                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700">Leer más →</a>
+                        <a href="#" class="text-primary-600 font-medium text-sm hover:text-primary-700 inline-flex items-center group">
+                            Leer más 
+                            <span class="ml-1 group-hover:translate-x-1 transition-transform">→</span>
+                        </a>
                     </div>
                 </article>
             </div>
@@ -539,11 +669,14 @@
     </section>
     
     <!-- Resources / Lead Magnet Section -->
-    <section id="recursos" class="py-20 md:py-28 bg-primary-600 relative overflow-hidden cta-section-enhanced">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="recursos" class="py-20 md:py-28 cta-section-enhanced">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <p class="text-highlight font-medium tracking-wider uppercase mb-3">Recurso gratuito</p>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="decorative-line"></div>
+                        <p class="text-highlight font-semibold tracking-wider uppercase text-sm">Recurso gratuito</p>
+                    </div>
                     <h2 class="font-display text-3xl md:text-4xl text-white font-semibold mb-6">Guía completa para especializarse en Psicopedagogía Clínica</h2>
                     <p class="text-primary-100 mb-6 leading-relaxed">
                         Descargá nuestra guía gratuita con todo lo que necesitás saber antes de elegir una especialización: qué buscar en un programa, competencias clave del psicopedagogo clínico, y cómo evaluar la calidad de la formación.
@@ -600,7 +733,7 @@
                             </select>
                         </div>
                         <button type="submit" 
-                                class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/50">
+                                class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
                             Descargar Guía Gratuita
                         </button>
                         <p class="text-xs text-gray-500 text-center">
@@ -618,7 +751,10 @@
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- Info -->
                 <div>
-                    <p class="text-highlight font-medium tracking-wider uppercase mb-3">Contacto</p>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="decorative-line"></div>
+                        <p class="text-highlight font-semibold tracking-wider uppercase text-sm">Contacto</p>
+                    </div>
                     <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold mb-6">¿Tenés preguntas?</h2>
                     <p class="text-gray-600 mb-8 leading-relaxed">
                         Estoy aquí para ayudarte a dar el próximo paso en tu carrera profesional. Completá el formulario o escribime directamente y te responderé a la brevedad.
@@ -627,7 +763,7 @@
                     <!-- Contact Info -->
                     <div class="space-y-4">
                         <div class="flex items-center">
-                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
@@ -638,7 +774,7 @@
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <div class="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mr-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mr-4">
                                 <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
@@ -685,7 +821,7 @@
                                       placeholder="Escribí tu consulta..."></textarea>
                         </div>
                         <button type="submit" 
-                                class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/50">
+                                class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
                             Enviar Mensaje
                         </button>
                     </form>
