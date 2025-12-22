@@ -115,6 +115,17 @@
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B4F72' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         
+        /* About section photo styles - Teal gradient */
+        .about-photo-container {
+            background: linear-gradient(135deg, rgba(27, 79, 114, 0.95) 0%, rgba(40, 116, 166, 0.9) 50%, rgba(93, 173, 226, 0.85) 100%);
+        }
+        
+        .about-photo-image {
+            filter: drop-shadow(0 0 30px rgba(93, 173, 226, 0.4));
+            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 8%, rgba(0,0,0,1) 25%);
+        }
+        
         /* Card hover effect */
         .card-hover {
             transition: all 0.3s ease;
@@ -310,21 +321,21 @@
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
                 <!-- Image -->
                 <div class="relative">
-                    <div class="aspect-[4/5] bg-gradient-to-br from-highlight/20 to-highlight/40 rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="nicolas-genise.jpg" 
+                    <div class="about-photo-container aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl flex items-end justify-center">
+                        <img src="nicolas-genise-hero.png" 
                              alt="Dr. Nicolás Genise - Especialista en Psicopedagogía Clínica" 
-                             class="w-full h-full object-cover object-top border-4 border-highlight/30"
+                             class="about-photo-image h-full w-auto object-contain object-bottom"
                              loading="lazy">
                     </div>
                     <!-- Decorative element -->
-                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-highlight/20 rounded-full -z-10"></div>
+                    <div class="absolute -bottom-8 -right-8 w-56 h-56 bg-primary-200/40 rounded-full -z-10"></div>
                     <!-- Additional decorative element -->
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary-500/10 rounded-3xl -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-accent/20 rounded-3xl -z-10"></div>
                 </div>
                 
                 <!-- Content -->
                 <div>
-                    <p class="text-highlight font-medium tracking-wider uppercase mb-3">Sobre mí</p>
+                    <p class="text-primary-500 font-medium tracking-wider uppercase mb-3">Sobre mí</p>
                     <h2 class="font-display text-3xl md:text-4xl text-primary-600 font-semibold mb-6">Dr. Nicolás Genise</h2>
                     <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                         Doctor en Psicología y Licenciado en Psicopedagogía por la Universidad de Flores. Mi formación incluye un Posdoctorado en Psicología y entrenamiento especializado en el prestigioso <strong>Ackerman Institute de Nueva York</strong>.
@@ -335,8 +346,8 @@
                     
                     <!-- Credentials -->
                     <div class="grid grid-cols-2 gap-4 mb-8">
-                        <div class="bg-gradient-to-br from-highlight/10 to-highlight/5 p-6 rounded-xl shadow-md border border-highlight/20">
-                            <p class="text-3xl font-bold text-highlight">+15</p>
+                        <div class="bg-gradient-to-br from-primary-100 to-primary-50 p-6 rounded-xl shadow-md border border-primary-200">
+                            <p class="text-3xl font-bold text-primary-600">+15</p>
                             <p class="text-sm text-gray-600 font-medium">Años de experiencia</p>
                         </div>
                         <div class="bg-gradient-to-br from-primary-100 to-primary-50 p-6 rounded-xl shadow-md border border-primary-200">
@@ -346,8 +357,8 @@
                     </div>
                     
                     <!-- Books highlight -->
-                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-md border-2 border-highlight/20">
-                        <p class="font-semibold text-gray-800 mb-2 flex items-center"><span class="w-2 h-2 bg-highlight rounded-full mr-2"></span>Publicaciones destacadas:</p>
+                    <div class="bg-gradient-to-br from-white to-gray-50 p-6 rounded-xl shadow-md border-2 border-primary-200">
+                        <p class="font-semibold text-gray-800 mb-2 flex items-center"><span class="w-2 h-2 bg-primary-500 rounded-full mr-2"></span>Publicaciones destacadas:</p>
                         <ul class="text-sm text-gray-600 space-y-1">
                             <li>• Manual de psicoterapia y psicopatología de niños y adolescentes</li>
                             <li>• Fonzo está furioso: Fichas para trabajar la ira</li>
@@ -746,7 +757,7 @@
     </footer>
     
     <!-- JavaScript -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
@@ -796,14 +807,4 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             // TODO: Connect to email service or n8n webhook
-            alert('¡Mensaje enviado! Te responderé a la brevedad.');
-            this.reset();
-        });
-        
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-sm');
-            } else {
-                nav.classList.remove('shadow-sm');
+            alert('¡M
