@@ -258,6 +258,31 @@
                 radial-gradient(ellipse at bottom right, rgba(255, 153, 0, 0.08) 0%, transparent 60%);
             pointer-events: none;
         }
+        
+        /* Modal animations */
+        #lead-modal {
+            animation: fadeIn 0.2s ease;
+        }
+        
+        #lead-modal > div:last-child > div {
+            animation: slideUp 0.3s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
     </style>
 </head>
 <body class="antialiased text-gray-700">
@@ -869,6 +894,89 @@
         </div>
     </section>
     
+    <!-- Modal Overlay -->
+    <div id="lead-modal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+        
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto transform transition-all">
+                <!-- Close Button -->
+                <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+                
+                <!-- Modal Header -->
+                <div class="bg-gradient-to-r from-primary-600 to-primary-500 p-6 rounded-t-2xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <div class="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-primary-100 text-sm font-medium">Guía gratuita</p>
+                            <h3 class="text-white font-semibold">Psicopedagogía Clínica</h3>
+                        </div>
+                    </div>
+                    <p class="text-primary-100 text-sm">10 desafíos + 6 competencias esenciales</p>
+                </div>
+                
+                <!-- Modal Form -->
+                <div class="p-6">
+                    <p class="text-gray-600 text-sm mb-5">Completá tus datos para descargar la guía:</p>
+                    
+                    <form id="modal-lead-form" class="space-y-4">
+                        <div>
+                            <label for="modal-name" class="block text-sm font-medium text-gray-700 mb-1">Nombre completo</label>
+                            <input type="text" id="modal-name" name="name" required
+                                   class="newsletter-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary-500 transition-colors"
+                                   placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="modal-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="modal-email" name="email" required
+                                   class="newsletter-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary-500 transition-colors"
+                                   placeholder="tu@email.com">
+                        </div>
+                        <div>
+                            <label for="modal-profession" class="block text-sm font-medium text-gray-700 mb-1">Profesión</label>
+                            <select id="modal-profession" name="profession" required
+                                    class="newsletter-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary-500 transition-colors bg-white">
+                                <option value="">Seleccioná una opción</option>
+                                <option value="psicopedagogo">Licenciado/a en Psicopedagogía</option>
+                                <option value="estudiante">Estudiante avanzado de Psicopedagogía</option>
+                                <option value="psicologo">Psicólogo/a</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        <button type="submit" 
+                                class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
+                            Descargar Ahora
+                        </button>
+                        <p class="text-xs text-gray-500 text-center">
+                            Al descargar aceptás recibir emails con contenido educativo.
+                        </p>
+                    </form>
+                    
+                    <!-- Success Message (hidden by default) -->
+                    <div id="modal-success" class="hidden text-center py-4">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">¡Listo!</h3>
+                        <p class="text-gray-600 text-sm mb-4">Tu guía se está descargando.<br>Si no comenzó, <a href="https://drive.google.com/uc?export=download&id=1VF9daf0BR224VEJB1tP4Bz3fnD-re098" target="_blank" class="text-primary-600 underline font-medium">hacé click acá</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-primary-800 text-primary-200 py-12">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
@@ -972,6 +1080,63 @@
             // Hide form, show success message
             leadForm.classList.add('hidden');
             leadSuccess.classList.remove('hidden');
+        });
+        
+        // Modal functionality
+        const modal = document.getElementById('lead-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalClose = document.getElementById('modal-close');
+        const modalForm = document.getElementById('modal-lead-form');
+        const modalSuccess = document.getElementById('modal-success');
+        
+        // Open modal when clicking download buttons
+        document.querySelectorAll('a[href="#recursos"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openModal();
+            });
+        });
+        
+        function openModal() {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+            // Reset form after closing
+            setTimeout(() => {
+                modalForm.classList.remove('hidden');
+                modalSuccess.classList.add('hidden');
+                modalForm.reset();
+            }, 300);
+        }
+        
+        // Close modal events
+        modalBackdrop.addEventListener('click', closeModal);
+        modalClose.addEventListener('click', closeModal);
+        
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+        
+        // Modal form submission
+        modalForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Open download
+            window.open(downloadUrl, '_blank');
+            
+            // Show success
+            modalForm.classList.add('hidden');
+            modalSuccess.classList.remove('hidden');
+            
+            // Close modal after 3 seconds
+            setTimeout(closeModal, 3000);
         });
     </script>
 </body>
