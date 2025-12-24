@@ -678,28 +678,44 @@
             </div>
             
             <!-- CTA -->
-            <div class="bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div class="bg-gradient-to-r from-primary-600 to-primary-500 rounded-2xl p-8 md:p-12 relative overflow-hidden">
                 <!-- Decorative elements -->
                 <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                 <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2"></div>
                 
                 <div class="relative z-10">
-                    <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para especializarte?</h3>
-                    <p class="text-primary-100 mb-6 max-w-2xl mx-auto">Inscripciones abiertas para la cohorte Abril 2026. Consultá requisitos de admisión, plan de estudios y opciones de financiamiento.</p>
-                    
-                    <!-- Logos Institucionales -->
-                    <div class="flex flex-wrap justify-center items-center gap-8 mb-8">
-                        <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
-                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-12 md:h-14 object-contain brightness-0 invert opacity-90">
+                    <!-- Layout con logos a los lados -->
+                    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+                        
+                        <!-- Logo UFLO - Izquierda -->
+                        <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-16 w-auto object-contain">
                         </a>
-                        <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white/10 backdrop-blur-sm rounded-xl p-4 hover:bg-white/20 transition-all">
-                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-14 md:h-16 object-contain brightness-0 invert opacity-90">
+                        
+                        <!-- Texto central -->
+                        <div class="text-center flex-1 max-w-xl">
+                            <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para especializarte?</h3>
+                            <p class="text-primary-100 mb-6">Inscripciones abiertas para la cohorte Abril 2026. Consultá requisitos de admisión, plan de estudios y opciones de financiamiento.</p>
+                            <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+                                Solicitar Información
+                            </a>
+                        </div>
+                        
+                        <!-- Logo TCM - Derecha -->
+                        <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
+                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-16 w-auto object-contain">
                         </a>
                     </div>
                     
-                    <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
-                        Solicitar Información
-                    </a>
+                    <!-- Logos para móvil (debajo del botón) -->
+                    <div class="flex md:hidden justify-center items-center gap-6 mt-8">
+                        <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
+                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-12 w-auto object-contain">
+                        </a>
+                        <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
+                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-12 w-auto object-contain">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
