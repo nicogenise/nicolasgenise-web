@@ -355,13 +355,13 @@
     <!-- Navigation -->
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
-            <div class="flex justify-between items-center h-20 md:h-24">
+            <div class="flex justify-between items-center h-24 md:h-28">
                 <!-- Logo -->
                 <a href="#" class="flex items-center">
                     <img 
                         src="logo_transparente.png" 
                         alt="Dr. Nicolás Genise - Psicopedagogía Clínica" 
-                        class="h-14 md:h-16 w-auto"
+                        class="h-20 md:h-24 w-auto"
                         loading="eager"
                         fetchpriority="high"
                     />
@@ -689,7 +689,7 @@
                         
                         <!-- Logo UFLO - Izquierda -->
                         <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-16 w-auto object-contain">
+                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-20 w-auto object-contain">
                         </a>
                         
                         <!-- Texto central -->
@@ -703,17 +703,17 @@
                         
                         <!-- Logo TCM - Derecha (más grande para equilibrar) -->
                         <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-20 w-auto object-contain">
+                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-24 w-auto object-contain">
                         </a>
                     </div>
                     
                     <!-- Logos para móvil (debajo del botón) -->
                     <div class="flex md:hidden justify-center items-center gap-6 mt-8">
                         <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
-                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-12 w-auto object-contain">
+                            <img src="logo-uflo.png" alt="Universidad de Flores" class="h-14 w-auto object-contain">
                         </a>
                         <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
-                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-14 w-auto object-contain">
+                            <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-16 w-auto object-contain">
                         </a>
                     </div>
                 </div>
@@ -1043,7 +1043,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <!-- Brand -->
                 <div class="md:col-span-2">
-                    <img src="logo_fondo_oscuro.png" alt="Dr. Nicolás Genise" class="h-12 mb-4">
+                    <img src="logo_fondo_oscuro.png" alt="Dr. Nicolás Genise" class="h-14 mb-4">
                     <p class="text-sm leading-relaxed mb-4">
                         Doctor en Psicología · Director de TCM Cognitiva (Argentina)<br>
                         Psicoterapeuta en Gandara Center (Boston)<br>
@@ -1114,7 +1114,7 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const headerOffset = 96;
+                    const headerOffset = 112;
                     const elementPosition = target.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                     
