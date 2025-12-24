@@ -409,21 +409,12 @@
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Image -->
                 <div class="relative order-2 md:order-1">
-                    <!-- Glow behind photo -->
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-80 h-80 bg-accent/20 rounded-full blur-3xl"></div>
-                    </div>
-                    
-                    <div class="relative aspect-[4/5] flex items-end justify-center">
+                    <div class="relative flex items-end justify-center">
                         <img src="nicolas-nobg.png" 
                              alt="Dr. Nicolás Genise - Director de la Especialización en Psicopedagogía Clínica" 
-                             class="about-photo-enhanced h-full w-auto object-contain object-bottom relative z-10 max-h-[500px]"
+                             class="h-auto w-auto object-contain object-bottom relative z-10 max-h-[520px] drop-shadow-2xl"
                              loading="lazy">
                     </div>
-                    
-                    <!-- Decorative elements -->
-                    <div class="absolute -bottom-4 -left-4 w-24 h-24 border-2 border-white/20 rounded-2xl -z-10"></div>
-                    <div class="absolute -top-4 -right-4 w-16 h-16 bg-accent/30 rounded-full blur-xl"></div>
                 </div>
                 
                 <!-- Content -->
@@ -501,19 +492,6 @@
     </section>
     
     <!-- ========================================
-         LOGOS INSTITUCIONALES
-         ======================================== -->
-    <section class="py-12 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6">
-            <p class="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-8">Instituciones y organizaciones</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-                <img src="logo-uflo.png" alt="Universidad de Flores" class="h-16 md:h-20 object-contain opacity-80 hover:opacity-100 transition-opacity">
-                <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-14 md:h-16 object-contain opacity-80 hover:opacity-100 transition-opacity">
-            </div>
-        </div>
-    </section>
-    
-    <!-- ========================================
          ESPECIALIZACIÓN - Textos mejorados
          ======================================== -->
     <section id="especializacion" class="py-20 md:py-28 bg-white section-transition-top">
@@ -549,6 +527,16 @@
                     <p class="text-3xl md:text-4xl font-bold text-primary-600 mb-1">CONEAU</p>
                     <p class="text-sm text-gray-600">Acreditación</p>
                 </div>
+            </div>
+            
+            <!-- Logos Institucionales -->
+            <div class="flex flex-wrap justify-center items-center gap-10 md:gap-16 mb-16">
+                <a href="https://www.uflouniversidad.edu.ar/" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 transition-opacity">
+                    <img src="logo-uflo.png" alt="Universidad de Flores" class="h-20 md:h-24 object-contain">
+                </a>
+                <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="opacity-80 hover:opacity-100 transition-opacity">
+                    <img src="logo-tcm.png" alt="TCM Terapia Cognitiva" class="h-20 md:h-24 object-contain">
+                </a>
             </div>
             
             <!-- Features Grid -->
