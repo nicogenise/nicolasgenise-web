@@ -71,6 +71,16 @@
     }
     </script>
     
+    <!-- Google Analytics 4 -->
+    <!-- INSTRUCCIONES: Reemplazar GA_MEASUREMENT_ID con tu ID real (ej: G-XXXXXXXXXX) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -911,7 +921,7 @@
                             </div>
                             <div>
                                 <p class="text-sm text-gray-500">Email</p>
-                                <a href="mailto:ngenise@tcmcognitiva.com" class="text-gray-800 font-medium hover:text-primary-600 transition-colors">ngenise@tcmcognitiva.com</a>
+                                <a href="/cdn-cgi/l/email-protection#204e47454e4953456054434d434f474e49544956410e434f4d" class="text-gray-800 font-medium hover:text-primary-600 transition-colors"><span class="__cf_email__" data-cfemail="741a13111a1d071134001719171b131a1d001d02155a171b19">[email&#160;protected]</span></a>
                             </div>
                         </div>
                         <div class="flex items-center">
@@ -1084,7 +1094,7 @@
                 <div>
                     <p class="font-semibold text-white mb-4">Contacto</p>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="mailto:ngenise@tcmcognitiva.com" class="hover:text-white transition-colors">ngenise@tcmcognitiva.com</a></li>
+                        <li><a href="/cdn-cgi/l/email-protection#98f6fffdf6f1ebfdd8ecfbf5fbf7fff6f1ecf1eef9b6fbf7f5" class="hover:text-white transition-colors"><span class="__cf_email__" data-cfemail="4e20292b20273d2b0e3a2d232d212920273a27382f602d2123">[email&#160;protected]</span></a></li>
                         <li>Buenos Aires, Argentina</li>
                         <li>Boston, Massachusetts</li>
                     </ul>
@@ -1105,7 +1115,7 @@
     </footer>
     
     <!-- JavaScript -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
@@ -1181,15 +1191,4 @@
         }
         
         function closeModal() {
-            modal.classList.add('hidden');
-            document.body.style.overflow = '';
-            // Reset form after closing
-            setTimeout(() => {
-                modalForm.classList.remove('hidden');
-                modalSuccess.classList.add('hidden');
-                modalForm.reset();
-            }, 300);
-        }
-        
-        // Close modal events
-        modalBackdrop.addEventListener('click', closeModal)
+            modal.classList.add('hi
