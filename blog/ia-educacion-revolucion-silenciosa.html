@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligencia Artificial en la Educación: La Revolución Silenciosa que ya Está Aquí | Dr. Nicolás Genise</title>
+    <meta name="description" content="Cómo la IA está transformando el aprendizaje, el papel del docente y los desafíos éticos que no podemos ignorar. Análisis completo con evidencia científica.">
+    <meta name="author" content="Dr. Nicolás Genise">
+    <meta name="keywords" content="inteligencia artificial, educación, IA en educación, ChatGPT, aprendizaje, docentes, ética IA, psicopedagogía">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Inteligencia Artificial en la Educación: La Revolución Silenciosa">
+    <meta property="og:description" content="Cómo la IA está transformando el aprendizaje, el papel del docente y los desafíos éticos que no podemos ignorar.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://nicolasgenise.org/blog/ia-educacion-revolucion-silenciosa.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../logo_transparente.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo_transparente.png">
+    <link rel="apple-touch-icon" href="../logo_transparente.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f7ff',
+                            100: '#e0efff',
+                            200: '#b8dbff',
+                            300: '#78bcff',
+                            400: '#369bff',
+                            500: '#0c7aff',
+                            600: '#1a5276',
+                            700: '#154360',
+                            800: '#0e2f44',
+                            900: '#071a28',
+                        },
+                        highlight: '#f39c12',
+                        accent: '#48c9b0',
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .prose h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #1a5276;
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #48c9b0;
+        }
+        .prose h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: #154360;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+        .prose ul, .prose ol {
+            margin-bottom: 1.25rem;
+            padding-left: 1.5rem;
+        }
+        .prose li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        .prose blockquote {
+            border-left: 4px solid #48c9b0;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #4a5568;
+        }
+        .reference-list {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .reference-list p {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            text-indent: -2rem;
+        }
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f39c12;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+        .glossary-term {
+            font-weight: 600;
+            color: #1a5276;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-700 bg-gray-50">
+    
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <a href="../index.html" class="flex items-center">
+                    <img 
+                        src="../logo_transparente.png" 
+                        alt="Dr. Nicolás Genise" 
+                        class="h-56 md:h-64 w-auto"
+                        loading="eager"
+                    />
+                </a>
+                <a href="../index.html#blog" class="text-primary-600 hover:text-primary-700 font-medium flex items-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Volver al Blog
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="pt-32 pb-12 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="bg-highlight text-primary-900 px-3 py-1 rounded-full text-sm font-semibold">NUEVO</span>
+                <span class="text-primary-200 text-sm">Tecnología Educativa</span>
+            </div>
+            <h1 class="font-display text-3xl md:text-5xl text-white font-semibold mb-4 leading-tight">
+                Inteligencia Artificial en la Educación: La Revolución Silenciosa que ya Está Aquí
+            </h1>
+            <p class="text-xl text-primary-100 mb-6">
+                Cómo la IA está transformando el aprendizaje, el papel del docente y los desafíos éticos que no podemos ignorar
+            </p>
+            <div class="flex items-center text-primary-200 text-sm">
+                <img src="../foto-perfil.jpg" alt="Dr. Nicolás Genise" class="w-10 h-10 rounded-full mr-3 border-2 border-white/20" onerror="this.style.display='none'">
+                <div>
+                    <p class="text-white font-medium">Dr. Nicolás Genise</p>
+                    <p>Diciembre 2024 · 15 min de lectura</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <article class="py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="prose max-w-none text-gray-700">
+                
+                <!-- Introducción -->
+                <p class="text-lg leading-relaxed">
+                    ¿Te has preguntado alguna vez cómo sería tener un tutor personal disponible las 24 horas del día, los 7 días de la semana, capaz de adaptarse exactamente a tu ritmo de aprendizaje? ¿O cómo sería para un profesor poder identificar a los estudiantes en riesgo de fracasar antes de que sea demasiado tarde? Lo que hace apenas una década parecía ciencia ficción, hoy es una realidad que está transformando silenciosamente las aulas de todo el mundo.
+                </p>
+                
+                <p>
+                    La inteligencia artificial (IA) ha dejado de ser una promesa futurista para convertirse en una fuerza disruptiva que está redefiniendo los paradigmas tradicionales de enseñanza-aprendizaje. Encuestas recientes sugieren que una proporción considerable de estudiantes universitarios ya utiliza alguna forma de IA en sus estudios: el Digital Education Council (2024) reportó que el 86% de los estudiantes encuestados había usado herramientas de IA generativa [4]. Esta transformación no representa simplemente la incorporación de tecnología en las aulas; es una reimaginación fundamental de cómo se conceptualiza, se entrega y se evalúa el conocimiento en instituciones de todos los niveles.
+                </p>
+                
+                <p>
+                    Sin embargo, esta oportunidad sin precedentes viene acompañada de desafíos ético-tecnológicos significativos que merecen nuestra atención crítica. En este artículo exploraremos ambas caras de esta revolución educativa: sus promesas transformadoras y los riesgos que debemos aprender a gestionar.
+                </p>
+
+                <h2>El catalizador inesperado: de la pandemia a la transformación digital</h2>
+                
+                <p>
+                    La transformación digital en educación se aceleró dramáticamente desde la pandemia de COVID-19, que actuó como catalizador forzoso para la adopción de tecnologías educativas. De la noche a la mañana, millones de docentes y estudiantes tuvieron que reinventarse, descubriendo tanto las limitaciones como las posibilidades de la educación mediada por tecnología.
+                </p>
+                
+                <p>
+                    Según el Banco Interamericano de Desarrollo, décadas de implementación de tecnología educativa en América Latina y el Caribe habían producido resultados mixtos, principalmente debido a la falta de integración pedagógica y las deficiencias infraestructurales [1]. Sin embargo, la IA representa una oportunidad cualitativamente diferente. No se trata simplemente de digitalizar lo que antes se hacía en papel; se trata de crear experiencias de aprendizaje que eran imposibles sin estas tecnologías: personalización a escala, retroalimentación inmediata, y detección temprana de dificultades.
+                </p>
+                
+                <p>
+                    El informe AI Index 2025 del Stanford Human-Centered AI Institute documenta que 2024 fue un año de consolidación de la IA generativa en múltiples sectores, incluyendo educación. Pero también señala una advertencia importante: los incidentes relacionados con IA a nivel global aumentaron un 56% en comparación con el año anterior [10].
+                </p>
+                
+                <p>
+                    Esta dualidad —oportunidad extraordinaria junto a riesgos significativos— define el momento que vivimos.
+                </p>
+
+                <h2>¿Funciona realmente? Lo que dice la evidencia científica</h2>
+                
+                <p>
+                    La pregunta que todos nos hacemos es directa: ¿la IA realmente mejora el aprendizaje, o es simplemente otra moda tecnológica? La base de evidencia está creciendo, aunque todavía presenta limitaciones.
+                </p>
+                
+                <h3>Lo que muestra la evidencia consolidada</h3>
+                
+                <p>
+                    Un metaanálisis reciente que examinó el impacto de ChatGPT en el aprendizaje estudiantil, analizando 51 estudios, indicó efectos positivos en el rendimiento y en el fomento del pensamiento de orden superior [14]. Sin embargo, es importante considerar las limitaciones de esta síntesis: los estudios incluidos presentaban heterogeneidad metodológica considerable y la mayoría provenía de contextos universitarios de países desarrollados.
+                </p>
+                
+                <h3>Evidencia emergente de contextos específicos</h3>
+                
+                <p>
+                    Además de los estudios consolidados, están surgiendo reportes de implementaciones en contextos específicos. Por ejemplo, una nota periodística reportó resultados preliminares de un programa piloto en escuelas de India que utilizó tecnología basada en IA para alfabetización lectora, con ganancias reportadas en las muestras de tratamiento [7].
+                </p>
+
+                <h2>Tutores inteligentes: el sueño de la personalización a escala</h2>
+                
+                <p>
+                    Los sistemas tutoriales inteligentes (ITS) representan una de las aplicaciones más maduras de IA en educación, con investigación de más de dos décadas documentando su efectividad [15]. Estos sistemas utilizan algoritmos de aprendizaje automático para monitorear el progreso estudiantil en tiempo real, identificar lagunas conceptuales y adaptar el contenido.
+                </p>
+                
+                <p>
+                    Plataformas como Khan Academy han implementado Khanmigo, un tutor basado en IA que funciona no simplemente proporcionando respuestas, sino guiando a los estudiantes a través de procesos de pensamiento crítico mediante andamiaje socrático [9].
+                </p>
+
+                <h2>Detectar problemas antes de que sea tarde</h2>
+                
+                <p>
+                    Una de las aplicaciones con mayor potencial para la equidad educativa es el análisis predictivo de rendimiento estudiantil, potenciado por técnicas de minería de datos educativos y aprendizaje automático [12]. Algoritmos sofisticados pueden analizar datos para identificar a estudiantes en riesgo de bajo rendimiento o deserción, permitiendo intervenciones preventivas.
+                </p>
+
+                <h2>La retroalimentación que no puede esperar</h2>
+                
+                <p>
+                    La IA puede proporcionar retroalimentación que es instantánea, personalizada y constructiva. La investigación sobre retroalimentación formativa sugiere que su efectividad depende de múltiples factores: el momento en que se entrega, su especificidad, y cómo el estudiante la procesa [11].
+                </p>
+
+                <h2>El docente potenciado: de administrador a mentor</h2>
+                
+                <p>
+                    ¿La IA viene a reemplazar al docente? La evidencia sugiere que la integración más efectiva de IA refuerza, en lugar de reemplazar, el rol del docente.
+                </p>
+                
+                <h3>Liberación de tiempo para lo que importa</h3>
+                
+                <p>
+                    Herramientas basadas en IA pueden automatizar tareas administrativas, liberando tiempo docente para interacciones de mayor calidad con estudiantes. Encuestas a directivos escolares indican que una proporción significativa desea que los sistemas de IA reduzcan su carga administrativa [2].
+                </p>
+                
+                <h3>De automatizador a asistente pedagógico</h3>
+                
+                <p>
+                    La IA está siendo implementada para potenciar el trabajo docente. El modo docente de Khanmigo, por ejemplo, permite a los educadores colaborar en el desarrollo de planes de lección y crear evaluaciones formativas [9].
+                </p>
+                
+                <p>
+                    El aprendizaje de nivel superior ocurría cuando los estudiantes utilizaban la IA generativa para construir y aumentar conocimiento, en contraste con el aprendizaje de nivel inferior resultante de usar IA de manera procedimental [3].
+                </p>
+                
+                <h3>La brecha de preparación docente</h3>
+                
+                <p>
+                    A pesar del potencial, existe una brecha en la preparación de los docentes. Un estudio de EDUCAUSE encontró que el 50% de los encuestados expresaba preocupación por sesgo en modelos de IA, y el 60% por privacidad y seguridad de datos [5]. Las directrices internacionales enfatizan la urgencia de formación docente integral [8].
+                </p>
+
+                <h2>El lado oscuro: riesgos que no podemos ignorar</h2>
+                
+                <h3>Privacidad de datos: el precio oculto de la personalización</h3>
+                
+                <p>
+                    Los sistemas de IA recopilan vastas cantidades de datos personales. La Ley de Derechos Educativos y Privacidad Familiar (FERPA) en EE.UU. y el Reglamento General de Protección de Datos (GDPR) en Europa establecen marcos legales, pero los desafíos de cumplimiento crecen.
+                </p>
+                
+                <h3>Sesgo algorítmico: cuando la máquina perpetúa la injusticia</h3>
+                
+                <p>
+                    Los algoritmos de IA pueden heredar y amplificar sesgos históricos. Un análisis sobre sesgo algorítmico en educación documentó múltiples formas en que los sistemas de IA pueden discriminar [2].
+                </p>
+                
+                <h3>El problema de la "caja negra"</h3>
+                
+                <p>
+                    Muchos modelos de IA funcionan como "cajas negras": su proceso interno de toma de decisiones no es visible. Cuando un algoritmo etiqueta a un estudiante como "en riesgo" pero no puede explicar por qué, no hay recurso para cuestionar esa determinación.
+                </p>
+                
+                <h3>La brecha digital ampliada y el riesgo de deshumanización</h3>
+                
+                <p>
+                    La adopción acrítica de IA puede resultar en una educación mecanizada. La IA debe "aumentar" a los docentes, no reemplazarlos.
+                </p>
+
+                <h2>ChatGPT en el aula: el elefante en la habitación</h2>
+                
+                <p>
+                    La adopción de IA generativa ha sido rápida. Según el Higher Education Policy Institute, la mayoría de estudiantes universitarios en Reino Unido reporta haber usado estas herramientas [6]. Esto presenta desafíos de integridad académica, pero también oportunidades pedagógicas [3].
+                </p>
+
+                <h2>Implicancias para la práctica psicopedagógica</h2>
+                
+                <h3>Oportunidades para la neurodiversidad</h3>
+                
+                <p>
+                    Para estudiantes con dificultades de aprendizaje, TDAH o autismo, la IA puede ofrecer beneficios: lectores de texto a voz, organizadores visuales y entornos de aprendizaje adaptativos.
+                </p>
+                
+                <h3>Riesgos en la evaluación y el diagnóstico</h3>
+                
+                <p>
+                    Si los sistemas de IA están entrenados con datos de estudiantes neurotípicos, pueden fallar en reconocer patrones de aprendizaje divergentes [2].
+                </p>
+
+                <h2>Hacia una implementación ética y efectiva</h2>
+                
+                <p>
+                    El Reglamento de IA de la Unión Europea (AI Act) clasifica ciertos usos de IA en educación como "alto riesgo", lo que implica requisitos adicionales de cumplimiento, como auditorías de sesgo y mecanismos de apelación [13].
+                </p>
+
+                <h2>¿Qué puedo hacer mañana? Acciones concretas</h2>
+                
+                <p><strong>Docentes:</strong> Experimenten con una herramienta de IA, diseñen una actividad donde los estudiantes la usen críticamente y conversen sobre su uso aceptable.</p>
+                
+                <p><strong>Directivos:</strong> Revisen las políticas de privacidad de las herramientas, organicen formación docente y establezcan canales para reportar preocupaciones.</p>
+                
+                <p><strong>Padres:</strong> Pregunten a la escuela sobre las herramientas de IA que utilizan y conversen con sus hijos sobre su uso.</p>
+
+                <h2>Reflexión final: el factor humano</h2>
+                
+                <p>
+                    Como señaló Sal Khan, fundador de Khan Academy: "Estamos al borde de utilizar IA para la transformación más grande positiva en educación que jamás hemos visto" [9].
+                </p>
+                
+                <p>
+                    La promesa de la IA en educación es real, pero su realización dependerá de la sabiduría humana, la reflexión ética y el compromiso con la justicia educativa.
+                </p>
+
+                <!-- Glosario -->
+                <h2>Glosario de términos clave</h2>
+                
+                <ul>
+                    <li><span class="glossary-term">Algoritmo de aprendizaje automático:</span> Programa que aprende de ejemplos.</li>
+                    <li><span class="glossary-term">Caja negra:</span> Sistema cuyo funcionamiento interno no es visible.</li>
+                    <li><span class="glossary-term">IA generativa:</span> IA que crea contenido nuevo (texto, imágenes). ChatGPT es un ejemplo.</li>
+                    <li><span class="glossary-term">Minería de datos educativos:</span> Analizar grandes cantidades de información de estudiantes para encontrar patrones.</li>
+                    <li><span class="glossary-term">Proctoring:</span> Supervisión automatizada de exámenes mediante IA.</li>
+                    <li><span class="glossary-term">Sesgo algorítmico:</span> Cuando un sistema de IA produce resultados sistemáticamente injustos.</li>
+                </ul>
+
+                <!-- Aviso importante -->
+                <div class="warning-box">
+                    <p class="font-semibold text-primary-800 mb-2">⚠ AVISO IMPORTANTE</p>
+                    <p class="text-primary-700 mb-0">
+                        Este artículo tiene fines exclusivamente informativos y educativos. No sustituye el asesoramiento profesional. Para cuestiones de cumplimiento normativo, consulte con especialistas.
+                    </p>
+                </div>
+
+                <!-- Referencias -->
+                <h2>Referencias bibliográficas</h2>
+                
+                <div class="reference-list text-gray-600">
+                    <p>[1] Arias Ortiz, E., Brechner, M., Pérez Alfaro, M. y Vásquez, M. (2024). Tecnología educativa en América Latina y el Caribe: Lecciones aprendidas y camino a seguir. Banco Interamericano de Desarrollo. <a href="https://publications.iadb.org/es/tecnologia-educativa-en-america-latina-y-el-caribe" class="text-primary-600 hover:underline" target="_blank">https://publications.iadb.org/es/tecnologia-educativa-en-america-latina-y-el-caribe</a></p>
+                    
+                    <p>[2] Baker, R. S. y Hawn, A. (2022). Algorithmic bias in education. International Journal of Artificial Intelligence in Education, 32(4), 1052–1092. <a href="https://doi.org/10.1007/s40593-021-00285-9" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.1007/s40593-021-00285-9</a></p>
+                    
+                    <p>[3] Cotton, D. R., Cotton, P. A. y Shipway, J. R. (2023). Chatting and cheating: Ensuring academic integrity in the era of ChatGPT. Frontiers in Education, 8, Artículo 1087947. <a href="https://doi.org/10.3389/feduc.2023.1087947" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.3389/feduc.2023.1087947</a></p>
+                    
+                    <p>[4] Digital Education Council. (2024). Global student survey on AI in higher education 2024. <a href="https://www.digitaleducationcouncil.com/post/global-student-survey-ai-2024" class="text-primary-600 hover:underline" target="_blank">https://www.digitaleducationcouncil.com/post/global-student-survey-ai-2024</a></p>
+                    
+                    <p>[5] Galanek, J. y Gierdowski, D. (2024). 2024 EDUCAUSE AI landscape study. EDUCAUSE. <a href="https://www.educause.edu/ecar/research-publications/2024/educause-ai-landscape-study" class="text-primary-600 hover:underline" target="_blank">https://www.educause.edu/ecar/research-publications/2024/educause-ai-landscape-study</a></p>
+                    
+                    <p>[6] Higher Education Policy Institute. (enero de 2025). Student generative AI survey 2025: AI use among UK students (Informe 176). <a href="https://www.hepi.ac.uk/wp-content/uploads/2025/01/Student-AI-Survey-2025.pdf" class="text-primary-600 hover:underline" target="_blank">https://www.hepi.ac.uk/wp-content/uploads/2025/01/Student-AI-Survey-2025.pdf</a></p>
+                    
+                    <p>[7] ICT Works. (8 de enero de 2025). AI-enhanced education technology increases learning outcomes in India study [Nota periodística]. <a href="https://www.ictworks.org/ai-education-technology-learning-outcomes-india/" class="text-primary-600 hover:underline" target="_blank">https://www.ictworks.org/ai-education-technology-learning-outcomes-india/</a></p>
+                    
+                    <p>[8] Instituto Nacional de Tecnologías Educativas y de Formación del Profesorado. (2025). Orientaciones para la integración de la inteligencia artificial en educación. INTEF. <a href="https://intef.es/recursos-educativos/orientaciones-ia-educacion/" class="text-primary-600 hover:underline" target="_blank">https://intef.es/recursos-educativos/orientaciones-ia-educacion/</a></p>
+                    
+                    <p>[9] Khan Academy. (2024). Khanmigo for teachers: AI-powered teaching assistant. <a href="https://www.khanacademy.org/khan-labs" class="text-primary-600 hover:underline" target="_blank">https://www.khanacademy.org/khan-labs</a></p>
+                    
+                    <p>[10] Maslej, N., et al. (abril de 2025). The AI Index 2025 annual report. Stanford Institute for Human-Centered AI. <a href="https://aiindex.stanford.edu/wp-content/uploads/2025/04/HAI-AI-Index-Report-2025.pdf" class="text-primary-600 hover:underline" target="_blank">https://aiindex.stanford.edu/wp-content/uploads/2025/04/HAI-AI-Index-Report-2025.pdf</a></p>
+                    
+                    <p>[11] Shute, V. J. (2008). Focus on formative feedback. Review of Educational Research, 78(1), 153–189. <a href="https://doi.org/10.3102/0034654307313795" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.3102/0034654307313795</a></p>
+                    
+                    <p>[12] Siemens, G. y Baker, R. S. (2012). Learning analytics and educational data mining: Towards communication and collaboration. En Proceedings of the 2nd International Conference on Learning Analytics and Knowledge (pp. 252–254). ACM. <a href="https://doi.org/10.1145/2330601.2330661" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.1145/2330601.2330661</a></p>
+                    
+                    <p>[13] Unión Europea. (2024). Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo por el que se establecen normas armonizadas en materia de inteligencia artificial (Reglamento de Inteligencia Artificial). Diario Oficial de la Unión Europea, L 2024/1689. <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" class="text-primary-600 hover:underline" target="_blank">https://eur-lex.europa.eu/eli/reg/2024/1689/oj</a></p>
+                    
+                    <p>[14] Wang, S., Wang, H., Liu, M. y Xu, Y. (2025). The effect of ChatGPT on students' learning performance, higher-order thinking, and learning perception: A meta-analysis. Humanities and Social Sciences Communications, 12, Artículo 341. <a href="https://doi.org/10.1057/s41599-025-04787-y" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.1057/s41599-025-04787-y</a></p>
+                    
+                    <p>[15] Zawacki-Richter, O., Marín, V. I., Bond, M. y Gouverneur, F. (2019). Systematic review of research on artificial intelligence applications in higher education: Where are the educators? International Journal of Educational Technology in Higher Education, 16, Artículo 39. <a href="https://doi.org/10.1186/s41239-019-0171-0" class="text-primary-600 hover:underline" target="_blank">https://doi.org/10.1186/s41239-019-0171-0</a></p>
+                </div>
+
+            </div>
+        </div>
+    </article>
+
+    <!-- Author Box -->
+    <section class="py-12 bg-white border-t border-gray-100">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 p-6 bg-gradient-to-br from-primary-50 to-white rounded-xl border border-primary-100">
+                <img src="../foto-perfil.jpg" alt="Dr. Nicolás Genise" class="w-24 h-24 rounded-full border-4 border-white shadow-lg" onerror="this.style.display='none'">
+                <div>
+                    <h3 class="font-display text-xl text-primary-700 font-semibold mb-2">Dr. Nicolás Genise</h3>
+                    <p class="text-gray-600 mb-3">
+                        Doctor en Psicología · Director de TCM Cognitiva (Argentina) · Psicoterapeuta en Gandara Center (Boston) · Director de la Especialización en Psicopedagogía Clínica en Universidad de Flores
+                    </p>
+                    <a href="../index.html#contacto" class="text-primary-600 font-medium hover:text-primary-700">
+                        Contactar →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-12 bg-gradient-to-r from-primary-600 to-primary-700">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <h3 class="font-display text-2xl text-white font-semibold mb-4">¿Te interesa la psicopedagogía clínica?</h3>
+            <p class="text-primary-100 mb-6">Conocé la Especialización en Psicopedagogía Clínica de la Universidad de Flores</p>
+            <a href="../index.html#especializacion" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
+                Conocer la Especialización
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-900 text-primary-200 py-8">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <p class="text-sm">© 2024 Dr. Nicolás Genise. Todos los derechos reservados.</p>
+            <p class="text-xs mt-2">
+                <a href="../index.html" class="hover:text-white">Inicio</a> · 
+                <a href="../index.html#blog" class="hover:text-white">Blog</a> · 
+                <a href="../index.html#contacto" class="hover:text-white">Contacto</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
