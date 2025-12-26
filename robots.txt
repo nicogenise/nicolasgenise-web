@@ -1,0 +1,15 @@
+# robots.txt para nicolasgenise.org
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nicolasgenise.org/sitemap.xml
+
+# Bloquear archivos de sistema si existieran
+Disallow: /*.json$
+Disallow: /node_modules/
+
+# Permitir explícitamente las páginas importantes
+Allow: /index.html
+Allow: /blog/
