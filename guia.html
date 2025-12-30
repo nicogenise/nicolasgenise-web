@@ -115,17 +115,31 @@
 </head>
 <body class="bg-gray-50">
     
-    <!-- Header simple -->
-    <header class="bg-white shadow-sm py-4">
-        <div class="max-w-4xl mx-auto px-4 flex justify-between items-center">
-            <a href="index.html">
-                <img src="logo_transparente.png" alt="Dr. Nicolás Genise" class="h-16">
-            </a>
-            <a href="index.html" class="text-primary-600 hover:text-primary-700 font-medium text-sm">
-                ← Volver al inicio
-            </a>
+    <!-- Header con mismo estilo que index -->
+    <header class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="flex justify-between items-center h-20 md:h-24">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center">
+                    <img 
+                        src="logo_transparente.png" 
+                        alt="Dr. Nicolás Genise - Psicopedagogía Clínica" 
+                        class="h-56 md:h-64 w-auto"
+                        loading="eager"
+                        fetchpriority="high"
+                    />
+                </a>
+                
+                <!-- Volver -->
+                <a href="index.html" class="text-primary-600 hover:text-primary-700 font-medium text-lg">
+                    ← Volver al inicio
+                </a>
+            </div>
         </div>
     </header>
+    
+    <!-- Spacer para compensar header fixed -->
+    <div class="h-20 md:h-24"></div>
     
     <!-- Main Content -->
     <main class="py-12 md:py-20">
@@ -236,22 +250,13 @@
             <img src="logo_fondo_oscuro.png" alt="Dr. Nicolás Genise" class="h-16 mx-auto mb-4">
             <p class="text-sm mb-2">© 2026 Dr. Nicolás Genise. Todos los derechos reservados.</p>
             <p class="text-xs text-primary-300">
-                <a href="mailto:ngenise@tcmcognitiva.com" class="hover:text-white">ngenise@tcmcognitiva.com</a>
+                <a href="/cdn-cgi/l/email-protection#244a43414a4d574164504749474b434a4d504d52450a474b49" class="hover:text-white"><span class="__cf_email__" data-cfemail="b9d7dedcd7d0cadcf9cddad4dad6ded7d0cdd0cfd897dad6d4">[email&#160;protected]</span></a>
             </p>
         </div>
     </footer>
     
     <!-- Track download -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('download-btn').addEventListener('click', function() {
             // GA4 event
-            gtag('event', 'file_download', {
-                'file_name': 'guia-psicopedagogia-clinica-teoria-practica.pdf',
-                'file_extension': 'pdf',
-                'link_url': this.href
-            });
-        });
-    </script>
-    
-</body>
-</html>
+            gt
