@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Dr. Nicolás Genise - Psicopedagogía Clínica</title>
+    <meta name="description" content="Artículos sobre psicopedagogía clínica, funciones ejecutivas, TDAH, evaluación e intervención.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nicolasgenise.org/blog/">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#f8fafc;color:#1e3a5f;line-height:1.6}
+        header{background:#fff;padding:1rem 2rem;box-shadow:0 2px 10px rgba(0,0,0,.05);position:sticky;top:0;z-index:100}
+        nav{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#1e3a5f;text-decoration:none}
+        .logo::before,.logo::after{content:'—';margin:0 .5rem;color:#94a3b8}
+        .nav-links{display:flex;gap:2rem;list-style:none}
+        .nav-links a{color:#1e3a5f;text-decoration:none;font-weight:500}
+        .nav-links a:hover{color:#f97316}
+        .btn-contact{background:#f97316;color:#fff!important;padding:.5rem 1.25rem;border-radius:6px}
+        .hero{background:linear-gradient(135deg,#1e3a5f,#2d5a87);color:#fff;padding:4rem 2rem;text-align:center}
+        .hero h1{font-family:'Cormorant Garamond',serif;font-size:3rem;margin-bottom:1rem}
+        .hero p{opacity:.9;max-width:600px;margin:0 auto}
+        .breadcrumb{max-width:1200px;margin:1.5rem auto;padding:0 2rem;font-size:.9rem}
+        .breadcrumb a{color:#64748b;text-decoration:none}
+        .articles-container{max-width:1200px;margin:0 auto;padding:2rem}
+        .articles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:2rem}
+        .article-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08);transition:transform .3s}
+        .article-card:hover{transform:translateY(-5px)}
+        .article-image{width:100%;height:200px;object-fit:cover;background:linear-gradient(135deg,#1e3a5f,#2d5a87)}
+        .article-content{padding:1.5rem}
+        .article-category{color:#f97316;font-size:.8rem;font-weight:600;text-transform:uppercase}
+        .article-title{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:#1e3a5f;margin:.75rem 0}
+        .article-excerpt{color:#64748b;font-size:.95rem;margin-bottom:1rem}
+        .article-meta{display:flex;justify-content:space-between;padding-top:1rem;border-top:1px solid #e2e8f0;font-size:.85rem;color:#94a3b8}
+        .read-more{color:#1e3a5f;text-decoration:none;font-weight:500}
+        .read-more:hover{color:#f97316}
+        .read-more::after{content:' →'}
+        .badge-new{background:#f97316;color:#fff;font-size:.7rem;padding:.25rem .5rem;border-radius:4px;position:absolute;top:1rem;left:1rem}
+        .card-wrapper{position:relative}
+        footer{background:#1e3a5f;color:#fff;padding:3rem 2rem;margin-top:4rem}
+        .footer-content{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+        .footer-links a{color:rgba(255,255,255,.8);text-decoration:none;margin-right:1.5rem}
+        @media(max-width:768px){.hero h1{font-size:2rem}.articles-grid{grid-template-columns:1fr}.nav-links{display:none}}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo">Dr. Nicolás Genise</a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../index.html#especializacion">Especialización</a></li>
+                <li><a href="index.html" style="color:#f97316">Blog</a></li>
+                <li><a href="../index.html#recursos">Recursos</a></li>
+                <li><a href="../index.html#contacto" class="btn-contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1>Blog</h1>
+        <p>Artículos y recursos sobre psicopedagogía clínica, evaluación, intervención y formación profesional.</p>
+    </section>
+    <div class="breadcrumb">
+        <a href="../index.html">Inicio</a> › <strong>Blog</strong>
+    </div>
+    <main class="articles-container">
+        <div class="articles-grid">
+            <article class="article-card">
+                <div class="card-wrapper">
+                    <span class="badge-new">NUEVO</span>
+                    <img src="funciones-ejecutivas-thumbnail-hires.jpg" alt="Funciones Ejecutivas" class="article-image">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Psicopedagogía Clínica</span>
+                    <h2 class="article-title">Funciones Ejecutivas: Evaluación e Intervención Clínica</h2>
+                    <p class="article-excerpt">Guía práctica para entender, evaluar e intervenir en las funciones ejecutivas de niños y adolescentes.</p>
+                    <div class="article-meta">
+                        <span>Enero 2026 · ~20 min</span>
+                        <a href="funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html" class="read-more">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-wrapper">
+                    <img src="tdah-adultos-thumbnail.jpg" alt="TDAH Inatento en Niñas" class="article-image">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Caso Clínico</span>
+                    <h2 class="article-title">TDAH Inatento en Niñas: El Diagnóstico que Llega Tarde</h2>
+                    <p class="article-excerpt">Caso clínico de Valentina, 12 años: cómo el TDAH inatento pasa desapercibido hasta que colapsa.</p>
+                    <div class="article-meta">
+                        <span>Enero 2026 · ~15 min</span>
+                        <a href="tdah-inatento-ninas-diagnostico-tardio.html" class="read-more">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-wrapper">
+                    <img src="images/impostor-thumbnail.jpg" alt="Fenómeno del Impostor" class="article-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2d5a87)'">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Formación Profesional</span>
+                    <h2 class="article-title">El Fenómeno del Impostor en Estudiantes Universitarios</h2>
+                    <p class="article-excerpt">¿Sientes que no mereces tus logros? Descubre estrategias basadas en evidencia para superarlo.</p>
+                    <div class="article-meta">
+                        <span>Diciembre 2025 · ~12 min</span>
+                        <a href="fenomeno-impostor-estudiantes-universitarios.html" class="read-more">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-wrapper">
+                    <img src="tdah-adultos-thumbnail.jpg" alt="TDAH en Adultos" class="article-image">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Psicopedagogía Clínica</span>
+                    <h2 class="article-title">TDAH en Adultos: Diagnóstico Tardío</h2>
+                    <p class="article-excerpt">Muchos adultos descubren que tienen TDAH después de años de dificultades.</p>
+                    <div class="article-meta">
+                        <span>Diciembre 2025 · ~18 min</span>
+                        <a href="tdah-adultos-diagnostico-tardio.html" class="read-more">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="card-wrapper">
+                    <img src="images/ia-educacion-thumbnail.jpg" alt="IA en Educación" class="article-image" onerror="this.style.background='linear-gradient(135deg,#1e3a5f,#2d5a87)'">
+                </div>
+                <div class="article-content">
+                    <span class="article-category">Educación</span>
+                    <h2 class="article-title">IA en Educación: La Revolución Silenciosa</h2>
+                    <p class="article-excerpt">Cómo la inteligencia artificial está transformando la educación.</p>
+                    <div class="article-meta">
+                        <span>Noviembre 2025 · ~10 min</span>
+                        <a href="ia-educacion-revolucion-silenciosa.html" class="read-more">Leer artículo</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem">— Dr. Nicolás Genise —</div>
+                <p style="margin-top:.5rem;opacity:.8;font-size:.9rem">Doctor en Psicología · Director TCM Cognitiva</p>
+            </div>
+            <div class="footer-links">
+                <a href="../index.html">Inicio</a>
+                <a href="../index.html#especializacion">Especialización</a>
+                <a href="index.html">Blog</a>
+                <a href="../index.html#contacto">Contacto</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
