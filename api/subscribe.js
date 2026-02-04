@@ -14,6 +14,9 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
+  // TEMPORARY DIAGNOSTIC MODE - remove after confirming Brevo works
+  const diagnostic = {};
+
   try {
     const { name, email, profession, source } = req.body || {};
 
@@ -22,9 +25,13 @@ module.exports = async function handler(req, res) {
     }
 
     const BREVO_API_KEY = process.env.BREVO_API_KEY;
+    diagnostic.hasKey = !!BREVO_API_KEY;
+    diagnostic.keyLen = BREVO_API_KEY ? BREVO_API_KEY.length : 0;
+    diagnostic.keyPrefix = BREVO_API_KEY ? BREVO_API_KEY.substring(0, 10) : 'NONE';
+
     if (!BREVO_API_KEY) {
-      console.error('BREVO_API_KEY not configured');
-      return res.status(500).json({ error: 'Server configuration error' });
+      diagnostic.error = 'BREVO_API_KEY not configured';
+      return res.status(200).json({ success: false, diagnostic });
     }
 
     const contactData = {
@@ -38,6 +45,8 @@ module.exports = async function handler(req, res) {
       listIds: [23],
       updateEnabled: true
     };
+
+    diagnostic.sentPayload = contactData;
 
     // Create contact in Brevo
     const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
@@ -54,20 +63,25 @@ module.exports = async function handler(req, res) {
     // Read response body ONCE (stream can only be consumed once)
     const responseText = await brevoRes.text();
 
+    diagnostic.brevoStatus = status;
+    diagnostic.brevoResponse = responseText;
+
     // Parse JSON from the already-read text
     let responseBody = {};
     try { responseBody = JSON.parse(responseText); } catch (e) {}
 
     // 201 = created, 204 = updated, 200 = ok
     if (status === 201 || status === 204 || status === 200) {
-      return res.status(200).json({ success: true });
+      diagnostic.result = 'CREATED_OR_UPDATED';
+      return res.status(200).json({ success: true, diagnostic });
     }
 
     // 400 = duplicate or validation error
     if (status === 400 && responseBody.code === 'duplicate_parameter') {
+      diagnostic.result = 'DUPLICATE_UPDATING';
       // Update existing contact via PUT
       try {
-        await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
+        const putRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
           method: 'PUT',
           headers: {
             'accept': 'application/json',
@@ -79,18 +93,20 @@ module.exports = async function handler(req, res) {
             listIds: [23]
           })
         });
+        diagnostic.putStatus = putRes.status;
       } catch (e) {
-        console.error('Brevo PUT update error:', e.message);
+        diagnostic.putError = e.message;
       }
-      return res.status(200).json({ success: true });
+      return res.status(200).json({ success: true, diagnostic });
     }
 
-    // Any other error - log but return success to user (graceful degradation)
-    console.error('Brevo error:', status, responseText);
-    return res.status(200).json({ success: true });
+    // Any other error
+    diagnostic.result = 'BREVO_ERROR';
+    return res.status(200).json({ success: false, diagnostic });
 
   } catch (error) {
-    console.error('Server error:', error.message || error);
-    return res.status(500).json({ error: 'Server error. Please try again.' });
+    diagnostic.result = 'SERVER_ERROR';
+    diagnostic.errorMessage = error.message || String(error);
+    return res.status(200).json({ success: false, diagnostic });
   }
 }
