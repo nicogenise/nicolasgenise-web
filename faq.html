@@ -229,6 +229,77 @@
             border-radius: 9999px;
             text-transform: uppercase;
         }
+
+        /* Dark Mode */
+        .dark body {
+            background-color: #0B1929;
+            color: #E0E7EF;
+        }
+        .dark nav {
+            background-color: rgba(11, 25, 41, 0.95) !important;
+            border-color: rgba(30, 58, 95, 0.5) !important;
+        }
+        .dark nav a:not([class*="bg-highlight"]) {
+            color: #8892A4;
+        }
+        .dark nav a:not([class*="bg-highlight"]):hover {
+            color: #5DADE2;
+        }
+        .dark #dark-mode-toggle {
+            color: #8892A4;
+        }
+        .dark #dark-mode-toggle:hover {
+            color: #5DADE2;
+            background-color: rgba(30, 58, 95, 0.5);
+        }
+        .dark .nav-logo-light {
+            display: none !important;
+        }
+        .dark .nav-logo-dark {
+            display: block !important;
+        }
+        .dark #mobile-menu {
+            background-color: #112240 !important;
+        }
+        .dark #mobile-menu a {
+            color: #8892A4;
+        }
+        .dark #mobile-menu a:hover {
+            color: #5DADE2;
+        }
+        .dark header {
+            background: linear-gradient(135deg, #0B1929 0%, #112240 100%);
+        }
+        .dark .bg-white {
+            background-color: #112240 !important;
+        }
+        .dark .faq-question span:first-child {
+            color: #E0E7EF;
+        }
+        .dark .faq-answer .pb-5 {
+            color: #8892A4;
+        }
+        .dark .faq-item {
+            border-color: #1E3A5F;
+        }
+        .dark .border-gray-200 {
+            border-color: #1E3A5F !important;
+        }
+        .dark .section-badge {
+            background: linear-gradient(135deg, #5DADE2 0%, #2874A6 100%);
+        }
+        .dark .text-gray-800 {
+            color: #E0E7EF !important;
+        }
+        .dark .text-gray-600 {
+            color: #8892A4 !important;
+        }
+        .dark footer {
+            background-color: #071B28 !important;
+        }
+        .dark .bg-gradient-to-br {
+            background: linear-gradient(135deg, #0E2F44 0%, #112240 100%) !important;
+        }
     </style>
 </head>
 <body class="bg-white">
@@ -238,7 +309,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20 md:h-24">
                 <a href="index.html" class="flex items-center">
-                    <img src="logo_transparente.png" alt="Dr. Nicolás Genise" class="h-56 md:h-64 w-auto" loading="eager">
+                    <img src="logo_transparente.png" class="nav-logo-light h-56 md:h-64 w-auto" alt="Dr. Nicolás Genise" loading="eager">
+                    <img src="logo_fondo_oscuro.webp" class="nav-logo-dark h-56 md:h-64 w-auto hidden" alt="Dr. Nicolás Genise" loading="eager">
                 </a>
                 <div class="hidden md:flex items-center space-x-10">
                     <a href="index.html#sobre-mi" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Sobre mí</a>
@@ -246,6 +318,10 @@
                     <a href="blog/index.html" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Blog</a>
                     <a href="faq.html" class="text-highlight font-semibold text-lg">FAQ</a>
                     <a href="index.html#recursos" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Recursos</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                    </button>
                     <a href="index.html#contacto" class="bg-highlight text-primary-900 px-6 py-3 rounded-lg hover:bg-highlight/90 transition-colors font-semibold text-lg shadow-md">Contacto</a>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
@@ -658,6 +734,46 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlEl = document.documentElement;
+
+        function setDarkMode(isDark) {
+            if (isDark) {
+                htmlEl.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                htmlEl.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'false');
+            }
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!htmlEl.classList.contains('dark'));
+        });
+
+        // Init from localStorage or system preference
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'true') {
+            setDarkMode(true);
+        } else if (savedMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDarkMode(true);
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (localStorage.getItem('darkMode') === null) {
+                setDarkMode(e.matches);
+            }
+        });
+    </script>
 
     <!-- Mobile Menu Script -->
     <script>

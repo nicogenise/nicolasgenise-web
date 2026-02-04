@@ -111,6 +111,66 @@
         .hero-gradient {
             background: linear-gradient(135deg, rgba(27, 79, 114, 0.97) 0%, rgba(40, 116, 166, 0.95) 50%, rgba(93, 173, 226, 0.9) 100%);
         }
+        /* Dark Mode */
+        .dark body {
+            background-color: #0B1929;
+            color: #E0E7EF;
+        }
+        .dark nav {
+            background-color: rgba(11, 25, 41, 0.95) !important;
+            border-color: rgba(30, 58, 95, 0.5) !important;
+        }
+        .dark nav a:not([class*="bg-highlight"]) {
+            color: #8892A4;
+        }
+        .dark nav a:not([class*="bg-highlight"]):hover {
+            color: #5DADE2;
+        }
+        .dark #dark-mode-toggle {
+            color: #8892A4;
+        }
+        .dark #dark-mode-toggle:hover {
+            color: #5DADE2;
+            background-color: rgba(30, 58, 95, 0.5);
+        }
+        .dark .nav-logo-light {
+            display: none !important;
+        }
+        .dark .nav-logo-dark {
+            display: block !important;
+        }
+        .dark #mobile-menu {
+            background-color: #112240 !important;
+        }
+        .dark #mobile-menu a {
+            color: #8892A4;
+        }
+        .dark #mobile-menu a:hover {
+            color: #5DADE2;
+        }
+        .dark .bg-white {
+            background-color: #112240 !important;
+        }
+        .dark .text-gray-800 {
+            color: #E0E7EF !important;
+        }
+        .dark .text-gray-600 {
+            color: #8892A4 !important;
+        }
+        .dark .border-gray-200 {
+            border-color: #1E3A5F !important;
+        }
+        .dark input, .dark select, .dark textarea {
+            background-color: #0E2F44 !important;
+            border-color: #1E3A5F !important;
+            color: #E0E7EF !important;
+        }
+        .dark input::placeholder, .dark textarea::placeholder {
+            color: #5A6B7F !important;
+        }
+        .dark footer {
+            background-color: #071B28 !important;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -118,7 +178,8 @@
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
             <a href="index.html" class="flex items-center">
-                <img src="logo_transparente.png" alt="Dr. Nicolás Genise" class="h-14 md:h-16">
+                <img src="logo_transparente.png" class="nav-logo-light h-56 md:h-64 w-auto" alt="Dr. Nicolás Genise" loading="eager">
+                <img src="logo_fondo_oscuro.webp" class="nav-logo-dark h-56 md:h-64 w-auto hidden" alt="Dr. Nicolás Genise" loading="eager">
             </a>
             <div class="hidden md:flex items-center space-x-8 font-body text-sm">
                 <a href="index.html#sobre-mi" class="text-gray-600 hover:text-primary-600 transition-colors">Sobre mí</a>
@@ -126,6 +187,10 @@
                 <a href="blog/index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Blog</a>
                 <a href="faq.html" class="text-gray-600 hover:text-primary-600 transition-colors">FAQ</a>
                 <a href="index.html#recursos" class="text-gray-600 hover:text-primary-600 transition-colors">Recursos</a>
+                <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+                </button>
                 <a href="index.html#contacto" class="bg-highlight text-primary-900 px-5 py-2.5 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-sm shadow-sm">Contacto</a>
             </div>
             <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
@@ -298,6 +363,45 @@
         </div>
     </footer>
     
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlEl = document.documentElement;
+
+        function setDarkMode(isDark) {
+            if (isDark) {
+                htmlEl.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                htmlEl.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'false');
+            }
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+            setDarkMode(!htmlEl.classList.contains('dark'));
+        });
+
+        const savedMode = localStorage.getItem('darkMode');
+        if (savedMode === 'true') {
+            setDarkMode(true);
+        } else if (savedMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDarkMode(true);
+        }
+
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (localStorage.getItem('darkMode') === null) {
+                setDarkMode(e.matches);
+            }
+        });
+    </script>
+
     <!-- Mobile menu toggle -->
     <script>
         // Mobile menu toggle
