@@ -631,26 +631,27 @@
             </div>
         </div>
         
-        <!-- Mobile Menu -->
-        <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-xl md:hidden">
-            <div class="p-6">
-                <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-                <div class="mt-8 flex flex-col space-y-4">
-                    <a href="#sobre-mi" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Sobre mí</a>
-                    <a href="#especializacion" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Especialización</a>
-                    <a href="#blog" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Blog</a>
-                    <a href="faq.html" class="text-gray-600 hover:text-primary-600 py-2 font-medium">FAQ</a>
-                    <a href="#recursos" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Recursos</a>
-                    <a href="#contacto" class="bg-primary-600 text-white px-5 py-2.5 rounded-lg text-center font-medium mt-4">Contacto</a>
-                </div>
+    </nav>
+
+    <!-- Mobile Menu (OUTSIDE nav to avoid stacking context from bg-white/95 + backdrop-blur) -->
+    <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-xl md:hidden">
+        <div class="p-6">
+            <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+            </button>
+            <div class="mt-8 flex flex-col space-y-4">
+                <a href="#sobre-mi" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Sobre mí</a>
+                <a href="#especializacion" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Especialización</a>
+                <a href="#blog" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Blog</a>
+                <a href="faq.html" class="text-gray-600 hover:text-primary-600 py-2 font-medium">FAQ</a>
+                <a href="#recursos" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Recursos</a>
+                <a href="#contacto" class="bg-primary-600 text-white px-5 py-2.5 rounded-lg text-center font-medium mt-4">Contacto</a>
             </div>
         </div>
-    </nav>
+    </div>
     
     <!-- ========================================
          HERO SECTION - Textos mejorados
