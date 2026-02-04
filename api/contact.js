@@ -2,7 +2,7 @@
 // Sends data to n8n webhook AND creates contact in Brevo
 // POST /api/contact
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', 'https://nicolasgenise.org');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
