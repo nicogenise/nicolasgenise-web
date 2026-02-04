@@ -49,12 +49,10 @@ module.exports = async function handler(req, res) {
       body: JSON.stringify({
         email: email.toLowerCase().trim(),
         attributes: {
-          FIRSTNAME: name.split(' ')[0],
-          LASTNAME: name.split(' ').slice(1).join(' ') || '',
-          NOMBRE: name,
-          PROFESION: profession || '',
-          SOURCE: source || 'guia-download',
-          SIGNUP_DATE: new Date().toISOString().split('T')[0]
+          NOMBRE: name.split(' ')[0],
+          APELLIDOS: name.split(' ').slice(1).join(' ') || '',
+          JOB_TITLE: profession || '',
+          TIPO: source || 'guia-download'
         },
         listIds: [LIST_ID],
         updateEnabled: true
@@ -79,9 +77,10 @@ module.exports = async function handler(req, res) {
           },
           body: JSON.stringify({
             attributes: {
-              NOMBRE: name,
-              PROFESION: profession || '',
-              SOURCE: source || 'guia-download'
+              NOMBRE: name.split(' ')[0],
+              APELLIDOS: name.split(' ').slice(1).join(' ') || '',
+              JOB_TITLE: profession || '',
+              TIPO: source || 'guia-download'
             },
             listIds: [LIST_ID]
           })

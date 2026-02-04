@@ -46,12 +46,9 @@ module.exports = async function handler(req, res) {
         body: JSON.stringify({
           email: email.toLowerCase().trim(),
           attributes: {
-            FIRSTNAME: name.split(' ')[0],
-            LASTNAME: name.split(' ').slice(1).join(' ') || '',
-            NOMBRE: name,
-            SOURCE: 'contact-form',
-            ASUNTO: subject || '',
-            SIGNUP_DATE: new Date().toISOString().split('T')[0]
+            NOMBRE: name.split(' ')[0],
+            APELLIDOS: name.split(' ').slice(1).join(' ') || '',
+            TIPO: 'contact-form'
           },
           listIds: [23],
           updateEnabled: true
