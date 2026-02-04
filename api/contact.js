@@ -3,8 +3,12 @@
 // POST /api/contact
 
 module.exports = async function handler(req, res) {
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://nicolasgenise.org');
+  // CORS headers - allow both www and non-www
+  const origin = req.headers.origin || '';
+  const allowedOrigins = ['https://nicolasgenise.org', 'https://www.nicolasgenise.org'];
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
