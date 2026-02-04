@@ -14,9 +14,6 @@ module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  // TEMPORARY DIAGNOSTIC MODE - remove after confirming Brevo works
-  const diagnostic = {};
-
   try {
     const { name, email, profession, source } = req.body || {};
 
@@ -24,18 +21,10 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Name and email are required' });
     }
 
-    const BREVO_API_KEY_RAW = process.env.BREVO_API_KEY;
-    const BREVO_API_KEY = BREVO_API_KEY_RAW ? BREVO_API_KEY_RAW.trim() : '';
-    diagnostic.hasKey = !!BREVO_API_KEY;
-    diagnostic.keyLenRaw = BREVO_API_KEY_RAW ? BREVO_API_KEY_RAW.length : 0;
-    diagnostic.keyLenTrimmed = BREVO_API_KEY.length;
-    diagnostic.keyPrefix = BREVO_API_KEY ? BREVO_API_KEY.substring(0, 12) : 'NONE';
-    diagnostic.keySuffix = BREVO_API_KEY ? BREVO_API_KEY.substring(BREVO_API_KEY.length - 8) : 'NONE';
-    diagnostic.hadWhitespace = BREVO_API_KEY_RAW !== BREVO_API_KEY;
-
+    const BREVO_API_KEY = (process.env.BREVO_API_KEY || '').trim();
     if (!BREVO_API_KEY) {
-      diagnostic.error = 'BREVO_API_KEY not configured';
-      return res.status(200).json({ success: false, diagnostic });
+      console.error('BREVO_API_KEY not configured');
+      return res.status(500).json({ error: 'Server configuration error' });
     }
 
     const contactData = {
@@ -49,8 +38,6 @@ module.exports = async function handler(req, res) {
       listIds: [23],
       updateEnabled: true
     };
-
-    diagnostic.sentPayload = contactData;
 
     // Create contact in Brevo
     const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
@@ -67,25 +54,20 @@ module.exports = async function handler(req, res) {
     // Read response body ONCE (stream can only be consumed once)
     const responseText = await brevoRes.text();
 
-    diagnostic.brevoStatus = status;
-    diagnostic.brevoResponse = responseText;
-
     // Parse JSON from the already-read text
     let responseBody = {};
     try { responseBody = JSON.parse(responseText); } catch (e) {}
 
     // 201 = created, 204 = updated, 200 = ok
     if (status === 201 || status === 204 || status === 200) {
-      diagnostic.result = 'CREATED_OR_UPDATED';
-      return res.status(200).json({ success: true, diagnostic });
+      return res.status(200).json({ success: true });
     }
 
     // 400 = duplicate or validation error
     if (status === 400 && responseBody.code === 'duplicate_parameter') {
-      diagnostic.result = 'DUPLICATE_UPDATING';
       // Update existing contact via PUT
       try {
-        const putRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
+        await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
           method: 'PUT',
           headers: {
             'accept': 'application/json',
@@ -97,20 +79,18 @@ module.exports = async function handler(req, res) {
             listIds: [23]
           })
         });
-        diagnostic.putStatus = putRes.status;
       } catch (e) {
-        diagnostic.putError = e.message;
+        console.error('Brevo PUT update error:', e.message);
       }
-      return res.status(200).json({ success: true, diagnostic });
+      return res.status(200).json({ success: true });
     }
 
-    // Any other error
-    diagnostic.result = 'BREVO_ERROR';
-    return res.status(200).json({ success: false, diagnostic });
+    // Any other error - log but return success to user (graceful degradation)
+    console.error('Brevo error:', status, responseText);
+    return res.status(200).json({ success: true });
 
   } catch (error) {
-    diagnostic.result = 'SERVER_ERROR';
-    diagnostic.errorMessage = error.message || String(error);
-    return res.status(200).json({ success: false, diagnostic });
+    console.error('Server error:', error.message || error);
+    return res.status(500).json({ error: 'Server error. Please try again.' });
   }
 }
