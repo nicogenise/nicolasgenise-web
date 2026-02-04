@@ -443,8 +443,8 @@
                         Formación de posgrado 100% virtual con acreditación CONEAU. Aprendé a evaluar, diagnosticar e intervenir en dificultades del aprendizaje a lo largo de todo el ciclo vital, con un enfoque basado en la evidencia científica y supervisión de casos reales.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-3 justify-center">
-                        <a href="#especializacion" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center">
-                            Conocer la Especialización
+                        <a href="#contacto" class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center">
+                            Inscripci&oacute;n Abril 2026 &mdash; Solo 30 cupos
                         </a>
                         <a href="#recursos" class="bg-highlight text-primary-900 px-8 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-center shadow-lg shadow-highlight/50">
                             Descargar Guía Gratuita
@@ -707,7 +707,7 @@
                             <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para especializarte?</h3>
                             <p class="text-primary-100 mb-6">Inscripciones abiertas para la cohorte Abril 2026. Consultá requisitos de admisión, plan de estudios y opciones de financiamiento.</p>
                             <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
-                                Solicitar Información
+                                Inscripci&oacute;n Abril 2026 &mdash; Solo 30 cupos
                             </a>
                         </div>
                         
@@ -1191,4 +1191,63 @@
         });
         
         // Modal functionality
-        const modal = document.getElementById('l
+        const modal = document.getElementById('lead-modal');
+        const modalBackdrop = document.getElementById('modal-backdrop');
+        const modalClose = document.getElementById('modal-close');
+        const modalForm = document.getElementById('modal-lead-form');
+        const modalSuccess = document.getElementById('modal-success');
+
+        // Open modal from guide buttons
+        document.querySelectorAll('a[href="#recursos"]').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        if (modalClose) modalClose.addEventListener('click', closeModal);
+        if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+        // Modal form submit
+        if (modalForm) {
+            modalForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                window.open(downloadUrl, '_blank');
+                modalForm.classList.add('hidden');
+                modalSuccess.classList.remove('hidden');
+            });
+        }
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.style.opacity = '1';
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
