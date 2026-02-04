@@ -27,9 +27,10 @@ module.exports = async function handler(req, res) {
     }
 
     const BREVO_API_KEY = process.env.BREVO_API_KEY;
+    console.log('DEBUG_ENV: BREVO_API_KEY exists:', !!BREVO_API_KEY, 'len:', BREVO_API_KEY ? BREVO_API_KEY.length : 0);
     if (!BREVO_API_KEY) {
       console.error('BREVO_API_KEY not set');
-      return res.status(500).json({ error: 'Server configuration error' });
+      return res.status(500).json({ error: 'Server configuration error', debug: 'BREVO_API_KEY missing' });
     }
 
     const contactData = {
@@ -55,10 +56,13 @@ module.exports = async function handler(req, res) {
     });
 
     const status = brevoRes.status;
+    let responseText = '';
+    try { responseText = await brevoRes.text(); } catch(e) {}
+    console.log('DEBUG_BREVO: status:', status, 'body:', responseText);
 
     // 201 = created, 204 = updated
     if (status === 201 || status === 204 || status === 200) {
-      return res.status(200).json({ success: true });
+      return res.status(200).json({ success: true, debug_status: status });
     }
 
     // 400 = duplicate or validation error
