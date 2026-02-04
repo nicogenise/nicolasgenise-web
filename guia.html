@@ -134,10 +134,7 @@
             background-color: rgba(30, 58, 95, 0.5);
         }
         .dark .nav-logo-light {
-            display: none !important;
-        }
-        .dark .nav-logo-dark {
-            display: block !important;
+            filter: brightness(0) invert(1);
         }
         .dark #mobile-menu {
             background-color: #112240 !important;
@@ -179,7 +176,6 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
             <a href="index.html" class="flex items-center">
                 <img src="logo_transparente.png" class="nav-logo-light h-56 md:h-64 w-auto" alt="Dr. Nicolás Genise" loading="eager">
-                <img src="logo_fondo_oscuro.webp" class="nav-logo-dark h-56 md:h-64 w-auto hidden" alt="Dr. Nicolás Genise" loading="eager">
             </a>
             <div class="hidden md:flex items-center space-x-8 font-body text-sm">
                 <a href="index.html#sobre-mi" class="text-gray-600 hover:text-primary-600 transition-colors">Sobre mí</a>
