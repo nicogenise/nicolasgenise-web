@@ -24,10 +24,14 @@ module.exports = async function handler(req, res) {
       return res.status(400).json({ error: 'Name and email are required' });
     }
 
-    const BREVO_API_KEY = process.env.BREVO_API_KEY;
+    const BREVO_API_KEY_RAW = process.env.BREVO_API_KEY;
+    const BREVO_API_KEY = BREVO_API_KEY_RAW ? BREVO_API_KEY_RAW.trim() : '';
     diagnostic.hasKey = !!BREVO_API_KEY;
-    diagnostic.keyLen = BREVO_API_KEY ? BREVO_API_KEY.length : 0;
-    diagnostic.keyPrefix = BREVO_API_KEY ? BREVO_API_KEY.substring(0, 10) : 'NONE';
+    diagnostic.keyLenRaw = BREVO_API_KEY_RAW ? BREVO_API_KEY_RAW.length : 0;
+    diagnostic.keyLenTrimmed = BREVO_API_KEY.length;
+    diagnostic.keyPrefix = BREVO_API_KEY ? BREVO_API_KEY.substring(0, 12) : 'NONE';
+    diagnostic.keySuffix = BREVO_API_KEY ? BREVO_API_KEY.substring(BREVO_API_KEY.length - 8) : 'NONE';
+    diagnostic.hadWhitespace = BREVO_API_KEY_RAW !== BREVO_API_KEY;
 
     if (!BREVO_API_KEY) {
       diagnostic.error = 'BREVO_API_KEY not configured';
