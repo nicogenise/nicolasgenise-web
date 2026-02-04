@@ -11,13 +11,8 @@ module.exports = async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  if (req.method === 'OPTIONS') {
-    return res.status(200).end();
-  }
-
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method not allowed' });
-  }
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
     const { name, email, profession, source } = req.body || {};
@@ -27,10 +22,9 @@ module.exports = async function handler(req, res) {
     }
 
     const BREVO_API_KEY = process.env.BREVO_API_KEY;
-    console.log('DEBUG_ENV: BREVO_API_KEY exists:', !!BREVO_API_KEY, 'len:', BREVO_API_KEY ? BREVO_API_KEY.length : 0);
     if (!BREVO_API_KEY) {
-      console.error('BREVO_API_KEY not set');
-      return res.status(500).json({ error: 'Server configuration error', debug: 'BREVO_API_KEY missing' });
+      console.error('BREVO_API_KEY not configured');
+      return res.status(500).json({ error: 'Server configuration error' });
     }
 
     const contactData = {
@@ -45,6 +39,7 @@ module.exports = async function handler(req, res) {
       updateEnabled: true
     };
 
+    // Create contact in Brevo
     const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
       method: 'POST',
       headers: {
@@ -56,50 +51,43 @@ module.exports = async function handler(req, res) {
     });
 
     const status = brevoRes.status;
-    let responseText = '';
-    try { responseText = await brevoRes.text(); } catch(e) {}
-    console.log('DEBUG_BREVO: status:', status, 'body:', responseText);
+    // Read response body ONCE (stream can only be consumed once)
+    const responseText = await brevoRes.text();
 
-    // 201 = created, 204 = updated
+    // Parse JSON from the already-read text
+    let responseBody = {};
+    try { responseBody = JSON.parse(responseText); } catch (e) {}
+
+    // 201 = created, 204 = updated, 200 = ok
     if (status === 201 || status === 204 || status === 200) {
-      return res.status(200).json({ success: true, debug_status: status });
+      return res.status(200).json({ success: true });
     }
 
     // 400 = duplicate or validation error
-    if (status === 400) {
-      let errBody = {};
-      try { errBody = await brevoRes.json(); } catch(e) {}
-
-      if (errBody.code === 'duplicate_parameter') {
-        // Update existing contact
-        try {
-          await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
-            method: 'PUT',
-            headers: {
-              'accept': 'application/json',
-              'content-type': 'application/json',
-              'api-key': BREVO_API_KEY
-            },
-            body: JSON.stringify({
-              attributes: contactData.attributes,
-              listIds: [23]
-            })
-          });
-        } catch(e) {
-          console.error('Update error:', e);
-        }
-        return res.status(200).json({ success: true });
+    if (status === 400 && responseBody.code === 'duplicate_parameter') {
+      // Update existing contact via PUT
+      try {
+        await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(contactData.email)}`, {
+          method: 'PUT',
+          headers: {
+            'accept': 'application/json',
+            'content-type': 'application/json',
+            'api-key': BREVO_API_KEY
+          },
+          body: JSON.stringify({
+            attributes: contactData.attributes,
+            listIds: [23]
+          })
+        });
+      } catch (e) {
+        console.error('Brevo PUT update error:', e.message);
       }
-
-      console.error('Brevo 400:', JSON.stringify(errBody));
-      return res.status(200).json({ success: true }); // Still success for user
+      return res.status(200).json({ success: true });
     }
 
-    // Any other error - log but still return success to user
-    let errText = '';
-    try { errText = await brevoRes.text(); } catch(e) {}
-    console.error('Brevo error:', status, errText);
-    return res.status(200).json({ success: true }); // Graceful degradation
+    // Any other error - log but return success to user (graceful degradation)
+    console.error('Brevo error:', status, responseText);
+    return res.status(200).json({ success: true });
 
   } catch (error) {
     console.error('Server error:', error.message || error);
