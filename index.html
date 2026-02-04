@@ -161,15 +161,133 @@
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             font-family: 'Source Sans 3', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
-        
+
         .font-display {
             font-family: 'Playfair Display', serif;
         }
-        
+
+        /* ========================================
+           SCROLL REVEAL ANIMATIONS
+           ======================================== */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ========================================
+           NAV LINK UNDERLINE ANIMATION
+           ======================================== */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #5DADE2, #FF9900);
+            transition: width 0.3s ease;
+            border-radius: 1px;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* ========================================
+           MICRO-INTERACTIONS
+           ======================================== */
+        .glass-card, .stat-card-elegant {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover, .stat-card-elegant:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* ========================================
+           DARK MODE
+           ======================================== */
+        .dark body {
+            background-color: #0B1929;
+            color: #E0E7EF;
+        }
+        .dark nav {
+            background-color: rgba(11, 25, 41, 0.95) !important;
+            border-color: rgba(30, 58, 95, 0.5) !important;
+        }
+        .dark nav a:not([class*="bg-highlight"]) {
+            color: #8892A4;
+        }
+        .dark nav a:not([class*="bg-highlight"]):hover {
+            color: #5DADE2;
+        }
+        .dark #dark-mode-toggle {
+            color: #8892A4;
+        }
+        .dark #dark-mode-toggle:hover {
+            color: #5DADE2;
+            background-color: rgba(93, 173, 226, 0.1);
+        }
+        .dark section:not(.hero-gradient) {
+            background-color: #0B1929;
+        }
+        .dark .bg-white {
+            background-color: #112240 !important;
+        }
+        .dark .bg-gray-50, .dark .bg-primary-50 {
+            background-color: #0E2F44 !important;
+        }
+        .dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-900 {
+            color: #E0E7EF !important;
+        }
+        .dark .text-gray-600, .dark .text-gray-500 {
+            color: #8892A4 !important;
+        }
+        .dark .border-gray-100, .dark .border-gray-200 {
+            border-color: #1E3A5F !important;
+        }
+        .dark .shadow-lg, .dark .shadow-xl {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.4) !important;
+        }
+        .dark input, .dark select, .dark textarea {
+            background-color: #0E2F44 !important;
+            border-color: #1E3A5F !important;
+            color: #E0E7EF !important;
+        }
+        .dark input::placeholder, .dark textarea::placeholder {
+            color: #5A6B7F !important;
+        }
+        .dark .pattern-bg {
+            background-color: #0B1929;
+        }
+        .dark footer {
+            background-color: #071B28 !important;
+        }
+        .dark .nav-logo-light {
+            display: none !important;
+        }
+        .dark .nav-logo-dark {
+            display: block !important;
+        }
+        .dark #back-to-top {
+            background-color: rgba(17, 34, 64, 0.9);
+            border-color: #1E3A5F;
+            color: #5DADE2;
+        }
+
         /* ========================================
            HERO SECTION
            ======================================== */
@@ -389,14 +507,60 @@
         }
         
         @keyframes slideUp {
-            from { 
+            from {
                 opacity: 0;
                 transform: translateY(20px) scale(0.95);
             }
-            to { 
+            to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
             }
+        }
+
+        /* ========================================
+           FORM VALIDATION STYLES
+           ======================================== */
+        .form-input-error {
+            border-color: #EF4444 !important;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+            animation: shake 0.4s ease-in-out;
+        }
+
+        .form-input-success {
+            border-color: #10B981 !important;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+        }
+
+        .form-error-message {
+            color: #EF4444;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: opacity 0.25s ease, max-height 0.25s ease;
+        }
+
+        .form-error-message.visible {
+            opacity: 1;
+            max-height: 2rem;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-4px); }
+            40% { transform: translateX(4px); }
+            60% { transform: translateX(-3px); }
+            80% { transform: translateX(3px); }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
         }
     </style>
 </head>
@@ -406,25 +570,36 @@
     <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex justify-between items-center h-20 md:h-24">
-                <!-- Logo -->
+                <!-- Logo (light + dark) -->
                 <a href="#" class="flex items-center">
-                    <img 
-                        src="logo_transparente.png" 
-                        alt="Dr. Nicolás Genise - Psicopedagogía Clínica" 
-                        class="h-56 md:h-64 w-auto"
+                    <img
+                        src="logo_transparente.png"
+                        alt="Dr. Nicolás Genise - Psicopedagogía Clínica"
+                        class="nav-logo-light h-56 md:h-64 w-auto"
                         loading="eager"
                         fetchpriority="high"
+                    />
+                    <img
+                        src="logo_fondo_oscuro.webp"
+                        alt="Dr. Nicolás Genise - Psicopedagogía Clínica"
+                        class="nav-logo-dark h-56 md:h-64 w-auto hidden"
+                        loading="eager"
                     />
                 </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="#sobre-mi" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Sobre mí</a>
-                    <a href="#especializacion" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Especialización</a>
-                    <a href="#blog" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Blog</a>
-                    <a href="faq.html" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">FAQ</a>
-                    <a href="#recursos" class="text-gray-600 hover:text-primary-600 transition-colors font-medium text-lg">Recursos</a>
-                    <a href="#contacto" class="bg-highlight text-primary-900 px-6 py-3 rounded-lg hover:bg-highlight/90 transition-colors font-semibold text-lg shadow-md">Contacto</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#sobre-mi" class="nav-link text-gray-600 hover:text-primary-600 transition-colors font-medium text-sm">Sobre mí</a>
+                    <a href="#especializacion" class="nav-link text-gray-600 hover:text-primary-600 transition-colors font-medium text-sm">Especialización</a>
+                    <a href="#blog" class="nav-link text-gray-600 hover:text-primary-600 transition-colors font-medium text-sm">Blog</a>
+                    <a href="faq.html" class="nav-link text-gray-600 hover:text-primary-600 transition-colors font-medium text-sm">FAQ</a>
+                    <a href="#recursos" class="nav-link text-gray-600 hover:text-primary-600 transition-colors font-medium text-sm">Recursos</a>
+                    <!-- Dark Mode Toggle -->
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="#contacto" class="bg-highlight text-primary-900 px-5 py-2.5 rounded-lg hover:bg-highlight/90 transition-all font-semibold text-sm shadow-md hover:shadow-lg hover:scale-[1.02]">Contacto</a>
                 </div>
                 
                 <!-- Mobile Menu Button -->
@@ -774,6 +949,40 @@
     </section>
     
     <!-- ========================================
+         SOCIAL PROOF BAR - Contadores animados
+         ======================================== -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 via-primary-500 to-accent relative overflow-hidden">
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-20 -left-20 w-40 h-40 bg-white/5 rounded-full blur-2xl"></div>
+            <div class="absolute -bottom-20 -right-20 w-60 h-60 bg-white/5 rounded-full blur-2xl"></div>
+        </div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div class="space-y-2">
+                    <p data-counter data-target="408" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Horas de formación</p>
+                </div>
+                <div class="space-y-2">
+                    <p data-counter data-target="100" data-suffix="%" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Virtual y asincrónica</p>
+                </div>
+                <div class="space-y-2">
+                    <p data-counter data-target="3" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Semestres de cursada</p>
+                </div>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-center gap-2">
+                        <svg class="w-8 h-8 text-highlight" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                        <p class="text-4xl md:text-5xl font-display font-bold">CONEAU</p>
+                    </div>
+                    <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Acreditación nacional</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
          BLOG - Títulos mejorados
          ======================================== -->
     <section id="blog" class="py-20 md:py-28 pattern-bg">
@@ -1034,11 +1243,29 @@
                                       class="newsletter-input w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary-500 transition-colors resize-none"
                                       placeholder="Contame en qué puedo ayudarte..."></textarea>
                         </div>
-                        <button type="submit" 
+                        <button type="submit" id="contact-submit-btn"
                                 class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
                             Enviar Mensaje
                         </button>
                     </form>
+
+                    <!-- Contact Success (hidden by default) -->
+                    <div id="contact-success" class="hidden text-center py-8">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">¡Mensaje enviado!</h3>
+                        <p class="text-gray-600 text-sm">Te responderé a la brevedad. Revisá tu bandeja de entrada.</p>
+                    </div>
+
+                    <!-- Contact Error (hidden by default) -->
+                    <div id="contact-error" class="hidden text-center py-4">
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-4">
+                            <p class="text-red-600 text-sm font-medium">Hubo un error al enviar tu mensaje. Por favor intentá de nuevo o escribime a contacto@nicolasgenise.org</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1103,7 +1330,7 @@
                                 <option value="otro">Otro</option>
                             </select>
                         </div>
-                        <button type="submit" 
+                        <button type="submit" id="modal-submit-btn"
                                 class="w-full bg-highlight text-primary-900 px-6 py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors shadow-lg shadow-highlight/30">
                             Descargar Ahora
                         </button>
@@ -1177,6 +1404,25 @@
         </div>
     </footer>
     
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-highlight to-accent z-[60] transition-all duration-100" style="width: 0%"></div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5491158711741?text=Hola%20Dr.%20Genise%2C%20quisiera%20información%20sobre%20la%20Especialización%20en%20Psicopedagogía%20Clínica"
+       target="_blank" rel="noopener noreferrer"
+       id="whatsapp-btn"
+       class="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 opacity-0 translate-y-4"
+       title="Chateá por WhatsApp">
+        <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top"
+            class="fixed bottom-6 right-24 z-40 bg-white/90 backdrop-blur-sm text-primary-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-primary-600 hover:text-white transition-all duration-300 opacity-0 translate-y-4 border border-gray-200"
+            title="Volver arriba">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
+    </button>
+
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
@@ -1217,28 +1463,135 @@
             });
         });
         
-        // Lead form - download ebook
+        // ========================================
+        // FORM UTILITIES
+        // ========================================
+        const downloadUrl = 'guia-psicopedagogia-clinica-teoria-practica.pdf';
+
+        function setButtonLoading(btn, loading) {
+            if (!btn) return;
+            if (loading) {
+                btn.dataset.originalText = btn.textContent;
+                btn.disabled = true;
+                btn.innerHTML = '<svg class="animate-spin inline w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>Enviando...';
+                btn.classList.add('opacity-75', 'cursor-not-allowed');
+            } else {
+                btn.disabled = false;
+                btn.textContent = btn.dataset.originalText || 'Enviar';
+                btn.classList.remove('opacity-75', 'cursor-not-allowed');
+            }
+        }
+
+        function showFieldError(inputEl, message) {
+            inputEl.classList.add('form-input-error');
+            inputEl.classList.remove('form-input-success');
+            let errEl = inputEl.parentElement.querySelector('.form-error-message');
+            if (!errEl) {
+                errEl = document.createElement('p');
+                errEl.className = 'form-error-message';
+                inputEl.parentElement.appendChild(errEl);
+            }
+            errEl.textContent = message;
+            errEl.classList.add('visible');
+        }
+
+        function clearFieldError(inputEl) {
+            inputEl.classList.remove('form-input-error');
+            const errEl = inputEl.parentElement.querySelector('.form-error-message');
+            if (errEl) errEl.classList.remove('visible');
+        }
+
+        function markFieldValid(inputEl) {
+            inputEl.classList.remove('form-input-error');
+            inputEl.classList.add('form-input-success');
+            clearFieldError(inputEl);
+        }
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        // Real-time validation on blur
+        document.querySelectorAll('input[required], select[required], textarea[required]').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (!this.value.trim()) {
+                    showFieldError(this, 'Este campo es requerido');
+                } else if (this.type === 'email' && !validateEmail(this.value)) {
+                    showFieldError(this, 'Ingresá un email válido');
+                } else {
+                    markFieldValid(this);
+                }
+            });
+            input.addEventListener('input', function() {
+                if (this.classList.contains('form-input-error') && this.value.trim()) {
+                    if (this.type === 'email') {
+                        if (validateEmail(this.value)) markFieldValid(this);
+                    } else {
+                        markFieldValid(this);
+                    }
+                }
+            });
+        });
+
+        // ========================================
+        // LEAD FORM (Guide Download)
+        // ========================================
         const leadForm = document.getElementById('lead-form');
         const leadSuccess = document.getElementById('lead-success');
-        const downloadUrl = 'guia-psicopedagogia-clinica-teoria-practica.pdf';
-        
+        const leadSubmitBtn = document.getElementById('lead-submit-btn');
+
+        async function handleLeadSubmit(form, submitBtn, successEl, source) {
+            const name = form.querySelector('[name="name"]').value.trim();
+            const email = form.querySelector('[name="email"]').value.trim();
+            const profession = form.querySelector('[name="profession"]').value;
+
+            // Validate
+            let valid = true;
+            if (!name) { showFieldError(form.querySelector('[name="name"]'), 'Ingresá tu nombre'); valid = false; }
+            if (!email || !validateEmail(email)) { showFieldError(form.querySelector('[name="email"]'), 'Ingresá un email válido'); valid = false; }
+            if (!profession) { showFieldError(form.querySelector('[name="profession"]'), 'Seleccioná tu profesión'); valid = false; }
+            if (!valid) return;
+
+            setButtonLoading(submitBtn, true);
+
+            try {
+                // Send to Brevo via serverless function
+                const response = await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, profession, source })
+                });
+
+                // Download PDF regardless of API result
+                window.open(downloadUrl, '_blank');
+
+                // Show success
+                form.classList.add('hidden');
+                successEl.classList.remove('hidden');
+            } catch (err) {
+                // Download PDF even if API fails
+                window.open(downloadUrl, '_blank');
+                form.classList.add('hidden');
+                successEl.classList.remove('hidden');
+            } finally {
+                setButtonLoading(submitBtn, false);
+            }
+        }
+
         leadForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            // Open download in new tab
-            window.open(downloadUrl, '_blank');
-            
-            // Hide form, show success message
-            leadForm.classList.add('hidden');
-            leadSuccess.classList.remove('hidden');
+            handleLeadSubmit(leadForm, leadSubmitBtn, leadSuccess, 'lead-form');
         });
-        
-        // Modal functionality
+
+        // ========================================
+        // MODAL (Guide Download)
+        // ========================================
         const modal = document.getElementById('lead-modal');
         const modalBackdrop = document.getElementById('modal-backdrop');
         const modalClose = document.getElementById('modal-close');
         const modalForm = document.getElementById('modal-lead-form');
         const modalSuccess = document.getElementById('modal-success');
+        const modalSubmitBtn = document.getElementById('modal-submit-btn');
 
         // Open modal from guide buttons
         document.querySelectorAll('a[href="#recursos"]').forEach(btn => {
@@ -1262,35 +1615,222 @@
         if (modalForm) {
             modalForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-                window.open(downloadUrl, '_blank');
-                modalForm.classList.add('hidden');
-                modalSuccess.classList.remove('hidden');
+                handleLeadSubmit(modalForm, modalSubmitBtn, modalSuccess, 'modal-form');
             });
         }
 
-        // Navbar background on scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('shadow-sm');
-            } else {
-                nav.classList.remove('shadow-sm');
+        // ========================================
+        // CONTACT FORM
+        // ========================================
+        const contactForm = document.getElementById('contact-form');
+        const contactSuccess = document.getElementById('contact-success');
+        const contactError = document.getElementById('contact-error');
+        const contactSubmitBtn = document.getElementById('contact-submit-btn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const name = document.getElementById('contact-name').value.trim();
+                const email = document.getElementById('contact-email').value.trim();
+                const subject = document.getElementById('contact-subject').value;
+                const message = document.getElementById('contact-message').value.trim();
+
+                // Validate
+                let valid = true;
+                if (!name) { showFieldError(document.getElementById('contact-name'), 'Ingresá tu nombre'); valid = false; }
+                if (!email || !validateEmail(email)) { showFieldError(document.getElementById('contact-email'), 'Ingresá un email válido'); valid = false; }
+                if (!subject) { showFieldError(document.getElementById('contact-subject'), 'Seleccioná un asunto'); valid = false; }
+                if (!message) { showFieldError(document.getElementById('contact-message'), 'Escribí tu mensaje'); valid = false; }
+                if (!valid) return;
+
+                setButtonLoading(contactSubmitBtn, true);
+                contactError.classList.add('hidden');
+
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, subject, message })
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        contactForm.classList.add('hidden');
+                        contactSuccess.classList.remove('hidden');
+                    } else {
+                        contactError.classList.remove('hidden');
+                    }
+                } catch (err) {
+                    contactError.classList.remove('hidden');
+                } finally {
+                    setButtonLoading(contactSubmitBtn, false);
+                }
+            });
+        }
+
+        // ========================================
+        // SCROLL ANIMATIONS (IntersectionObserver)
+        // ========================================
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                    scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards for scroll animation
+        document.querySelectorAll('section, .glass-card, .stat-card-elegant, .feature-card').forEach(el => {
+            if (!el.closest('.hero-gradient')) {
+                el.classList.add('scroll-reveal');
+                scrollObserver.observe(el);
             }
         });
 
-        // Animation on scroll
-        const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.animate-fade-in');
-            elements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    el.style.opacity = '1';
+        // Staggered animation for cards within sections
+        document.querySelectorAll('.grid').forEach(grid => {
+            const cards = grid.children;
+            Array.from(cards).forEach((card, i) => {
+                if (card.tagName !== 'SECTION') {
+                    card.style.transitionDelay = `${i * 0.1}s`;
                 }
             });
-        };
+        });
 
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
+        // Hero fade-in animations (immediate)
+        document.querySelectorAll('.animate-fade-in').forEach(el => {
+            el.style.opacity = '1';
+        });
+
+        // ========================================
+        // NAVBAR SCROLL EFFECTS
+        // ========================================
+        const nav = document.querySelector('nav');
+        const scrollProgress = document.getElementById('scroll-progress');
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        const backToTopBtn = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollY / docHeight) * 100;
+
+            // Nav shadow
+            if (scrollY > 50) {
+                nav.classList.add('shadow-md');
+                nav.classList.remove('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-md');
+                nav.classList.add('shadow-sm');
+            }
+
+            // Scroll progress bar
+            if (scrollProgress) {
+                scrollProgress.style.width = scrollPercent + '%';
+            }
+
+            // WhatsApp + Back to top visibility
+            if (scrollY > 600) {
+                whatsappBtn.classList.remove('opacity-0', 'translate-y-4');
+                whatsappBtn.classList.add('opacity-100', 'translate-y-0');
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-4');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0');
+            } else {
+                whatsappBtn.classList.add('opacity-0', 'translate-y-4');
+                whatsappBtn.classList.remove('opacity-100', 'translate-y-0');
+                backToTopBtn.classList.add('opacity-0', 'translate-y-4');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0');
+            }
+        });
+
+        // Back to top click
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ========================================
+        // DARK MODE
+        // ========================================
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const htmlEl = document.documentElement;
+
+        function setDarkMode(isDark) {
+            if (isDark) {
+                htmlEl.classList.add('dark');
+                sunIcon.classList.remove('hidden');
+                moonIcon.classList.add('hidden');
+                localStorage.setItem('darkMode', 'true');
+            } else {
+                htmlEl.classList.remove('dark');
+                sunIcon.classList.add('hidden');
+                moonIcon.classList.remove('hidden');
+                localStorage.setItem('darkMode', 'false');
+            }
+        }
+
+        // Initialize dark mode from localStorage or system preference
+        const savedDarkMode = localStorage.getItem('darkMode');
+        if (savedDarkMode === 'true') {
+            setDarkMode(true);
+        } else if (savedDarkMode === null && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDarkMode(true);
+        }
+
+        if (darkModeToggle) {
+            darkModeToggle.addEventListener('click', () => {
+                setDarkMode(!htmlEl.classList.contains('dark'));
+            });
+        }
+
+        // Listen for system preference changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (localStorage.getItem('darkMode') === null) {
+                setDarkMode(e.matches);
+            }
+        });
+
+        // ========================================
+        // COUNTER ANIMATION (for Social Proof)
+        // ========================================
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target, 10);
+            const suffix = el.dataset.suffix || '';
+            const prefix = el.dataset.prefix || '';
+            const duration = 2000;
+            const start = performance.now();
+
+            function tick(now) {
+                const elapsed = now - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3); // easeOutCubic
+                const current = Math.floor(eased * target);
+                el.textContent = prefix + current.toLocaleString('es-AR') + suffix;
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+        }
+
+        // Observe counters
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter(entry.target);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
     </script>
+</body>
+</html>
 </body>
 </html>

@@ -1,12 +1,18 @@
 {
   "name": "nicolasgenise-web",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "Web personal Dr. Nicolás Genise - Especialización en Psicopedagogía Clínica",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:css": "npx tailwindcss -i ./src/styles/base.css -o ./dist/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/styles/base.css -o ./dist/styles.css --watch",
+    "build": "npm run build:css"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["psicopedagogía", "clínica", "UFLO", "educación"],
+  "author": "Dr. Nicolás Genise",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "postcss": "^8.4.0",
+    "autoprefixer": "^10.4.0"
+  }
 }

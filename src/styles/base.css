@@ -1,0 +1,359 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   BASE STYLES
+   ======================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    @apply antialiased text-gray-700;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(135deg, rgba(27, 79, 114, 0.97) 0%, rgba(40, 116, 166, 0.95) 50%, rgba(93, 173, 226, 0.9) 100%);
+    position: relative;
+  }
+
+  .hero-gradient::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(93, 173, 226, 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 50% 50%, rgba(255,255,255,0.05) 0%, transparent 40%);
+    pointer-events: none;
+  }
+
+  .hero-gradient::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* ========================================
+     SOBRE MÍ - Gradiente mejorado
+     ======================================== */
+  .about-section-enhanced {
+    background: linear-gradient(135deg,
+      #1B4F72 0%,
+      #1a5a80 25%,
+      #1d6a94 50%,
+      #2874A6 75%,
+      #3d8ab8 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-section-enhanced::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(93, 173, 226, 0.2) 0%, transparent 50%),
+      radial-gradient(ellipse at 70% 80%, rgba(27, 79, 114, 0.3) 0%, transparent 50%),
+      linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.15) 100%);
+    pointer-events: none;
+  }
+
+  .about-section-enhanced::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(93, 173, 226, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .about-photo-enhanced {
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
+    mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
+  }
+
+  /* ========================================
+     GLASS CARDS
+     ======================================== */
+  .stat-card-elegant {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card-elegant:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+  }
+
+  .publications-card {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  /* ========================================
+     DECORATIVE ELEMENTS
+     ======================================== */
+  .decorative-line {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #FF9900, #FFB84D);
+    border-radius: 2px;
+  }
+
+  .decorative-dot {
+    width: 8px;
+    height: 8px;
+    background: #5DADE2;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ========================================
+     SECTION TRANSITIONS
+     ======================================== */
+  .section-transition-top {
+    position: relative;
+  }
+
+  .section-transition-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to bottom,
+      rgba(61, 138, 184, 0.15) 0%,
+      rgba(61, 138, 184, 0.05) 50%,
+      transparent 100%);
+    pointer-events: none;
+  }
+
+  /* ========================================
+     PATTERN BACKGROUNDS
+     ======================================== */
+  .pattern-bg {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B4F72' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ========================================
+     CARD INTERACTIONS
+     ======================================== */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(27, 79, 114, 0.15);
+  }
+
+  /* ========================================
+     TEXT SHADOWS
+     ======================================== */
+  .text-shadow-subtle {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-strong {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  /* ========================================
+     CTA SECTION
+     ======================================== */
+  .cta-section-enhanced {
+    background: linear-gradient(135deg, #1B4F72 0%, #2874A6 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-section-enhanced::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at top left, rgba(93, 173, 226, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(255, 153, 0, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* ========================================
+     MOBILE MENU
+     ======================================== */
+  .mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-menu.active {
+    transform: translateX(0);
+  }
+
+  /* ========================================
+     FORM STYLES
+     ======================================== */
+  .newsletter-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.3);
+  }
+
+  /* Form validation states */
+  .form-input-error {
+    @apply border-red-500 ring-2 ring-red-200;
+  }
+
+  .form-input-success {
+    @apply border-green-500 ring-2 ring-green-200;
+  }
+
+  .form-error-message {
+    @apply text-red-500 text-sm mt-1 opacity-0 transition-opacity duration-300;
+  }
+
+  .form-error-message.visible {
+    @apply opacity-100;
+  }
+
+  .form-success-message {
+    @apply text-green-600 text-center py-4;
+  }
+
+  /* ========================================
+     MODAL ANIMATIONS
+     ======================================== */
+  #lead-modal {
+    animation: fadeIn 0.2s ease;
+  }
+
+  #lead-modal > div:last-child > div {
+    animation: slideUp 0.3s ease;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* ========================================
+     SCROLL ANIMATIONS (will be enhanced in Phase 3)
+     ======================================== */
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .scroll-reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-reveal-delay-1 { transition-delay: 0.1s; }
+  .scroll-reveal-delay-2 { transition-delay: 0.2s; }
+  .scroll-reveal-delay-3 { transition-delay: 0.3s; }
+  .scroll-reveal-delay-4 { transition-delay: 0.4s; }
+
+  /* ========================================
+     ANIMATION DELAYS (Tailwind utilities)
+     ======================================== */
+  .animate-delay-1 { animation-delay: 0.1s; }
+  .animate-delay-2 { animation-delay: 0.2s; }
+  .animate-delay-3 { animation-delay: 0.3s; }
+  .animate-delay-4 { animation-delay: 0.4s; }
+
+  /* ========================================
+     FORM VALIDATION
+     ======================================== */
+  .form-input-error {
+    border-color: #EF4444 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+    animation: shake 0.4s ease-in-out;
+  }
+
+  .form-input-success {
+    border-color: #10B981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+  }
+
+  .form-error-message {
+    color: #EF4444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.25s ease;
+  }
+
+  .form-error-message.visible {
+    opacity: 1;
+    max-height: 2rem;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-4px); }
+    40% { transform: translateX(4px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+  }
+
+  /* ========================================
+     DARK MODE OVERRIDES (Phase 3)
+     ======================================== */
+  .dark .hero-gradient {
+    background: linear-gradient(135deg, rgba(11, 25, 41, 0.97) 0%, rgba(17, 34, 64, 0.95) 50%, rgba(30, 58, 95, 0.9) 100%);
+  }
+
+  .dark .about-section-enhanced {
+    background: linear-gradient(135deg, #071B28 0%, #0B1929 50%, #112240 100%);
+  }
+
+  .dark .pattern-bg {
+    background-color: #0B1929;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .stat-card-elegant {
+    background: rgba(93, 173, 226, 0.08);
+    border-color: rgba(93, 173, 226, 0.12);
+  }
+
+  .dark .cta-section-enhanced {
+    background: linear-gradient(135deg, #071B28 0%, #112240 100%);
+  }
+}
