@@ -327,8 +327,10 @@
                 </button>
             </div>
         </div>
+        <!-- Mobile Menu Backdrop -->
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-[9998] opacity-0 invisible transition-all duration-300 md:hidden"></div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-xl md:hidden transform translate-x-full transition-transform duration-300">
+        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" style="background-color: #ffffff !important;">
             <div class="p-6">
                 <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -776,22 +778,29 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
 
-        mobileMenuBtn?.addEventListener('click', () => {
+        function openMobileMenu() {
             mobileMenu.classList.remove('translate-x-full');
             mobileMenu.classList.add('translate-x-0');
-        });
-
-        closeMenuBtn?.addEventListener('click', () => {
+            mobileBackdrop.classList.remove('opacity-0', 'invisible');
+            mobileBackdrop.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
             mobileMenu.classList.remove('translate-x-0');
             mobileMenu.classList.add('translate-x-full');
-        });
+            mobileBackdrop.classList.remove('opacity-100', 'visible');
+            mobileBackdrop.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn?.addEventListener('click', openMobileMenu);
+        closeMenuBtn?.addEventListener('click', closeMobileMenu);
+        mobileBackdrop?.addEventListener('click', closeMobileMenu);
 
         mobileMenu?.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
     </script>
 

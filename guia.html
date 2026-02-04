@@ -195,7 +195,8 @@
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-50 md:hidden">
+        <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black/50 z-[9998] opacity-0 invisible transition-all duration-300 md:hidden"></div>
+        <div id="mobile-menu" class="fixed inset-y-0 right-0 w-64 shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out z-[9999] md:hidden" style="background-color: #ffffff !important;">
             <div class="flex justify-end p-4">
                 <button id="close-menu-btn" class="p-2 text-gray-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -400,31 +401,33 @@
 
     <!-- Mobile menu toggle -->
     <script>
-        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
 
-        if (mobileMenuBtn) {
-            mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-full');
-                mobileMenu.classList.add('translate-x-0');
-            });
+        function openMobileMenu() {
+            mobileMenu.classList.remove('translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+            mobileBackdrop.classList.remove('opacity-0', 'invisible');
+            mobileBackdrop.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('translate-x-0');
+            mobileMenu.classList.add('translate-x-full');
+            mobileBackdrop.classList.remove('opacity-100', 'visible');
+            mobileBackdrop.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = '';
         }
 
-        if (closeMenuBtn) {
-            closeMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.remove('translate-x-0');
-                mobileMenu.classList.add('translate-x-full');
-            });
-        }
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+        if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileMenu);
 
         if (mobileMenu) {
             mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.remove('translate-x-0');
-                    mobileMenu.classList.add('translate-x-full');
-                });
+                link.addEventListener('click', closeMobileMenu);
             });
         }
     </script>

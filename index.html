@@ -480,9 +480,26 @@
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease;
+            z-index: 9999;
+            background-color: #ffffff !important;
+            opacity: 1 !important;
         }
         .mobile-menu.active {
             transform: translateX(0);
+        }
+        /* Dark overlay behind mobile menu */
+        .mobile-menu-backdrop {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .mobile-menu-backdrop.active {
+            opacity: 1;
+            visibility: visible;
         }
         
         .cta-section-enhanced {
@@ -615,6 +632,7 @@
         </div>
         
         <!-- Mobile Menu -->
+        <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
         <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-xl md:hidden">
             <div class="p-6">
                 <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
@@ -1432,20 +1450,26 @@
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const closeMenuBtn = document.getElementById('close-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
+        const mobileBackdrop = document.getElementById('mobile-menu-backdrop');
+
+        function openMobileMenu() {
             mobileMenu.classList.add('active');
-        });
-        
-        closeMenuBtn.addEventListener('click', () => {
+            mobileBackdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMobileMenu() {
             mobileMenu.classList.remove('active');
-        });
-        
+            mobileBackdrop.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+        mobileBackdrop.addEventListener('click', closeMobileMenu);
+
         // Close mobile menu when clicking a link
         mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
+            link.addEventListener('click', closeMobileMenu);
         });
         
         // Smooth scroll for navigation links
