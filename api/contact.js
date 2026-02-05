@@ -2,6 +2,10 @@
 // Sends data to n8n webhook AND creates contact in Brevo
 // POST /api/contact
 
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
 module.exports = async function handler(req, res) {
   // CORS headers - allow both www and non-www
   const origin = req.headers.origin || '';
@@ -32,12 +36,13 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required' });
   }
 
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (!emailRegex.test(email)) {
     return res.status(400).json({ error: 'Invalid email format' });
   }
 
   const BREVO_API_KEY = (process.env.BREVO_API_KEY || '').trim();
+  const BREVO_LIST_ID = parseInt(process.env.BREVO_LIST_ID || '23', 10);
   const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
 
   const results = { brevo: false, n8n: false, email: false };
@@ -59,7 +64,7 @@ module.exports = async function handler(req, res) {
             APELLIDOS: name.split(' ').slice(1).join(' ') || '',
             TIPO: 'contact-form'
           },
-          listIds: [23],
+          listIds: [BREVO_LIST_ID],
           updateEnabled: true
         })
       });
@@ -76,7 +81,7 @@ module.exports = async function handler(req, res) {
           const updateRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.toLowerCase().trim())}`, {
             method: 'PUT',
             headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
-            body: JSON.stringify({ attributes: { NOMBRE: name.split(' ')[0], APELLIDOS: name.split(' ').slice(1).join(' ') || '', TIPO: 'contact-form' }, listIds: [23] })
+            body: JSON.stringify({ attributes: { NOMBRE: name.split(' ')[0], APELLIDOS: name.split(' ').slice(1).join(' ') || '', TIPO: 'contact-form' }, listIds: [BREVO_LIST_ID] })
           });
           await updateRes.text(); // consume stream
           results.brevo = true;
@@ -123,16 +128,16 @@ module.exports = async function handler(req, res) {
         },
         body: JSON.stringify({
           sender: { name: 'Web nicolasgenise.org', email: 'contacto@nicolasgenise.org' },
-          to: [{ email: 'ngenise@gmail.com', name: 'Nicolás Genise' }],
+          to: [{ email: process.env.ADMIN_EMAIL || 'ngenise@gmail.com', name: 'Nicolás Genise' }],
           replyTo: { email: email.toLowerCase().trim(), name: name },
-          subject: `[Web] ${subject || 'Consulta'} - ${name}`,
+          subject: `[Web] ${escapeHtml(subject || 'Consulta')} - ${escapeHtml(name)}`,
           htmlContent: `
             <h2>Nuevo mensaje desde nicolasgenise.org</h2>
-            <p><strong>Nombre:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Asunto:</strong> ${subject || 'No especificado'}</p>
+            <p><strong>Nombre:</strong> ${escapeHtml(name)}</p>
+            <p><strong>Email:</strong> ${escapeHtml(email)}</p>
+            <p><strong>Asunto:</strong> ${escapeHtml(subject || 'No especificado')}</p>
             <p><strong>Mensaje:</strong></p>
-            <p>${message.replace(/\n/g, '<br>')}</p>
+            <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
             <hr>
             <p><small>Enviado desde el formulario de contacto de nicolasgenise.org - ${new Date().toLocaleString('es-AR')}</small></p>
           `

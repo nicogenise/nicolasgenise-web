@@ -225,23 +225,6 @@
     box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.3);
   }
 
-  /* Form validation states */
-  .form-input-error {
-    @apply border-red-500 ring-2 ring-red-200;
-  }
-
-  .form-input-success {
-    @apply border-green-500 ring-2 ring-green-200;
-  }
-
-  .form-error-message {
-    @apply text-red-500 text-sm mt-1 opacity-0 transition-opacity duration-300;
-  }
-
-  .form-error-message.visible {
-    @apply opacity-100;
-  }
-
   .form-success-message {
     @apply text-green-600 text-center py-4;
   }

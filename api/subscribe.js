@@ -27,6 +27,7 @@ module.exports = async function handler(req, res) {
     }
 
     const BREVO_API_KEY = (process.env.BREVO_API_KEY || '').trim();
+    const BREVO_LIST_ID = parseInt(process.env.BREVO_LIST_ID || '23', 10);
     if (!BREVO_API_KEY) {
       console.error('BREVO_API_KEY not configured');
       return res.status(500).json({ error: 'Server configuration error' });
@@ -40,7 +41,7 @@ module.exports = async function handler(req, res) {
         JOB_TITLE: profession || '',
         TIPO: source || 'guia-download'
       },
-      listIds: [23],
+      listIds: [BREVO_LIST_ID],
       updateEnabled: true
     };
 

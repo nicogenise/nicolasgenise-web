@@ -147,6 +147,7 @@
     </style>
 </head>
 <body class="bg-gray-50">
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-highlight focus:text-primary-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Ir al contenido principal</a>
     
     <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
@@ -159,13 +160,13 @@
                 <a href="blog/index.html" class="text-gray-600 hover:text-primary-600 transition-colors">Blog</a>
                 <a href="faq.html" class="text-gray-600 hover:text-primary-600 transition-colors">FAQ</a>
                 <a href="index.html#recursos" class="text-gray-600 hover:text-primary-600 transition-colors">Recursos</a>
-                <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema">
+                <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema" aria-label="Cambiar modo oscuro">
                     <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                     <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                 </button>
                 <a href="index.html#contacto" class="bg-highlight text-primary-900 px-5 py-2.5 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-sm shadow-sm">Contacto</a>
             </div>
-            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600" aria-label="Abrir menú de navegación" aria-expanded="false">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -203,7 +204,7 @@
     <div class="h-20"></div>
     
     <!-- Main Content -->
-    <main class="py-12 md:py-20">
+    <main id="main" class="py-12 md:py-20">
         <div class="max-w-4xl mx-auto px-4">
             
             <!-- Success Card -->
@@ -309,7 +310,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="md:col-span-1">
-                    <img src="logo_fondo_oscuro.webp" alt="Dr. Nicolás Genise" class="h-32 mb-4" onerror="this.src='logo_fondo_oscuro.png'">
+                    <img src="logo_fondo_oscuro.webp" alt="Dr. Nicolás Genise" class="h-32 mb-4" loading="lazy" onerror="this.src='logo_fondo_oscuro.png'">
                     <p class="text-sm text-primary-300">Doctor en Psicología · Psicopedagogo · Investigador · BCBAar</p>
                 </div>
                 <div>
