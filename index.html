@@ -364,9 +364,44 @@
         }
         
         .about-photo-enhanced {
-            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.4));
-            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
-            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 10%, rgba(0,0,0,1) 25%);
+            filter: drop-shadow(0 20px 40px rgba(27, 79, 114, 0.5));
+            mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 8%, rgba(0,0,0,1) 20%);
+            -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 8%, rgba(0,0,0,1) 20%);
+            transition: transform 0.5s ease, filter 0.5s ease;
+        }
+        @media (hover: hover) {
+            .about-photo-enhanced:hover {
+                transform: scale(1.02);
+                filter: drop-shadow(0 25px 50px rgba(27, 79, 114, 0.65));
+            }
+        }
+        /* Decorative elements behind photo */
+        .photo-container {
+            position: relative;
+        }
+        .photo-container::before {
+            content: '';
+            position: absolute;
+            bottom: 5%;
+            left: -5%;
+            width: 110%;
+            height: 75%;
+            background: radial-gradient(ellipse, rgba(93, 173, 226, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .photo-container::after {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -8%;
+            width: 180px;
+            height: 180px;
+            border: 2px solid rgba(255, 153, 0, 0.12);
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
         }
         
         .stat-card-elegant {
@@ -648,6 +683,12 @@
                 <a href="#blog" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Blog</a>
                 <a href="faq.html" class="text-gray-600 hover:text-primary-600 py-2 font-medium">FAQ</a>
                 <a href="#recursos" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Recursos</a>
+                <!-- Dark mode toggle mobile -->
+                <button id="mobile-dark-toggle" class="flex items-center gap-3 py-2 text-gray-600 hover:text-primary-600 font-medium">
+                    <svg class="w-5 h-5 mobile-moon-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    <svg class="w-5 h-5 mobile-sun-icon hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                    <span class="mobile-theme-label">Modo oscuro</span>
+                </button>
                 <a href="#contacto" class="bg-primary-600 text-white px-5 py-2.5 rounded-lg text-center font-medium mt-4">Contacto</a>
             </div>
         </div>
@@ -737,10 +778,10 @@
             <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
                 <!-- Image -->
                 <div class="relative order-2 md:order-1">
-                    <div class="relative flex items-end justify-center">
-                        <img src="nicolas-nobg.webp" 
-                             alt="Dr. Nicolás Genise - Director de la Especialización en Psicopedagogía Clínica" 
-                             class="h-auto w-auto object-contain object-bottom relative z-10 max-h-[520px] drop-shadow-2xl"
+                    <div class="photo-container relative flex items-end justify-center">
+                        <img src="nicolas-nobg.webp"
+                             alt="Dr. Nicolás Genise - Director de la Especialización en Psicopedagogía Clínica"
+                             class="about-photo-enhanced h-auto w-auto object-contain object-bottom relative z-10 max-h-[380px] sm:max-h-[460px] md:max-h-[520px]"
                              loading="lazy">
                     </div>
                 </div>
@@ -1786,6 +1827,7 @@
         // DARK MODE
         // ========================================
         const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const mobileDarkToggle = document.getElementById('mobile-dark-toggle');
         const sunIcon = document.getElementById('sun-icon');
         const moonIcon = document.getElementById('moon-icon');
         const htmlEl = document.documentElement;
@@ -1793,15 +1835,21 @@
         function setDarkMode(isDark) {
             if (isDark) {
                 htmlEl.classList.add('dark');
-                sunIcon.classList.remove('hidden');
-                moonIcon.classList.add('hidden');
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
                 localStorage.setItem('darkMode', 'true');
             } else {
                 htmlEl.classList.remove('dark');
-                sunIcon.classList.add('hidden');
-                moonIcon.classList.remove('hidden');
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
                 localStorage.setItem('darkMode', 'false');
             }
+            // Sync mobile toggle icons + label
+            document.querySelectorAll('.mobile-sun-icon').forEach(el => el.classList.toggle('hidden', !isDark));
+            document.querySelectorAll('.mobile-moon-icon').forEach(el => el.classList.toggle('hidden', isDark));
+            document.querySelectorAll('.mobile-theme-label').forEach(el => {
+                el.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+            });
         }
 
         // Initialize dark mode from localStorage or system preference
@@ -1814,6 +1862,11 @@
 
         if (darkModeToggle) {
             darkModeToggle.addEventListener('click', () => {
+                setDarkMode(!htmlEl.classList.contains('dark'));
+            });
+        }
+        if (mobileDarkToggle) {
+            mobileDarkToggle.addEventListener('click', () => {
                 setDarkMode(!htmlEl.classList.contains('dark'));
             });
         }
