@@ -20,7 +20,12 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, subject, message } = req.body;
+  const { name, email, subject, message, website } = req.body;
+
+  // Honeypot anti-bot: if hidden field is filled, silently reject
+  if (website) {
+    return res.status(200).json({ success: true });
+  }
 
   // Validation
   if (!email || !name || !message) {

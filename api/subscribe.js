@@ -15,7 +15,12 @@ module.exports = async function handler(req, res) {
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   try {
-    const { name, email, profession, source } = req.body || {};
+    const { name, email, profession, source, website } = req.body || {};
+
+    // Honeypot anti-bot: if hidden field is filled, silently reject
+    if (website) {
+      return res.status(200).json({ success: true });
+    }
 
     if (!email || !name) {
       return res.status(400).json({ error: 'Name and email are required' });
