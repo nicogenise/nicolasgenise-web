@@ -185,34 +185,105 @@
         tr:nth-child(even) {
             background-color: #f8fafc;
         }
+
+        /* Mobile Menu */
+        .mobile-menu-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 9998; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .mobile-menu-backdrop.active { opacity: 1; visibility: visible; }
+
+        /* Dark Mode */
+        .dark body { background-color: #0B1929; color: #E0E7EF; }
+        .dark header { background: linear-gradient(135deg, #0E2F44 0%, #071B28 100%) !important; }
+        .dark nav { background-color: rgba(11, 25, 41, 0.95) !important; border-color: rgba(30, 58, 95, 0.5) !important; }
+        .dark nav a { color: #8892A4; }
+        .dark nav a:hover { color: #5DADE2; }
+        .dark #dark-mode-toggle { color: #8892A4; }
+        .dark #dark-mode-toggle:hover { color: #5DADE2; background-color: rgba(93, 173, 226, 0.1); }
+        .dark .nav-logo-light { filter: brightness(0) invert(1); }
+        .dark .bg-white { background-color: #112240 !important; }
+        .dark .bg-gray-50 { background-color: #0B1929 !important; }
+        .dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-900, .dark .text-gray-600 { color: #E0E7EF !important; }
+        .dark .text-gray-500, .dark .text-gray-400 { color: #8892A4 !important; }
+        .dark .text-primary { color: #5DADE2 !important; }
+        .dark .text-primary-dark { color: #85C1E9 !important; }
+        .dark .border-gray-100, .dark .border-gray-200 { border-color: #1E3A5F !important; }
+        .dark .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
+        .dark .prose { color: #C8D6E5; }
+        .dark .prose h2, .dark .prose h3, .dark .prose h4 { color: #E0E7EF !important; }
+        .dark .prose a { color: #5DADE2; }
+        .dark .prose strong { color: #E0E7EF; }
+        .dark blockquote { border-color: #1E3A5F; color: #8892A4; }
+        .dark footer { background-color: #071B28 !important; }
+        .dark #mobile-menu { background-color: #112240 !important; }
+        .dark #mobile-menu a { color: #8892A4; }
+        .dark #mobile-menu a:hover { color: #5DADE2; }
+        .dark input, .dark textarea { background-color: #0E2F44 !important; border-color: #1E3A5F !important; color: #E0E7EF !important; }
+        .dark .info-box { background: linear-gradient(135deg, #0E2F44 0%, #112240 100%) !important; border-left-color: #48c9b0 !important; }
+        .dark .warning-box { background: linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 100%) !important; border-left-color: #d4a017 !important; }
+        .dark .warning-box h4, .dark .warning-box p { color: #E0E7EF !important; }
+        .dark .case-box { background: linear-gradient(135deg, #1a0a2a 0%, #2a1a3a 100%) !important; border-left-color: #8b5cf6 !important; }
+        .dark .case-box h4, .dark .case-box p { color: #E0E7EF !important; }
+        .dark table th { background-color: #0E2F44; }
+        .dark table td, .dark table th { border-color: #1E3A5F; }
+        .dark table tr:nth-child(even) { background-color: #0E2F44; }
+        .dark .bg-gray-50.rounded-lg { background-color: #0E2F44 !important; }
+        .dark .bg-blue-50, .dark .bg-green-50, .dark .bg-purple-50 { background-color: #0E2F44 !important; }
+        .dark .toc-link a { color: #8892A4; }
+        .dark .toc-link:hover a { color: #48c9b0; }
+        .dark .reference-item { color: #8892A4 !important; }
+        .dark dt { color: #5DADE2 !important; }
+        .dark dd { color: #C8D6E5 !important; }
     </style>
 </head>
 <body class="bg-white">
     
     <!-- Navigation -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20 md:h-24">
+            <div class="flex justify-between items-center h-16 md:h-20">
                 <a href="/" class="flex items-center">
-                    <img src="/logo_transparente.webp" alt="Nicolás Genise" class="h-56 md:h-64">
+                    <img src="/logo_transparente.webp" alt="Nicolás Genise" class="nav-logo-light h-40 md:h-48 w-auto" loading="eager">
                 </a>
-                <div class="hidden md:flex items-center space-x-10">
-                    <a href="/" class="text-lg text-gray-700 hover:text-primary transition-colors">Inicio</a>
-                    <a href="/#blog" class="text-lg text-primary font-medium">Blog</a>
-                    <a href="/#sobre-mi" class="text-lg text-gray-700 hover:text-primary transition-colors">Sobre mí</a>
-                    <a href="/#contacto" class="px-6 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary-dark transition-colors">Contacto</a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Inicio</a>
+                    <a href="/#blog" class="text-highlight font-semibold">Blog</a>
+                    <a href="../faq.html" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">FAQ</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="/#contacto" class="bg-highlight text-primary-900 px-5 py-2 rounded-lg hover:bg-highlight/90 transition-colors font-semibold shadow-md">Contacto</a>
                 </div>
-                <button class="md:hidden text-gray-700" id="mobile-menu-btn">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu -->
+    <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" style="background-color: #ffffff !important;">
+        <div class="p-6">
+            <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="mt-8 flex flex-col space-y-4">
+                <a href="/" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Inicio</a>
+                <a href="/#blog" class="text-highlight py-2 font-semibold">Blog</a>
+                <a href="../faq.html" class="text-gray-600 hover:text-primary-600 py-2 font-medium">FAQ</a>
+                <a href="/#contacto" class="bg-highlight text-primary-900 px-4 py-2 rounded-lg text-center font-semibold mt-2">Contacto</a>
+                <hr class="border-gray-200 my-2">
+                <button id="mobile-dark-toggle" class="flex items-center gap-3 py-2 text-gray-600 hover:text-primary-600 font-medium">
+                    <svg class="w-5 h-5 mobile-moon-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    <svg class="w-5 h-5 mobile-sun-icon hidden" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                    <span class="mobile-theme-label">Modo oscuro</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- Article Header -->
-    <header class="bg-gradient-to-br from-primary to-primary-dark text-white py-16 md:py-24">
+    <header class="bg-gradient-to-br from-primary to-primary-dark text-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
             <nav class="mb-6 text-sm text-blue-200">
@@ -981,12 +1052,43 @@
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- Dark Mode + Mobile Menu JS -->
     <script>
-        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-            // Add mobile menu functionality here
-            alert('Menú móvil - implementar según necesidad');
-        });
+        const html = document.documentElement;
+        const toggle = document.getElementById('dark-mode-toggle');
+        const mobileToggle = document.getElementById('mobile-dark-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const mobileSun = document.querySelector('.mobile-sun-icon');
+        const mobileMoon = document.querySelector('.mobile-moon-icon');
+        const mobileLabel = document.querySelector('.mobile-theme-label');
+
+        function setDark(isDark) {
+            html.classList.toggle('dark', isDark);
+            localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+            if (sunIcon && moonIcon) { sunIcon.classList.toggle('hidden', !isDark); moonIcon.classList.toggle('hidden', isDark); }
+            if (mobileSun && mobileMoon) { mobileSun.classList.toggle('hidden', !isDark); mobileMoon.classList.toggle('hidden', isDark); }
+            if (mobileLabel) mobileLabel.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        const saved = localStorage.getItem('darkMode');
+        if (saved === 'true' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) setDark(true);
+
+        if (toggle) toggle.addEventListener('click', () => setDark(!html.classList.contains('dark')));
+        if (mobileToggle) mobileToggle.addEventListener('click', () => setDark(!html.classList.contains('dark')));
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+
+        function openMenu() { menu.classList.remove('translate-x-full'); backdrop.classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function closeMenu() { menu.classList.add('translate-x-full'); backdrop.classList.remove('active'); document.body.style.overflow = ''; }
+
+        if (menuBtn) menuBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
     </script>
 </body>
 </html>
