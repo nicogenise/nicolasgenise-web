@@ -32,15 +32,15 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid email format' });
   }
 
-  const BREVO_API_KEY = process.env.BREVO_API_KEY;
+  const BREVO_API_KEY = (process.env.BREVO_API_KEY || '').trim();
   const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL;
 
-  const results = { brevo: false, n8n: false };
+  const results = { brevo: false, n8n: false, email: false };
 
   // 1. Create contact in Brevo (if API key available)
   if (BREVO_API_KEY) {
     try {
-      const brevoResponse = await fetch('https://api.brevo.com/v3/contacts', {
+      const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
         method: 'POST',
         headers: {
           'accept': 'application/json',
@@ -58,20 +58,38 @@ module.exports = async function handler(req, res) {
           updateEnabled: true
         })
       });
-      results.brevo = brevoResponse.ok || brevoResponse.status === 204 || brevoResponse.status === 400;
+      const brevoStatus = brevoRes.status;
+      const brevoText = await brevoRes.text();
+      let brevoBody = {};
+      try { brevoBody = JSON.parse(brevoText); } catch (e) {}
+
+      if (brevoStatus === 201 || brevoStatus === 204 || brevoStatus === 200) {
+        results.brevo = true;
+      } else if (brevoStatus === 400 && brevoBody.code === 'duplicate_parameter') {
+        // Contact exists, update it
+        try {
+          const updateRes = await fetch(`https://api.brevo.com/v3/contacts/${encodeURIComponent(email.toLowerCase().trim())}`, {
+            method: 'PUT',
+            headers: { 'accept': 'application/json', 'content-type': 'application/json', 'api-key': BREVO_API_KEY },
+            body: JSON.stringify({ attributes: { NOMBRE: name.split(' ')[0], APELLIDOS: name.split(' ').slice(1).join(' ') || '', TIPO: 'contact-form' }, listIds: [23] })
+          });
+          await updateRes.text(); // consume stream
+          results.brevo = true;
+        } catch (e) { console.error('Brevo PUT update error:', e.message); }
+      } else {
+        console.error('Brevo create error:', brevoStatus, brevoText);
+      }
     } catch (error) {
-      console.error('Brevo error:', error);
+      console.error('Brevo error:', error.message || error);
     }
   }
 
   // 2. Send to n8n webhook (if webhook URL available)
   if (N8N_WEBHOOK_URL) {
     try {
-      const n8nResponse = await fetch(N8N_WEBHOOK_URL, {
+      const n8nRes = await fetch(N8N_WEBHOOK_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name,
           email: email.toLowerCase().trim(),
@@ -81,16 +99,17 @@ module.exports = async function handler(req, res) {
           timestamp: new Date().toISOString()
         })
       });
-      results.n8n = n8nResponse.ok;
+      await n8nRes.text(); // consume stream
+      results.n8n = n8nRes.status >= 200 && n8nRes.status < 300;
     } catch (error) {
-      console.error('n8n webhook error:', error);
+      console.error('n8n webhook error:', error.message || error);
     }
   }
 
-  // 3. Fallback: Send notification email via Brevo transactional API
+  // 3. Send notification email via Brevo transactional API
   if (BREVO_API_KEY) {
     try {
-      await fetch('https://api.brevo.com/v3/smtp/email', {
+      const emailRes = await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
           'accept': 'application/json',
@@ -114,13 +133,16 @@ module.exports = async function handler(req, res) {
           `
         })
       });
+      const emailStatus = emailRes.status;
+      await emailRes.text(); // consume stream
+      results.email = emailStatus >= 200 && emailStatus < 300;
     } catch (error) {
-      console.error('Email notification error:', error);
+      console.error('Email notification error:', error.message || error);
     }
   }
 
   // If at least one channel worked, it's a success
-  if (results.brevo || results.n8n || BREVO_API_KEY) {
+  if (results.brevo || results.n8n || results.email) {
     return res.status(200).json({ success: true, message: 'Message sent successfully' });
   }
 

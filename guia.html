@@ -70,37 +70,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: {
-                            50: '#EBF5FB',
-                            100: '#D6EAF8',
-                            200: '#AED6F1',
-                            300: '#85C1E9',
-                            400: '#5DADE2',
-                            500: '#2874A6',
-                            600: '#1B4F72',
-                            700: '#154360',
-                            800: '#0E2F44',
-                            900: '#071B28'
-                        },
-                        accent: '#5DADE2',
-                        highlight: '#FF9900'
-                    },
-                    fontFamily: {
-                        'display': ['Playfair Display', 'serif'],
-                        'body': ['Source Sans 3', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="/dist/styles.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/dist/styles.css" as="style">
+    <link rel="preload" href="/logo_transparente.webp" as="image" type="image/webp">
+
     <style>
         body {
             font-family: 'Source Sans 3', sans-serif;
