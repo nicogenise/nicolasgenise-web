@@ -157,6 +157,214 @@
             margin-bottom: 2rem;
         }
 
+        /* === Editorial Enhancements (2026-04-16) === */
+
+        /* Reading progress bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, #1B4F72 0%, #3d8ab8 50%, #FFB84D 100%);
+            z-index: 100;
+            transition: width 0.1s linear;
+            pointer-events: none;
+        }
+
+        /* Numbered section headers (editorial magazine style) */
+        .prose { counter-reset: section; }
+        .prose h2 {
+            position: relative;
+            counter-increment: section;
+        }
+        .prose h2::before {
+            content: counter(section, decimal-leading-zero);
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            color: #3d8ab8;
+            margin-bottom: 0.35rem;
+            text-transform: uppercase;
+        }
+
+        /* Dropcap editorial on first paragraph */
+        .prose > p.lead-dropcap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            float: left;
+            font-size: 4.5rem;
+            line-height: 0.85;
+            padding: 0.45rem 0.75rem 0 0;
+            color: #1B4F72;
+            background: linear-gradient(180deg, transparent 0%, transparent 55%, rgba(255, 184, 77, 0.18) 55%, rgba(255, 184, 77, 0.18) 100%);
+        }
+
+        /* Ornamental divider between major sections */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3.5rem 0 2.5rem;
+            color: #8892A4;
+        }
+        .section-divider::before,
+        .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e0, transparent);
+            max-width: 120px;
+        }
+        .section-divider svg {
+            width: 24px;
+            height: 24px;
+            opacity: 0.5;
+        }
+
+        /* Pull quote editorial */
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.65rem;
+            line-height: 1.45;
+            color: #112240;
+            text-align: center;
+            margin: 3.5rem auto;
+            padding: 2rem 1rem;
+            max-width: 42rem;
+            border-top: 1px solid #cbd5e0;
+            border-bottom: 1px solid #cbd5e0;
+            position: relative;
+        }
+        .pull-quote::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            line-height: 1;
+            color: #FFB84D;
+            position: absolute;
+            top: -0.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffffff;
+            padding: 0 1rem;
+        }
+        .pull-quote cite {
+            display: block;
+            font-family: 'Source Sans 3', sans-serif;
+            font-style: normal;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #3d8ab8;
+            margin-top: 1rem;
+            font-weight: 600;
+        }
+
+        /* CTA block end-of-article */
+        .article-cta {
+            background: linear-gradient(135deg, #071B28 0%, #112240 60%, #1B4F72 100%);
+            color: #E0E7EF;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            margin: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 60%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 184, 77, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .article-cta h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin: 0 0 1rem;
+            position: relative;
+            border: none;
+            padding: 0;
+        }
+        .article-cta p {
+            color: #C8D6E5;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0 auto 1.5rem;
+            max-width: 36rem;
+            position: relative;
+        }
+        .article-cta .cta-buttons {
+            display: flex;
+            gap: 0.75rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .article-cta a.cta-primary {
+            background: #FFB84D;
+            color: #071B28;
+            padding: 0.85rem 1.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-block;
+        }
+        .article-cta a.cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 184, 77, 0.35);
+        }
+        .article-cta a.cta-secondary {
+            background: transparent;
+            color: #E0E7EF;
+            padding: 0.85rem 1.75rem;
+            border: 1px solid rgba(224, 231, 239, 0.3);
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: background 0.2s, border-color 0.2s;
+            display: inline-block;
+        }
+        .article-cta a.cta-secondary:hover {
+            background: rgba(224, 231, 239, 0.08);
+            border-color: rgba(224, 231, 239, 0.5);
+        }
+
+        /* Fade-in on scroll (orchestrated) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal { opacity: 1; transform: none; transition: none; }
+            .reading-progress { display: none; }
+        }
+
+        /* Dark mode adjustments for new elements */
+        .dark .prose h2::before { color: #5DADE2; }
+        .dark .prose > p.lead-dropcap::first-letter { color: #5DADE2; background: linear-gradient(180deg, transparent 0%, transparent 55%, rgba(255, 184, 77, 0.12) 55%, rgba(255, 184, 77, 0.12) 100%); }
+        .dark .section-divider::before, .dark .section-divider::after { background: linear-gradient(90deg, transparent, #1E3A5F, transparent); }
+        .dark .pull-quote { color: #E0E7EF; border-color: #1E3A5F; }
+        .dark .pull-quote::before { background: #0B1929; }
+
         /* Mobile Menu */
         .mobile-menu-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 9998; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
         .mobile-menu-backdrop.active { opacity: 1; visibility: visible; }
@@ -198,6 +406,42 @@
         .dark .reference-list p { color: #8892A4 !important; }
     </style>
 
+    <!-- Editorial enhancements JS -->
+    <script>
+        // Reading progress bar
+        (function() {
+            const bar = document.getElementById('reading-progress');
+            if (!bar) return;
+            const update = () => {
+                const h = document.documentElement;
+                const scrolled = h.scrollTop;
+                const total = h.scrollHeight - h.clientHeight;
+                const pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+                bar.style.width = pct + '%';
+            };
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+            update();
+        })();
+
+        // Scroll reveal (IntersectionObserver)
+        (function() {
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) return;
+            // Auto-mark h2 sections + key elements as reveal targets
+            document.querySelectorAll('.prose > h2, .prose > .metrics-box, .prose > .timeline-box, .prose > .warning-box').forEach(el => el.classList.add('reveal'));
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('is-visible');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        })();
+    </script>
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1S6LMZ5RJ0"></script>
     <script>
@@ -208,6 +452,9 @@
     </script>
 </head>
 <body class="font-sans text-gray-700 bg-gray-50">
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
     <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-highlight focus:text-primary-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Ir al contenido principal</a>
 
     <!-- Navigation -->
@@ -301,7 +548,7 @@
                 <!-- INTRODUCCIÓN -->
                 <h2>Cuando las notas no cuentan toda la historia</h2>
 
-                <p class="text-lg leading-relaxed">
+                <p class="text-lg leading-relaxed lead-dropcap">
                     Sofía tiene 8 años y lee. Eso no está en discusión. Lee en voz alta cuando la maestra lo pide, descifra las palabras del pizarrón, completa las consignas escritas. Pero algo no cierra. Su mamá lo describe así: "Lee, pero es como si no le quedara nada. Le pregunto de qué se trataba el cuento y me mira con cara de no entender la pregunta".
                 </p>
 
@@ -439,6 +686,12 @@
                     La mamá de Sofía, cuando escuchó la devolución, dijo algo que escucho con frecuencia y que siempre me conmueve: "Entonces no es que es vaga". No. No es que es vaga.
                 </p>
 
+                <!-- Pull Quote editorial -->
+                <blockquote class="pull-quote reveal">
+                    Eso es lo que hace una buena evaluación. No pone una etiqueta: abre una puerta.
+                    <cite>— Dr. Nicolás Genise</cite>
+                </blockquote>
+
                 <!-- POR QUÉ IMPORTA -->
                 <h2>¿Por qué esto importa más allá de Sofía?</h2>
 
@@ -462,9 +715,17 @@
                     Si reconocés este patrón en un niño de tu entorno —esfuerzo desproporcionado, frustración creciente, la sensación de que "algo no cierra"—, una evaluación psicopedagógica integral puede ser el primer paso para entender qué está pasando y cómo ayudar.
                 </blockquote>
 
-                <p>
-                    En la <a href="https://nicolasgenise.org/#especializacion" class="text-primary-600 hover:underline">Especialización en Psicopedagogía Clínica</a> que dirijo en la Universidad de Flores trabajamos exactamente esto: formar profesionales que sepan evaluar con rigor, interpretar con criterio clínico e intervenir con evidencia.
-                </p>
+                <!-- CTA block -->
+                <aside class="article-cta reveal" aria-label="Contacto y formación profesional">
+                    <h3>¿Reconocés este patrón en alguien cercano?</h3>
+                    <p>
+                        Una evaluación psicopedagógica integral puede abrir el camino que los números escolares no logran explicar. Si sos profesional y querés formarte con rigor clínico, también podés sumarte a la Especialización que dirijo en la Universidad de Flores.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="../index.html#contacto" class="cta-primary">Consultar por una evaluación</a>
+                        <a href="https://nicolasgenise.org/#especializacion" class="cta-secondary">Ver la Especialización UFLO</a>
+                    </div>
+                </aside>
 
                 <!-- AVISO -->
                 <div class="warning-box">
