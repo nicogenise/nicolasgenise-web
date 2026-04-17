@@ -33,7 +33,15 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- Blog: Funciones Ejecutivas (NUEVO) -->
+  <!-- Blog: Evaluación Psicopedagógica (NUEVO 2026-04) -->
+  <url>
+    <loc>https://nicolasgenise.org/blog/evaluacion-psicopedagogica-guia-clinica.html</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Blog: Funciones Ejecutivas -->
   <url>
     <loc>https://nicolasgenise.org/blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html</loc>
     <lastmod>2026-01-15</lastmod>

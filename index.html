@@ -130,7 +130,8 @@
     <link rel="stylesheet" href="/dist/styles.css">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/logo_transparente.webp" as="image" type="image/webp">
+    <link rel="preload" href="/logo_transparente.png" as="image" type="image/png">
+    <link rel="preload" href="/nicolas-nobg.webp" as="image" type="image/webp">
 
     <style>
         html {
@@ -685,14 +686,14 @@
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-28 md:py-32">
             <div class="flex justify-center">
                 <div class="max-w-3xl text-center">
-                    <!-- Badge de cupos limitados -->
+                    <!-- Badge de cohorte -->
                     <div class="inline-flex items-center gap-2 bg-highlight/20 border border-highlight/40 text-highlight px-4 py-2 rounded-full mb-6 animate-fade-in opacity-0">
                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
                         </svg>
-                        <span class="font-semibold text-sm">Solo 30 cupos disponibles · Cohorte Abril 2026</span>
+                        <span class="font-semibold text-sm">Inscripción abierta · Cohorte Abril 2026</span>
                     </div>
-                    
+
                     <p class="text-accent font-medium tracking-wider uppercase mb-4 animate-fade-in opacity-0">Especialización en Psicopedagogía Clínica · Universidad de Flores</p>
                     <h1 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white font-semibold leading-tight mb-6 animate-fade-in opacity-0 animate-delay-1">
                         De la teoría a la intervención clínica: desarrollá las competencias que tus consultantes necesitan
@@ -702,7 +703,7 @@
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 animate-fade-in opacity-0 animate-delay-3 justify-center">
                         <a href="#contacto" class="bg-white text-primary-600 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors text-center text-sm sm:text-base">
-                            Inscripci&oacute;n Abril 2026 &mdash; Solo 30 cupos
+                            Inscripción Abril 2026 — Informate
                         </a>
                         <a href="#recursos" class="bg-highlight text-primary-900 px-6 py-3 sm:px-8 sm:py-4 rounded-lg font-semibold hover:bg-highlight/90 transition-colors text-center shadow-lg shadow-highlight/50 text-sm sm:text-base">
                             Descargar Guía Gratuita
@@ -761,7 +762,8 @@
                              alt="Dr. Nicolás Genise - Director de la Especialización en Psicopedagogía Clínica"
                              class="about-photo-enhanced h-auto w-auto object-contain object-bottom relative z-10 max-h-[380px] sm:max-h-[460px] md:max-h-[520px]"
                              width="896" height="1260"
-                             loading="lazy">
+                             loading="eager"
+                             fetchpriority="high">
                     </div>
                 </div>
                 
@@ -966,7 +968,7 @@
                             <h3 class="font-display text-2xl md:text-3xl text-white font-semibold mb-4">¿Listo para especializarte?</h3>
                             <p class="text-primary-100 mb-6">Inscripciones abiertas para la cohorte Abril 2026. Consultá requisitos de admisión, plan de estudios y opciones de financiamiento.</p>
                             <a href="#contacto" class="inline-block bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors">
-                                Inscripci&oacute;n Abril 2026 &mdash; Solo 30 cupos
+                                Inscripción Abril 2026 — Informate
                             </a>
                         </div>
                         
