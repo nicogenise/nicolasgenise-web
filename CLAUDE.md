@@ -42,11 +42,21 @@ Antes de diseñar cualquier página, componente o thumbnail nuevo, SIEMPRE revis
 
 Los thumbnails del blog siguen un patrón: ilustración con paleta cálida, texto overlay en tipografía Playfair, ratio 16:9 (1200×675 o 800×450).
 
+## Source of truth del sistema de diseño
+
+A partir de 2026-05-02 el sitio tiene un sistema de diseño formalizado en dos archivos canónicos del repo:
+
+- **`PRODUCT.md`** — quiénes son los users, voice & tone, anti-references, principios estratégicos. Lo leen los agentes IA antes de cualquier trabajo de diseño/copy.
+- **`DESIGN.md`** — tokens (colores, tipografía, spacing, components) en formato spec [Google DESIGN.md](https://github.com/google-labs-code/design.md) + reglas Do/Don't. Reemplaza la duplicación de paleta que vivía en este CLAUDE.md.
+
+Cualquier cambio de paleta, tipografía o componente debe pasar por `DESIGN.md` primero (no improvisar inline). Validación con `npm run design:lint` (chequea el spec) y `npm run design:detect` (chequea anti-patterns en el HTML construido).
+
 ## Stack de diseño disponible (Claude Code)
 
 Cuando trabajes en este repo tenés estas skills automáticamente activas (ver `~/.claude/CLAUDE.md` para inventario completo):
 
 **Frontend / diseño**
+- `impeccable` (Paul Bakaus, instalado en `.claude/skills/impeccable/`) — 1 skill + 23 sub-comandos (`/impeccable audit`, `/critique`, `/polish`, `/distill`, `/harden`, etc.). Lee `PRODUCT.md` + `DESIGN.md` antes de tocar nada (preflight gate). Builds on `frontend-design`. Ver `.claude/skills/impeccable/SKILL.md`.
 - `frontend-design` (oficial Anthropic) — fuerza decisión estética antes de código
 - `distinctive-frontend` (Koomook) — evita AI slop
 - `design:design-critique` / `design:design-system` / `design:ux-copy` / `design:accessibility-review` (plugin design)

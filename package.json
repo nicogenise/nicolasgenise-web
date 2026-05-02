@@ -5,7 +5,12 @@
   "scripts": {
     "build:css": "npx tailwindcss -i ./src/styles/base.css -o ./dist/styles.css --minify",
     "watch:css": "npx tailwindcss -i ./src/styles/base.css -o ./dist/styles.css --watch",
-    "build": "npm run build:css"
+    "build": "npm run build:css",
+    "design:lint": "npx -y @google/design.md lint DESIGN.md",
+    "design:diff": "npx -y @google/design.md diff DESIGN.md",
+    "design:detect": "npx -y impeccable detect ./",
+    "design:detect-url": "npx -y impeccable detect https://nicolasgenise.org --json",
+    "design:check": "npm run design:lint && npm run design:detect"
   },
   "keywords": ["psicopedagogía", "clínica", "UFLO", "educación"],
   "author": "Dr. Nicolás Genise",
