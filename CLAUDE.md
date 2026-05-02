@@ -51,6 +51,40 @@ A partir de 2026-05-02 el sitio tiene un sistema de diseño formalizado en dos a
 
 Cualquier cambio de paleta, tipografía o componente debe pasar por `DESIGN.md` primero (no improvisar inline). Validación con `npm run design:lint` (chequea el spec) y `npm run design:detect` (chequea anti-patterns en el HTML construido).
 
+## Auto-routing al skill impeccable (regla operativa)
+
+Cuando Nicolás describa una tarea de UI/diseño/copy en lenguaje natural, **ruteá automáticamente al sub-comando correspondiente de `impeccable` SIN pedir confirmación**. Cargá `.claude/skills/impeccable/reference/<subcomando>.md` y aplicá el protocolo. El gate del preflight (PRODUCT.md + DESIGN.md) ya pasa porque ambos archivos existen en el repo.
+
+| Frase del usuario contiene… | Sub-comando a ejecutar | Reference a cargar |
+|---|---|---|
+| "diseñá", "creá la UI", "armá la página" | `craft` | `reference/craft.md` |
+| "planificá", "shape", "estructurá antes de codear" | `shape` | `reference/shape.md` |
+| "revisá", "qué opinás de", "criticá", "feedback de UX" | `critique` | `reference/critique.md` |
+| "auditá", "chequeá calidad", "qué problemas tiene" | `audit` | `reference/audit.md` |
+| "polí (polish)", "limpiá", "ajustes finales", "antes de pushear" | `polish` | `reference/polish.md` |
+| "más bold", "más fuerte", "esto está soso" | `bolder` | `reference/bolder.md` |
+| "más quieto", "bajale un cambio", "demasiado fuerte" | `quieter` | `reference/quieter.md` |
+| "destilá", "reducí", "sacale lo de más" | `distill` | `reference/distill.md` |
+| "endurecé", "edge cases", "i18n", "errores", "overflow" | `harden` | `reference/harden.md` |
+| "onboarding", "primera vez", "empty state" | `onboard` | `reference/onboard.md` |
+| "animá", "agregale movimiento" | `animate` | `reference/animate.md` |
+| "agregá color", "está muy gris" | `colorize` | `reference/colorize.md` |
+| "tipografía", "fuentes", "fix headings" | `typeset` | `reference/typeset.md` |
+| "layout", "espaciado", "alineación", "ritmo" | `layout` | `reference/layout.md` |
+| "sumale joy", "más memorable", "delight" | `delight` | `reference/delight.md` |
+| "wow", "extraordinario", "efectos técnicos" | `overdrive` | `reference/overdrive.md` |
+| "clarificá copy", "el texto no se entiende", "fix UX writing" | `clarify` | `reference/clarify.md` |
+| "responsive", "adaptá a mobile/tablet" | `adapt` | `reference/adapt.md` |
+| "performance", "carga lenta", "optimizá" | `optimize` | `reference/optimize.md` |
+| "iterá en el browser", "live preview" | `live` | `reference/live.md` |
+| "extraé tokens", "componentizá", "design system" | `extract` | `reference/extract.md` |
+| "documentá el diseño actual" | `document` | `reference/document.md` |
+| "regenerá PRODUCT.md/DESIGN.md desde cero" | `teach` | `reference/teach.md` |
+
+Si la frase encaja en múltiples comandos, elegí el más específico (ej: "limpiá los headings" → `typeset`, no `polish` general). Si no matchea ninguno claramente, preguntá UNA vez cuál aplicar — no asumir.
+
+Para sesiones largas, podés correr `/impeccable pin <subcomando>` UNA vez al inicio y crear shortcuts top-level (ej: `/audit`, `/polish`). Esto es opcional.
+
 ## Stack de diseño disponible (Claude Code)
 
 Cuando trabajes en este repo tenés estas skills automáticamente activas (ver `~/.claude/CLAUDE.md` para inventario completo):
