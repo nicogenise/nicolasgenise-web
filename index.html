@@ -650,7 +650,7 @@
     <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
     <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 w-64 h-full bg-white shadow-xl md:hidden">
         <div class="p-6">
-            <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600">
+            <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600" aria-label="Cerrar menú">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
@@ -1004,15 +1004,15 @@
         <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
                 <div class="space-y-2">
-                    <p data-counter data-target="408" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p data-counter data-target="408" aria-label="408 horas reloj" class="text-4xl md:text-5xl font-display font-bold">0</p>
                     <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Horas de formación</p>
                 </div>
                 <div class="space-y-2">
-                    <p data-counter data-target="100" data-suffix="%" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p data-counter data-target="100" data-suffix="%" aria-label="100 por ciento virtual y asincrónica" class="text-4xl md:text-5xl font-display font-bold">0</p>
                     <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Virtual y asincrónica</p>
                 </div>
                 <div class="space-y-2">
-                    <p data-counter data-target="3" class="text-4xl md:text-5xl font-display font-bold">0</p>
+                    <p data-counter data-target="3" aria-label="3 semestres de cursada" class="text-4xl md:text-5xl font-display font-bold">0</p>
                     <p class="text-primary-100 text-sm font-medium uppercase tracking-wider">Semestres de cursada</p>
                 </div>
                 <div class="space-y-2">
@@ -1370,7 +1370,7 @@
         <div class="absolute inset-0 flex items-center justify-center p-4">
             <div class="relative bg-white rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto transform transition-all">
                 <!-- Close Button -->
-                <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                <button id="modal-close" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Cerrar diálogo">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
                     </svg>
@@ -1486,7 +1486,7 @@
             <div class="border-t border-primary-700 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-sm">© 2026 Dr. Nicolás Genise. Todos los derechos reservados.</p>
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="https://www.linkedin.com/in/nicolasgenise/" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+                    <a href="https://www.linkedin.com/in/nicolasgenise/" target="_blank" rel="noopener" class="hover:text-white transition-colors" aria-label="LinkedIn — Dr. Nicolás Genise">
                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                         </svg>
@@ -1502,7 +1502,8 @@
     <!-- Back to Top Button -->
     <button id="back-to-top"
             class="fixed bottom-6 right-6 z-40 bg-white/90 backdrop-blur-sm text-primary-600 w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl hover:bg-primary-600 hover:text-white transition-all duration-300 opacity-0 translate-y-4 border border-gray-200"
-            title="Volver arriba">
+            title="Volver arriba"
+            aria-label="Volver arriba">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/></svg>
     </button>
 
@@ -1926,7 +1927,5 @@
 
         document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
     </script>
-</body>
-</html>
 </body>
 </html>
