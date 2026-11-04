@@ -164,7 +164,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (compiled) -->
-    <link rel="stylesheet" href="/dist/styles.css?v=20261104">
+    <link rel="stylesheet" href="/dist/styles.css?v=20261105">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo_transparente.webp">
@@ -216,6 +216,8 @@
             text-indent: -2rem;
             padding-left: 2rem;
         }
+        /* Enlaces de las referencias: #2874A6 (5,07:1 sobre blanco); el celeste #5DADE2 daba 2,45:1. En modo oscuro siguen en celeste. */
+        .reference-item a { color: #2874A6; text-decoration: underline; text-underline-offset: 2px; }
         blockquote {
             border-left: 3px solid #48c9b0;
             padding-left: 1.5rem;
@@ -264,6 +266,7 @@
         .dark .text-gray-500, .dark .text-gray-400 { color: #8892A4 !important; }
         .dark .text-primary-700 { color: #5DADE2 !important; }
         .dark .text-primary-600 { color: #85C1E9 !important; }
+        .dark .text-primary-500 { color: #5DADE2 !important; }
         .dark .border-gray-100, .dark .border-gray-200 { border-color: #1E3A5F !important; }
         .dark .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
         .dark .prose { color: #C8D6E5; }
@@ -289,6 +292,7 @@
         .dark .toc-link a { color: #8892A4; }
         .dark .toc-link:hover a { color: #48c9b0; }
         .dark .reference-item { color: #8892A4 !important; }
+        .dark .reference-item a { color: #5DADE2; }
         .dark dt { color: #5DADE2 !important; }
         .dark dd { color: #C8D6E5 !important; }
     </style>
@@ -346,12 +350,12 @@
     <header class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
-            <nav class="mb-6 text-sm text-blue-200">
+            <nav class="mb-6 text-sm text-blue-200" aria-label="Ruta de navegación">
                 <a href="/" class="hover:text-white">Inicio</a>
-                <span class="mx-2">›</span>
+                <span class="mx-2" aria-hidden="true">›</span>
                 <a href="/#blog" class="hover:text-white">Blog</a>
-                <span class="mx-2">›</span>
-                <span class="text-accent">Funciones Ejecutivas</span>
+                <span class="mx-2" aria-hidden="true">›</span>
+                <span class="text-white font-semibold" aria-current="page">Funciones Ejecutivas</span>
             </nav>
             
             <!-- Badge + Date -->
@@ -479,19 +483,19 @@
                 <h3 class="font-display text-xl font-bold text-primary-700 mb-4">Cronología del desarrollo ejecutivo</h3>
                 <div class="space-y-4">
                     <div class="flex gap-4">
-                        <span class="font-bold text-accent whitespace-nowrap">6-12 meses:</span>
+                        <span class="font-bold text-primary-600 whitespace-nowrap">6-12 meses:</span>
                         <span>Emergencia de capacidades ejecutivas primitivas, evidenciadas en tareas A-not-B (Diamond, 1985)</span>
                     </div>
                     <div class="flex gap-4">
-                        <span class="font-bold text-accent whitespace-nowrap">3-5 años:</span>
+                        <span class="font-bold text-primary-600 whitespace-nowrap">3-5 años:</span>
                         <span>Consolidación de inhibición motora y verbal; aparición de flexibilidad cognitiva</span>
                     </div>
                     <div class="flex gap-4">
-                        <span class="font-bold text-accent whitespace-nowrap">6-12 años:</span>
+                        <span class="font-bold text-primary-600 whitespace-nowrap">6-12 años:</span>
                         <span>Diferenciación progresiva de componentes; mejoras sustanciales en memoria de trabajo y planificación</span>
                     </div>
                     <div class="flex gap-4">
-                        <span class="font-bold text-accent whitespace-nowrap">Adolescencia:</span>
+                        <span class="font-bold text-primary-600 whitespace-nowrap">Adolescencia:</span>
                         <span>Refinamiento de autorregulación emocional; integración de funciones para organización temporal a largo plazo</span>
                     </div>
                 </div>
@@ -997,7 +1001,7 @@
                     <p class="text-gray-600 mb-4">
                         Doctor en Psicología y Licenciado en Psicopedagogía. Director de la Especialización en Psicopedagogía Clínica de la Universidad de Flores (UFLO). Psicoterapeuta en Gandara Center (Boston, EE.UU.). Formación internacional en Ackerman Institute (New York). Autor de múltiples libros sobre psicoterapia infantil y adolescente.
                     </p>
-                    <a href="/#contacto" class="inline-flex items-center text-accent hover:text-primary-700 font-medium transition-colors">
+                    <a href="/#contacto" class="inline-flex items-center text-primary-500 hover:text-primary-700 font-medium transition-colors">
                         Contactar
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>

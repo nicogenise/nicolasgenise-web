@@ -122,6 +122,8 @@
         .dark #mobile-menu a { color: #8892A4; }
         .dark #mobile-menu a:hover { color: #5DADE2; }
         .dark input, .dark textarea { background-color: #0E2F44 !important; border-color: #1E3A5F !important; color: #E0E7EF !important; }
+        /* Enlaces de las referencias subrayados: el color solo no los distingue del texto (WCAG 1.4.1) */
+        ol.list-decimal a { text-decoration: underline; text-underline-offset: 2px; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -511,7 +513,7 @@
                         >
                         <button
                             type="submit"
-                            class="px-8 py-4 bg-yellow-400 hover:bg-yellow-500 text-white font-bold rounded-lg transition-colors whitespace-nowrap"
+                            class="px-8 py-4 bg-highlight hover:bg-highlight/90 text-primary-900 font-bold rounded-lg transition-colors whitespace-nowrap"
                         >
                             Suscribirme
                         </button>
