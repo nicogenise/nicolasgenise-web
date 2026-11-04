@@ -206,7 +206,7 @@
             padding-left: 1.5rem;
         }
         .activity-list li::before {
-            content: "â–¸";
+            content: "\25B8";
             position: absolute;
             left: 0;
             color: #48c9b0;
@@ -262,8 +262,9 @@
         .dark .bg-gray-50 { background-color: #0B1929 !important; }
         .dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-900, .dark .text-gray-600 { color: #E0E7EF !important; }
         .dark .text-gray-500, .dark .text-gray-400 { color: #8892A4 !important; }
-        .dark .text-primary { color: #5DADE2 !important; }
-        .dark .text-primary-dark { color: #85C1E9 !important; }
+        .dark .text-primary-700 { color: #5DADE2 !important; }
+        .dark .text-primary-600 { color: #85C1E9 !important; }
+        .dark .hover\:text-primary-700:hover { color: #85C1E9 !important; }
         .dark .border-gray-100, .dark .border-gray-200 { border-color: #1E3A5F !important; }
         .dark .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
         .dark .prose { color: #C8D6E5; }
@@ -343,7 +344,7 @@
     </div>
 
     <!-- Article Header -->
-    <header class="bg-gradient-to-br from-primary to-primary-dark text-white pt-24 pb-16 md:pt-32 md:pb-24">
+    <header class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white pt-24 pb-16 md:pt-32 md:pb-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
             <nav class="mb-6 text-sm text-blue-200">
@@ -351,12 +352,12 @@
                 <span class="mx-2">›</span>
                 <a href="/#blog" class="hover:text-white">Blog</a>
                 <span class="mx-2">›</span>
-                <span class="text-accent">Funciones Ejecutivas</span>
+                <span class="font-medium text-white">Funciones Ejecutivas</span>
             </nav>
             
             <!-- Badge + Date -->
             <div class="flex items-center gap-3 mb-4">
-                <span class="inline-block px-3 py-1 bg-highlight text-white text-sm font-semibold rounded-full">Psicopedagogía Clínica</span>
+                <span class="inline-block px-3 py-1 bg-highlight text-primary-900 text-sm font-semibold rounded-full">Psicopedagogía Clínica</span>
                 <span class="text-blue-200 text-sm"><time datetime="2026-01-27">Enero 2026</time> · 12 min de lectura</span>
             </div>
             
@@ -386,7 +387,7 @@
         
         <!-- Table of Contents -->
         <div class="info-box rounded-lg p-6 mb-12">
-            <h2 class="font-display text-xl font-bold text-primary mb-4">En este artículo encontrarás:</h2>
+            <h2 class="font-display text-xl font-bold text-primary-700 mb-4">En este artículo encontrarás:</h2>
             <ul class="space-y-2 text-gray-700">
                 <li class="toc-link"><a href="#que-son">Qué son las funciones ejecutivas y cómo se desarrollan</a></li>
                 <li class="toc-link"><a href="#evaluacion">Instrumentos de evaluación validados en población hispanohablante</a></li>
@@ -411,7 +412,7 @@
             </p>
 
             <!-- Section 1 -->
-            <h2 id="que-son" class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 id="que-son" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 1. ¿Qué son las funciones ejecutivas en niños?
             </h2>
             
@@ -435,17 +436,17 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="font-semibold text-primary">Memoria de trabajo</td>
+                            <td class="font-semibold text-primary-700">Memoria de trabajo</td>
                             <td>Mantener y manipular información mentalmente</td>
                             <td>Seguir instrucciones de varios pasos</td>
                         </tr>
                         <tr>
-                            <td class="font-semibold text-primary">Control inhibitorio</td>
+                            <td class="font-semibold text-primary-700">Control inhibitorio</td>
                             <td>Suprimir respuestas automáticas o impulsivas</td>
                             <td>Esperar el turno para hablar</td>
                         </tr>
                         <tr>
-                            <td class="font-semibold text-primary">Flexibilidad cognitiva</td>
+                            <td class="font-semibold text-primary-700">Flexibilidad cognitiva</td>
                             <td>Cambiar entre tareas o perspectivas</td>
                             <td>Adaptarse cuando cambia el plan</td>
                         </tr>
@@ -462,7 +463,7 @@
             </p>
 
             <!-- Section 2 -->
-            <h2 class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 2. ¿Cómo se desarrollan las funciones ejecutivas?
             </h2>
             
@@ -476,7 +477,7 @@
             
             <!-- Timeline Box -->
             <div class="info-box rounded-lg p-6 my-8">
-                <h3 class="font-display text-xl font-bold text-primary mb-4">Cronología del desarrollo ejecutivo</h3>
+                <h3 class="font-display text-xl font-bold text-primary-700 mb-4">Cronología del desarrollo ejecutivo</h3>
                 <div class="space-y-4">
                     <div class="flex gap-4">
                         <span class="font-bold text-accent whitespace-nowrap">6-12 meses:</span>
@@ -502,7 +503,7 @@
             </p>
 
             <!-- Section 3 -->
-            <h2 id="evaluacion" class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 id="evaluacion" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 3. Evaluación de las funciones ejecutivas: instrumentos clínicos validados
             </h2>
             
@@ -516,7 +517,7 @@
             
             <!-- Evaluation Protocol -->
             <div class="info-box rounded-lg p-6 my-8">
-                <h3 class="font-display text-xl font-bold text-primary mb-4">Secuencia de evaluación sugerida</h3>
+                <h3 class="font-display text-xl font-bold text-primary-700 mb-4">Secuencia de evaluación sugerida</h3>
                 <ol class="space-y-3">
                     <li><strong>1. Entrevista inicial:</strong> motivo de consulta + hipótesis de perfil ejecutivo</li>
                     <li><strong>2. Escalas ecológicas:</strong> BRIEF-2 padres + docentes (funcionamiento cotidiano)</li>
@@ -526,7 +527,7 @@
                 </ol>
             </div>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">Instrumentos validados en población hispanohablante</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">Instrumentos validados en población hispanohablante</h3>
             
             <div class="my-8 overflow-x-auto">
                 <table class="min-w-full text-sm">
@@ -583,7 +584,7 @@
                 <strong>Nota importante:</strong> Algunos instrumentos requieren formación específica y/o licencia de uso. Las normas citadas corresponden a poblaciones específicas (país, edad, contexto); verificar aplicabilidad antes de interpretar. Para baterías como BANFE-3 y ENFEN, consultar requisitos del distribuidor.
             </p>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark mt-8">Consideraciones sobre perfiles ejecutivos en TDAH y TEA</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600 mt-8">Consideraciones sobre perfiles ejecutivos en TDAH y TEA</h3>
             
             <p>
                 La literatura ha descrito algunas tendencias en los perfiles de FE según diagnóstico, aunque con importantes limitaciones. En TDAH, el control inhibitorio suele estar, en promedio, más comprometido (con alta variabilidad entre individuos), mientras que en TEA las dificultades de flexibilidad cognitiva tienden a ser más prominentes (Geurts et al., 2014; Craig et al., 2016). La memoria de trabajo muestra resultados variables en ambos grupos.
@@ -610,7 +611,7 @@
             </div>
 
             <!-- Section 4 -->
-            <h2 id="intervencion" class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 id="intervencion" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 4. Intervención en funciones ejecutivas: estrategias basadas en evidencia
             </h2>
             
@@ -619,13 +620,13 @@
             </p>
             
             <div class="info-box rounded-lg p-6 my-8">
-                <h4 class="font-display text-lg font-bold text-primary mb-2">💡 Implicación clínica</h4>
+                <h4 class="font-display text-lg font-bold text-primary-700 mb-2">💡 Implicación clínica</h4>
                 <p class="mb-0">
                     La transferencia de las ganancias a contextos académicos reales (<em>far-transfer</em>) parece más probable cuando la intervención entrena el uso contextualizado de las FE en situaciones que las demandan, más que la mera mejora de capacidades de manera aislada. Sin embargo, esta hipótesis se basa en patrones observados en la literatura; la heterogeneidad de los estudios limita conclusiones causales.
                 </p>
             </div>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">Estructura de sesión sugerida</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">Estructura de sesión sugerida</h3>
             
             <p>Un esquema de sesión que facilita la transferencia incluye cinco momentos:</p>
             
@@ -640,7 +641,7 @@
             </div>
             
             <!-- 4.1 Working Memory -->
-            <h3 id="actividades" class="font-display text-2xl font-semibold text-primary-dark">4.1 Memoria de trabajo</h3>
+            <h3 id="actividades" class="font-display text-2xl font-semibold text-primary-600">4.1 Memoria de trabajo</h3>
             
             <p>
                 La memoria de trabajo es uno de los componentes más investigados. El meta-análisis de Spencer-Smith & Klingberg (2015), según los valores corregidos en su corrigendum (Spencer-Smith & Klingberg, 2016), reporta mejoras pequeñas a moderadas post-intervención en memoria de trabajo visuoespacial (SMD ≈ 0.62) y verbal (SMD ≈ 0.41), con reducción de síntomas de inatención (SMD ≈ -0.37). Estos resultados son sensibles al tipo de grupo control y medidas utilizadas. La evidencia de transferencia a rendimiento académico permanece limitada (Roberts et al., 2016).
@@ -650,7 +651,7 @@
                 La clave parece estar en añadir un <strong>componente metacognitivo</strong>: enseñar explícitamente cuándo y cómo aplicar las estrategias de memoria de trabajo. Jones et al. (2020), en un ensayo controlado aleatorizado doble ciego con 95 niños de 9-14 años con desarrollo típico (no clínicos), encontraron que combinar entrenamiento de memoria de trabajo con estrategias metacognitivas produjo mejoras que se mantuvieron a los 3 meses. La generalización de estos hallazgos a poblaciones clínicas (TDAH, TEA) requiere investigación específica.
             </p>
             
-            <h4 class="font-display text-xl font-semibold text-primary-dark mt-6">Actividades para el consultorio</h4>
+            <h4 class="font-display text-xl font-semibold text-primary-600 mt-6">Actividades para el consultorio</h4>
             
             <ul class="activity-list space-y-2 my-4">
                 <li><strong>Span de dígitos inverso:</strong> Repetir secuencias de números en orden inverso, aumentando progresivamente la longitud</li>
@@ -661,7 +662,7 @@
             </ul>
             
             <div class="bg-gray-50 rounded-lg p-4 my-6 text-sm">
-                <h5 class="font-semibold text-primary mb-2">Parámetros de implementación</h5>
+                <h5 class="font-semibold text-primary-700 mb-2">Parámetros de implementación</h5>
                 <ul class="space-y-1">
                     <li><strong>Dosis:</strong> 10-15 minutos por sesión, 2-3 veces/semana, mínimo 8 semanas</li>
                     <li><strong>Progresión:</strong> Aumentar dificultad cuando logra ~80% de éxito en nivel actual (heurístico clínico)</li>
@@ -670,13 +671,13 @@
             </div>
             
             <!-- 4.2 Inhibitory Control -->
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">4.2 Control inhibitorio</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">4.2 Control inhibitorio</h3>
             
             <p>
                 Las intervenciones lúdicas se utilizan frecuentemente para entrenar el control inhibitorio, aunque la evidencia de su efectividad aislada es limitada (Diamond & Ling, 2016). Juegos como "Simón dice", "Luz roja, luz verde" o juegos de mesa que requieren esperar el turno ofrecen oportunidades para practicar el ciclo de antecedente → respuesta inhibida → consecuencia social positiva. Su principal valor puede estar en la integración con otras estrategias.
             </p>
             
-            <h4 class="font-display text-xl font-semibold text-primary-dark mt-6">Actividades clínicas sugeridas</h4>
+            <h4 class="font-display text-xl font-semibold text-primary-600 mt-6">Actividades clínicas sugeridas</h4>
             
             <ul class="activity-list space-y-2 my-4">
                 <li><strong>Juego "Congelado":</strong> Música/actividad libre → cuando se detiene, quedarse estático</li>
@@ -687,7 +688,7 @@
             </ul>
             
             <div class="bg-gray-50 rounded-lg p-4 my-6 text-sm">
-                <h5 class="font-semibold text-primary mb-2">Parámetros de implementación</h5>
+                <h5 class="font-semibold text-primary-700 mb-2">Parámetros de implementación</h5>
                 <ul class="space-y-1">
                     <li><strong>Dosis:</strong> 5-10 minutos integrados en sesión, diario en hogar/escuela si es posible</li>
                     <li><strong>Progresión:</strong> Reducir tiempo de anticipación de señales; aumentar complejidad de reglas</li>
@@ -696,7 +697,7 @@
             </div>
             
             <!-- 4.3 Cognitive Flexibility -->
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">4.3 Flexibilidad cognitiva (estrategias clínicas, evidencia limitada)</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">4.3 Flexibilidad cognitiva (estrategias clínicas, evidencia limitada)</h3>
             
             <p>
                 La flexibilidad cognitiva es particularmente desafiante para niños con TEA. La experiencia clínica sugiere que la introducción gradual de variabilidad (en lugar de cambios abruptos) puede reducir la ansiedad asociada y facilitar una adaptación más sostenida. Esta hipótesis clínica es coherente con principios de exposición gradual (Kerns et al., 2014), aunque la evidencia específica para flexibilidad cognitiva como componente ejecutivo es limitada.
@@ -710,7 +711,7 @@
                 </p>
             </div>
             
-            <h4 class="font-display text-xl font-semibold text-primary-dark mt-6">Actividades clínicas sugeridas</h4>
+            <h4 class="font-display text-xl font-semibold text-primary-600 mt-6">Actividades clínicas sugeridas</h4>
             
             <ul class="activity-list space-y-2 my-4">
                 <li><strong>Juegos con cambio de reglas:</strong> Partir de un juego conocido, cambiar inesperadamente las reglas</li>
@@ -721,7 +722,7 @@
             </ul>
             
             <div class="bg-gray-50 rounded-lg p-4 my-6 text-sm">
-                <h5 class="font-semibold text-primary mb-2">Parámetros de implementación</h5>
+                <h5 class="font-semibold text-primary-700 mb-2">Parámetros de implementación</h5>
                 <ul class="space-y-1">
                     <li><strong>Dosis:</strong> 10 minutos por sesión; introducir cambios pequeños primero, luego más significativos</li>
                     <li><strong>Progresión:</strong> De cambios anticipados → cambios sorpresivos; de contexto seguro → contextos naturales</li>
@@ -730,13 +731,13 @@
             </div>
             
             <!-- 4.4 Planning -->
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">4.4 Planificación y organización</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">4.4 Planificación y organización</h3>
             
             <p>
                 El programa <strong>HOPS</strong> (Homework, Organization, and Planning Skills) es una de las intervenciones más estudiadas para planificación en adolescentes con TDAH. Consiste en 16 sesiones individuales de 20 minutos que entrenan organización de materiales, seguimiento de tareas y planificación del tiempo. El ensayo controlado de Langberg et al. (2012) mostró efectos moderados a grandes según reportes parentales: d = 0.88 para acción organizada, d = 1.05 para planificación, y d = 0.85 para completar tareas. Es importante notar que las mejoras no se replicaron en informes docentes, lo cual sugiere que la generalización del hogar a la escuela requiere componentes adicionales.
             </p>
             
-            <h4 class="font-display text-xl font-semibold text-primary-dark mt-6">Estrategias de organización (adaptación clínica)</h4>
+            <h4 class="font-display text-xl font-semibold text-primary-600 mt-6">Estrategias de organización (adaptación clínica)</h4>
             
             <p class="text-sm text-gray-600 italic mb-4">
                 Nota: Las siguientes estrategias están inspiradas en los principios de HOPS pero no constituyen el protocolo completo. Para implementar HOPS con fidelidad, consultar Langberg et al. (2011, 2012).
@@ -752,7 +753,7 @@
             </ul>
 
             <!-- Section 5 -->
-            <h2 id="familias" class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 id="familias" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 5. Trabajo con familias y docentes
             </h2>
             
@@ -760,17 +761,17 @@
                 La evidencia disponible sugiere que las intervenciones que incluyen a padres y docentes como agentes activos de cambio tienden a mostrar mayor efectividad y mejor generalización. El entrenamiento conductual de padres (BPT), recomendado en guías clínicas para TDAH (NICE, 2018; AAP, 2019), es particularmente eficaz como primera línea en preescolares y escolares menores; en escolares mayores y adolescentes suele integrarse con otras intervenciones. El BPT puede influir indirectamente en las FE mediante el establecimiento de estructura externa, rutinas predecibles y contingencias consistentes que compensan las dificultades de autorregulación.
             </p>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">Herramientas listas para usar</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">Herramientas listas para usar</h3>
             
             <div class="bg-gray-50 rounded-lg p-6 my-6">
-                <h4 class="font-semibold text-primary mb-3">📝 Daily Report Card (DRC) simplificado</h4>
+                <h4 class="font-semibold text-primary-700 mb-3">📝 Daily Report Card (DRC) simplificado</h4>
                 <p class="mb-2">
                     <strong>Objetivos diarios (máx. 3):</strong> Ej. "Trae agenda firmada" / "Inicia tarea en &lt;5 min" / "Entrega trabajo completo". El docente marca Sí/No; el padre aplica consecuencia acordada (ej. 15 min de pantalla). Revisar semanalmente y ajustar criterios cuando hay éxito consistente.
                 </p>
             </div>
             
             <div class="bg-gray-50 rounded-lg p-6 my-6">
-                <h4 class="font-semibold text-primary mb-3">✅ Checklist mochila/cuaderno (rutina de 2 minutos)</h4>
+                <h4 class="font-semibold text-primary-700 mb-3">✅ Checklist mochila/cuaderno (rutina de 2 minutos)</h4>
                 <p class="mb-2">
                     □ Agenda revisada &nbsp; □ Tareas en carpeta "pendientes" &nbsp; □ Materiales para mañana &nbsp; □ Carpeta "completado" vaciada
                 </p>
@@ -789,11 +790,11 @@
                 <li>Considerar derivación a apoyo parental si el estrés impide la implementación consistente</li>
             </ul>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">Adaptaciones escolares recomendadas</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">Adaptaciones escolares recomendadas</h3>
             
             <div class="grid md:grid-cols-3 gap-4 my-6">
                 <div class="bg-blue-50 rounded-lg p-4">
-                    <h4 class="font-semibold text-primary mb-2">Organizacionales</h4>
+                    <h4 class="font-semibold text-primary-700 mb-2">Organizacionales</h4>
                     <ul class="text-sm space-y-1">
                         <li>• Listas de verificación visuales</li>
                         <li>• Código de colores para materiales</li>
@@ -802,7 +803,7 @@
                     </ul>
                 </div>
                 <div class="bg-green-50 rounded-lg p-4">
-                    <h4 class="font-semibold text-primary mb-2">Cognitivos</h4>
+                    <h4 class="font-semibold text-primary-700 mb-2">Cognitivos</h4>
                     <ul class="text-sm space-y-1">
                         <li>• Notas del docente vs. apuntes independientes</li>
                         <li>• Organizadores gráficos</li>
@@ -811,7 +812,7 @@
                     </ul>
                 </div>
                 <div class="bg-purple-50 rounded-lg p-4">
-                    <h4 class="font-semibold text-primary mb-2">Temporales</h4>
+                    <h4 class="font-semibold text-primary-700 mb-2">Temporales</h4>
                     <ul class="text-sm space-y-1">
                         <li>• Tareas largas → submetas con fechas</li>
                         <li>• Tiempo extendido para iniciación</li>
@@ -821,7 +822,7 @@
                 </div>
             </div>
             
-            <h3 class="font-display text-2xl font-semibold text-primary-dark">Cómo medir el cambio: indicadores y tiempos</h3>
+            <h3 class="font-display text-2xl font-semibold text-primary-600">Cómo medir el cambio: indicadores y tiempos</h3>
             
             <p>
                 Para cerrar el circuito clínico, es fundamental establecer indicadores medibles desde el inicio. Se recomienda combinar tres fuentes con diferentes horizontes temporales:
@@ -849,7 +850,7 @@
             </p>
 
             <!-- Section 6 -->
-            <h2 class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 6. Consideraciones finales
             </h2>
             
@@ -862,7 +863,7 @@
             </p>
             
             <div class="info-box rounded-lg p-6 my-8">
-                <h4 class="font-display text-lg font-bold text-primary mb-3">Para recordar:</h4>
+                <h4 class="font-display text-lg font-bold text-primary-700 mb-3">Para recordar:</h4>
                 <ul class="space-y-2">
                     <li>✓ Las FE son maleables y responden a intervención apropiada</li>
                     <li>✓ La evaluación debe ser multimodal (pruebas + escalas + observación)</li>
@@ -877,49 +878,49 @@
                 <p class="text-purple-900 mb-4">
                     Volviendo a Martín, el niño del inicio: después de seis meses de intervención —trabajando memoria de trabajo y planificación en sesión, implementando sistemas de organización en casa y coordinando adaptaciones con la escuela— su mochila seguía siendo algo caótica. Pero ahora sabía dónde estaban sus cosas, entregaba las tareas a tiempo la mayoría de las veces, y cuando algo cambiaba en el plan del día, podía tomarse unos segundos para reorganizarse en lugar de estallar.
                 </p>
-                <p class="text-xl font-display font-bold text-primary text-center mb-0">
+                <p class="text-xl font-display font-bold text-primary-700 text-center mb-0">
                     No se trata de perfección. Se trata de funcionalidad.
                 </p>
             </div>
 
             <!-- Glossary -->
-            <h2 class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 Glosario
             </h2>
             
             <dl class="space-y-4 my-6">
                 <div>
-                    <dt class="font-semibold text-primary">Funciones ejecutivas (FE)</dt>
+                    <dt class="font-semibold text-primary-700">Funciones ejecutivas (FE)</dt>
                     <dd class="ml-4">Procesos cognitivos de orden superior que permiten regular la conducta, planificar acciones y adaptarse flexiblemente al entorno.</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Memoria de trabajo</dt>
+                    <dt class="font-semibold text-primary-700">Memoria de trabajo</dt>
                     <dd class="ml-4">Capacidad de mantener, actualizar y manipular información en la mente mientras se realizan tareas cognitivas.</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Control inhibitorio</dt>
+                    <dt class="font-semibold text-primary-700">Control inhibitorio</dt>
                     <dd class="ml-4">Habilidad para suprimir respuestas automáticas y mantener la atención frente a distracciones.</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Flexibilidad cognitiva</dt>
+                    <dt class="font-semibold text-primary-700">Flexibilidad cognitiva</dt>
                     <dd class="ml-4">Capacidad de cambiar entre tareas, perspectivas o estrategias de resolución según las demandas.</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Near-transfer (transferencia cercana)</dt>
+                    <dt class="font-semibold text-primary-700">Near-transfer (transferencia cercana)</dt>
                     <dd class="ml-4">Mejora en tareas similares a las entrenadas, que comparten procesos cognitivos.</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Far-transfer (transferencia lejana)</dt>
+                    <dt class="font-semibold text-primary-700">Far-transfer (transferencia lejana)</dt>
                     <dd class="ml-4">Mejora en dominios distintos a los entrenados (ej: entrenamiento de memoria de trabajo → mejora en matemáticas).</dd>
                 </div>
                 <div>
-                    <dt class="font-semibold text-primary">Validez ecológica</dt>
+                    <dt class="font-semibold text-primary-700">Validez ecológica</dt>
                     <dd class="ml-4">Grado en que las demandas cognitivas de una prueba representan las demandas que el individuo enfrenta en la vida cotidiana.</dd>
                 </div>
             </dl>
 
             <!-- References -->
-            <h2 class="font-display text-3xl font-bold text-primary border-b-2 border-accent pb-2">
+            <h2 class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 Referencias
             </h2>
             
@@ -993,11 +994,11 @@
             <div class="flex flex-col md:flex-row gap-6 items-start">
                 <img src="/nicolas-nobg.webp" alt="Dr. Nicolás Genise" class="w-24 h-24 rounded-full border-4 border-accent">
                 <div>
-                    <h3 class="font-display text-2xl font-bold text-primary mb-2">Dr. Nicolás Genise</h3>
+                    <h3 class="font-display text-2xl font-bold text-primary-700 mb-2">Dr. Nicolás Genise</h3>
                     <p class="text-gray-600 mb-4">
                         Doctor en Psicología y Licenciado en Psicopedagogía. Director de la Especialización en Psicopedagogía Clínica de la Universidad de Flores (UFLO). Psicoterapeuta en Gandara Center (Boston, EE.UU.). Formación internacional en Ackerman Institute (New York). Autor de múltiples libros sobre psicoterapia infantil y adolescente.
                     </p>
-                    <a href="/#contacto" class="inline-flex items-center text-accent hover:text-primary font-medium transition-colors">
+                    <a href="/#contacto" class="inline-flex items-center text-accent hover:text-primary-700 font-medium transition-colors">
                         Contactar
                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -1009,7 +1010,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-gradient-to-br from-primary to-primary-dark text-white py-16">
+    <section class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="font-display text-3xl md:text-4xl font-bold mb-4">
                 Especialización en Psicopedagogía Clínica
