@@ -130,7 +130,7 @@
     <link rel="stylesheet" href="/dist/styles.css">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/logo_transparente.png" as="image" type="image/png">
+    <link rel="preload" href="/logo_transparente.webp" as="image" type="image/webp">
     <link rel="preload" href="/nicolas-nobg.webp" as="image" type="image/webp">
 
     <style>
@@ -614,12 +614,11 @@
                 <!-- Logo (light + dark) -->
                 <a href="index.html" class="flex items-center" aria-label="Inicio — Dr. Nicolás Genise">
                     <img
-                        src="logo_transparente.png"
+                        src="/logo_transparente.webp"
                         alt="Dr. Nicolás Genise - Psicopedagogía Clínica"
                         class="nav-logo-light h-56 md:h-64 w-auto"
                         loading="eager"
-                        fetchpriority="high"
-                    />
+                        fetchpriority="high" width="512" height="512"/>
                 </a>
                 
                 <!-- Desktop Menu -->
@@ -949,7 +948,7 @@
                         
                         <!-- Logo UFLO - Izquierda -->
                         <a href="https://www.uflouniversidad.edu.ar/carrera/especializacion-en-psicopedagogia-clinica/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                            <img src="logo-uflo.webp" alt="Universidad de Flores" class="h-20 w-auto object-contain">
+                            <img src="/logo-uflo-160.webp" alt="Universidad de Flores" class="h-20 w-auto object-contain" width="160" height="160">
                         </a>
                         
                         <!-- Texto central -->
@@ -968,17 +967,17 @@
                         
                         <!-- Logo TCM - Derecha (más grande para equilibrar) -->
                         <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="hidden md:block bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-                            <img src="logo-tcm.webp" alt="TCM Terapia Cognitiva" class="h-24 w-auto object-contain">
+                            <img src="/logo-tcm-200.webp" alt="TCM Terapia Cognitiva" class="h-24 w-auto object-contain" width="200" height="191">
                         </a>
                     </div>
                     
                     <!-- Logos para móvil (debajo del botón) -->
                     <div class="flex md:hidden justify-center items-center gap-6 mt-8">
                         <a href="https://www.uflouniversidad.edu.ar/carrera/especializacion-en-psicopedagogia-clinica/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
-                            <img src="logo-uflo.webp" alt="Universidad de Flores" class="h-14 w-auto object-contain">
+                            <img src="/logo-uflo-160.webp" alt="Universidad de Flores" class="h-14 w-auto object-contain" width="160" height="160">
                         </a>
                         <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white rounded-xl p-3 shadow-lg">
-                            <img src="logo-tcm.webp" alt="TCM Terapia Cognitiva" class="h-16 w-auto object-contain">
+                            <img src="/logo-tcm-200.webp" alt="TCM Terapia Cognitiva" class="h-16 w-auto object-contain" width="200" height="191">
                         </a>
                     </div>
                 </div>
@@ -1046,7 +1045,7 @@
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <a href="blog/evaluacion-psicopedagogica-guia-clinica.html" class="block">
                         <div class="aspect-video overflow-hidden relative">
-                            <img src="blog/images/evaluacion-psicopedagogica-thumbnail.webp" alt="Evaluación Psicopedagógica: Lo que Revela Cuando Sabemos Mirar" class="w-full h-full object-cover" width="1456" height="816">
+                            <img src="/blog/images/evaluacion-psicopedagogica-thumbnail-800w.webp" alt="Evaluación Psicopedagógica: Lo que Revela Cuando Sabemos Mirar" class="w-full h-full object-cover" width="1376" height="768">
                             <div class="absolute top-3 left-3 flex gap-2">
                                 <span class="bg-highlight text-primary-900 px-2 py-1 rounded text-xs font-semibold">NUEVO</span>
                             </div>
@@ -1085,7 +1084,7 @@
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <a href="blog/tdah-inatento-ninas-diagnostico-tardio.html" class="block">
                         <div class="aspect-video overflow-hidden relative">
-                            <img src="blog/images/tdah-inatento-ninas-thumbnail.webp" alt="TDAH Inatento en Niñas: El Diagnóstico que Llega Tarde" class="w-full h-full object-cover" width="2000" height="1117">
+                            <img src="/blog/images/tdah-inatento-ninas-thumbnail-800w.webp" alt="TDAH Inatento en Niñas: El Diagnóstico que Llega Tarde" class="w-full h-full object-cover" width="2000" height="1117">
                             <div class="absolute top-3 left-3 flex gap-2">
                                 <span class="bg-primary-600 text-white px-2 py-1 rounded text-xs font-semibold">CASO CLÍNICO</span>
                             </div>
@@ -1446,7 +1445,7 @@
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <!-- Brand -->
                 <div class="md:col-span-2">
-                    <img src="logo_fondo_oscuro.webp" alt="Dr. Nicolás Genise" class="h-56 mb-4" loading="lazy">
+                    <img src="/logo_fondo_oscuro-448.webp" alt="Dr. Nicolás Genise" class="h-56 mb-4 w-auto" loading="lazy" width="448" height="448">
                     <p class="text-sm leading-relaxed mb-4">
                         Doctor en Psicología · Director de TCM Cognitiva (Argentina)<br>
                         Psicoterapeuta en Gandara Center (Boston)<br>
