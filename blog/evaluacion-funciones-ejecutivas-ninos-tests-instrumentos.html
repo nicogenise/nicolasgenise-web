@@ -78,14 +78,59 @@
         },
         "articleSection": "Psicopedagogía Clínica",
         "keywords": ["evaluación de funciones ejecutivas", "test de funciones ejecutivas para niños", "ENFEN", "BRIEF-2", "Stroop", "Trail Making Test", "Torre de Londres", "WCST", "WISC-V", "validez ecológica", "evaluación neuropsicológica infantil"],
-        "wordCount": __WORDCOUNT__,
-        "timeRequired": "__TIMEREQ__"
+        "wordCount": 6873,
+        "timeRequired": "PT31M"
     }
     </script>
 
     <!-- FAQ Schema (las mismas preguntas se muestran en la sección "Preguntas frecuentes") -->
     <script type="application/ld+json">
-__FAQ_JSON__
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cuál es el mejor test para evaluar funciones ejecutivas en niños?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No hay uno. Las funciones ejecutivas son un conjunto de procesos relacionados pero separables, y cada prueba mide una parte, mezclada con otros procesos como el lenguaje, la percepción o la velocidad. Lo recomendable es combinar pruebas de desempeño (por ejemplo, ENFEN, Stroop, Trail Making, Torre de Londres, Wisconsin o los Dígitos del WISC-V) con una escala que completen la familia y la escuela, como el BRIEF-2, además de la entrevista y la observación, y elegir las pruebas según la pregunta clínica."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Qué mide el ENFEN y a qué edad se aplica?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El ENFEN (Evaluación Neuropsicológica de las Funciones Ejecutivas en Niños; Portellano, Martínez Arias y Zumárraga, TEA Ediciones, 2009) se aplica entre los 6 y los 12 años y lleva unos 20 minutos. Tiene cuatro pruebas: Fluidez (fonológica y semántica), Senderos (uno gris y otro a color, que obliga a alternar), Anillas (planificación) e Interferencia (control inhibitorio, al estilo del Stroop). Sus baremos se obtuvieron con 837 escolares españoles; en Colombia hay además baremos para zonas urbanas y rurales de Tunja."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿El BRIEF-2 sirve para diagnosticar TDAH?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No por sí solo. El BRIEF-2 es una escala en la que la familia, los docentes y, desde cierta edad, el propio chico califican conductas cotidianas vinculadas con las funciones ejecutivas. Una elevación describe cómo ven al chico quienes lo rodean y orienta la evaluación, pero el diagnóstico de TDAH requiere una evaluación clínica completa, con la historia del desarrollo, información de varios contextos y el descarte de otras condiciones, como problemas de sueño, ansiedad o dificultades sensoriales."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Hay tests de funciones ejecutivas para niños en PDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Los tests estandarizados son materiales con derechos de autor que se adquieren a través de sus editoriales, y un protocolo descargado sin el manual ni los baremos no permite interpretar los resultados. Existen baterías de libre uso pensadas para la investigación, como PEBL, con versiones abiertas de tareas clásicas, pero no reemplazan a una prueba con manual y baremos en un informe clínico."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Quién puede administrar las pruebas de funciones ejecutivas?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende del instrumento y del país. Las editoriales clasifican sus pruebas con letras (A, B o C) según la formación que exigen para venderlas: Hogrefe TEA, por ejemplo, ubica el BRIEF-2 y el Stroop en el nivel B, y el ENFEN y el Wisconsin en el C. Pero quién puede administrar e interpretar cada test lo define también la regulación profesional de cada país o jurisdicción. En el caso del BRIEF-2, el manual admite que la aplicación la haga personal formado y reserva la interpretación a profesionales titulados con formación específica."
+                }
+            }
+        ]
+    }
     </script>
 
     <!-- Breadcrumb Schema -->
@@ -101,10 +146,213 @@ __FAQ_JSON__
     }
     </script>
 
-__HEAD_REST__
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (compiled). El parámetro ?v= evita que un navegador con la versión vieja en caché la reutilice. -->
+    <link rel="stylesheet" href="/dist/styles.css?v=20261104">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo_transparente.webp">
+
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            color: #4a5568;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .prose p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+        .prose h2 {
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .prose h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .prose a:not(.no-underline) {
+            color: #1B4F72;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .info-box {
+            background: #F0F7FC;
+            border-left: 4px solid #48c9b0;
+        }
+        .warning-box {
+            background: #FEF3C7;
+            border-left: 4px solid #B45309;
+        }
+        .case-box {
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 4px solid #2874A6;
+        }
+        .fiction-notice {
+            font-size: 0.875rem;
+            color: #5A6B7F;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+        .activity-list li {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .activity-list li::before {
+            content: "\25B8";
+            position: absolute;
+            left: 0;
+            color: #2874A6;
+            font-weight: bold;
+        }
+        .reference-item {
+            text-indent: -2rem;
+            padding-left: 2rem;
+        }
+        .toc-link {
+            transition: all 0.2s ease;
+        }
+        .toc-link:hover {
+            padding-left: 0.5rem;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th {
+            background-color: #1B4F72;
+            color: white;
+        }
+        td, th {
+            border: 1px solid #e2e8f0;
+            padding: 0.75rem;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-backdrop { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); z-index: 9998; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; }
+        .mobile-menu-backdrop.active { opacity: 1; visibility: visible; }
+
+        /* Dark Mode */
+        .dark body { background-color: #0B1929; color: #E0E7EF; }
+        .dark header { background: linear-gradient(135deg, #0E2F44 0%, #071B28 100%) !important; }
+        .dark nav { background-color: rgba(11, 25, 41, 0.95) !important; border-color: rgba(30, 58, 95, 0.5) !important; }
+        .dark nav a { color: #8892A4; }
+        .dark nav a:hover { color: #5DADE2; }
+        .dark #dark-mode-toggle { color: #8892A4; }
+        .dark #dark-mode-toggle:hover { color: #5DADE2; background-color: rgba(93, 173, 226, 0.1); }
+        .dark .nav-logo-light { filter: brightness(0) invert(1); }
+        .dark .bg-white { background-color: #112240 !important; }
+        .dark .bg-gray-50 { background-color: #0B1929 !important; }
+        .dark .text-gray-800, .dark .text-gray-700, .dark .text-gray-900, .dark .text-gray-600 { color: #E0E7EF !important; }
+        .dark .text-gray-500, .dark .text-gray-400 { color: #8892A4 !important; }
+        .dark .text-primary-700, .dark .text-primary-600 { color: #5DADE2 !important; }
+        .dark .border-gray-100, .dark .border-gray-200 { border-color: #1E3A5F !important; }
+        .dark .shadow-sm { box-shadow: 0 4px 15px rgba(0,0,0,0.3) !important; }
+        .dark .prose { color: #C8D6E5; }
+        .dark .prose h2, .dark .prose h3, .dark .prose h4 { color: #E0E7EF !important; }
+        .dark .prose a:not(.no-underline) { color: #5DADE2; }
+        .dark .prose strong { color: #E0E7EF; }
+        .dark footer { background-color: #071B28 !important; }
+        .dark #mobile-menu { background-color: #112240 !important; }
+        .dark #mobile-menu a { color: #8892A4; }
+        .dark #mobile-menu a:hover { color: #5DADE2; }
+        .dark input, .dark textarea { background-color: #0E2F44 !important; border-color: #1E3A5F !important; color: #E0E7EF !important; }
+        .dark .info-box { background: #0E2F44 !important; }
+        .dark .warning-box { background: #2a2410 !important; border-left-color: #d4a017 !important; }
+        .dark .warning-box h3, .dark .warning-box p, .dark .warning-box li { color: #E0E7EF !important; }
+        .dark .case-box { background: #112240 !important; border-color: #1E3A5F !important; border-left-color: #5DADE2 !important; }
+        .dark .case-box h3, .dark .case-box p, .dark .case-box li { color: #E0E7EF !important; }
+        .dark .fiction-notice { color: #8892A4; }
+        .dark table th { background-color: #0E2F44; }
+        .dark table td, .dark table th { border-color: #1E3A5F; }
+        .dark table tr:nth-child(even) { background-color: #0E2F44; }
+        .dark .bg-blue-50, .dark .bg-green-50, .dark .bg-slate-50 { background-color: #0E2F44 !important; }
+        .dark .reference-item { color: #8892A4 !important; }
+        .dark dt { color: #5DADE2 !important; }
+        .dark dd { color: #C8D6E5 !important; }
+
+        /* Propios de esta nota */
+        #mobile-menu { background-color: #ffffff; }
+        .table-scroll:focus-visible { outline: 3px solid #2874A6; outline-offset: 2px; }
+        .table-note { font-size: 0.8125rem; color: #5A6B7F; }
+        .instrument-facts { border-top: 1px solid #E2E8F0; padding-top: 0.75rem; }
+        .instrument-facts li { padding-left: 1.5rem; }
+        .reference-item { overflow-wrap: anywhere; }
+        tbody th { background-color: transparent; color: #1B4F72; font-family: 'Source Sans 3', sans-serif; }
+        /* La regla «.dark nav a» de la plantilla también pintaba de gris el índice (es un <nav>) y el botón naranja
+           «Contacto»: 4,43:1 y 1,46:1 en modo oscuro. Acá se limita a los enlaces de texto del menú principal. */
+        .dark nav a { color: inherit; }
+        .dark nav[aria-label="Navegación principal"] a:not(.bg-highlight) { color: #8892A4; }
+        .dark nav[aria-label="Navegación principal"] a:not(.bg-highlight):hover { color: #5DADE2; }
+        .dark nav[aria-labelledby="toc-title"] a { color: #E0E7EF; }
+        .dark nav[aria-label="Ruta de navegación"] { background-color: transparent !important; border-color: transparent !important; }
+        .dark nav[aria-label="Ruta de navegación"] a { color: #bfdbfe; }
+        .dark nav a.bg-highlight, .dark #mobile-menu a.bg-highlight { color: #071B28; }
+        .dark .table-note { color: #8892A4; }
+        .dark .instrument-facts { border-top-color: #1E3A5F; }
+        .dark table tbody th { background-color: transparent; color: #5DADE2; }
+        .dark .table-scroll:focus-visible { outline-color: #5DADE2; }
+    </style>
 </head>
 <body class="bg-white">
-__NAV__
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-highlight focus:text-primary-900 focus:px-4 focus:py-2 focus:rounded-lg focus:font-semibold">Ir al contenido principal</a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100 shadow-sm" aria-label="Navegación principal">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="/" class="flex items-center" aria-label="Inicio — Dr. Nicolás Genise">
+                    <img src="/logo_transparente.webp" alt="Dr. Nicolás Genise" width="2000" height="2000" class="nav-logo-light h-40 md:h-48 w-auto" loading="eager">
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Inicio</a>
+                    <a href="/blog/" class="text-primary-700 font-semibold" aria-current="page">Blog</a>
+                    <a href="../faq.html" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">FAQ</a>
+                    <button id="dark-mode-toggle" class="p-2 rounded-lg text-gray-500 hover:text-primary-600 hover:bg-gray-100 transition-all" title="Cambiar tema" aria-label="Cambiar modo oscuro">
+                        <svg id="sun-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                        <svg id="moon-icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    </button>
+                    <a href="/#contacto" class="bg-highlight text-primary-900 px-5 py-2 rounded-lg hover:bg-highlight/90 transition-colors font-semibold shadow-md">Contacto</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-600" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (inert mientras está cerrado: no recibe foco ni lo lee el lector de pantalla) -->
+    <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" inert>
+        <div class="p-6">
+            <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600" aria-label="Cerrar menú">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="mt-8 flex flex-col space-y-4">
+                <a href="/" class="text-gray-600 hover:text-primary-600 py-2 font-medium">Inicio</a>
+                <a href="/blog/" class="text-primary-700 py-2 font-semibold" aria-current="page">Blog</a>
+                <a href="../faq.html" class="text-gray-600 hover:text-primary-600 py-2 font-medium">FAQ</a>
+                <a href="/#contacto" class="bg-highlight text-primary-900 px-4 py-2 rounded-lg text-center font-semibold mt-2">Contacto</a>
+                <hr class="border-gray-200 my-2">
+                <button id="mobile-dark-toggle" class="flex items-center gap-3 py-2 text-gray-600 hover:text-primary-600 font-medium">
+                    <svg class="w-5 h-5 mobile-moon-icon" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg>
+                    <svg class="w-5 h-5 mobile-sun-icon hidden" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd"/></svg>
+                    <span class="mobile-theme-label">Modo oscuro</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- Article Header -->
     <header class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white pt-24 pb-16 md:pt-32 md:pb-24">
@@ -139,7 +387,7 @@ __NAV__
                 <span aria-hidden="true">•</span>
                 <time datetime="2026-11-04">Noviembre 2026</time>
                 <span aria-hidden="true">•</span>
-                <span>~__MINUTES__ min de lectura</span>
+                <span>~31 min de lectura</span>
             </div>
         </div>
     </header>
@@ -153,8 +401,8 @@ __NAV__
             <ul class="space-y-2 text-gray-700">
                 <li class="toc-link"><a href="#un-solo-test" class="hover:underline">Por qué no alcanza con un solo test</a></li>
                 <li class="toc-link"><a href="#desempeno-escalas" class="hover:underline">Pruebas de desempeño y escalas: qué mide cada familia</a></li>
-                <li class="toc-link"><a href="#instrumentos" class="hover:underline">Qué mide cada instrumento, para qué edad y con qué baremos</a></li>
                 <li class="toc-link"><a href="#tabla" class="hover:underline">Tabla comparativa de tests de funciones ejecutivas</a></li>
+                <li class="toc-link"><a href="#instrumentos" class="hover:underline">Qué mide cada instrumento, para qué edad y con qué baremos</a></li>
                 <li class="toc-link"><a href="#integrar" class="hover:underline">Cómo integrar los resultados con la entrevista, la observación y la escuela</a></li>
                 <li class="toc-link"><a href="#errores" class="hover:underline">Errores frecuentes al interpretar</a></li>
                 <li class="toc-link"><a href="#preguntas" class="hover:underline">Preguntas frecuentes</a></li>
@@ -221,7 +469,7 @@ __NAV__
             </p>
 
             <p>
-                Uno esperaría que ambas familias coincidan. No pasa. Toplak, West y Stanovich (2013) revisaron 20 estudios —13 con niños y 7 con adultos— que habían aplicado los dos tipos de medida a las mismas personas. De las 286 correlaciones que informaban, sólo el 24 % fue estadísticamente significativo, y la correlación mediana fue de .19. Una correlación indica cuánto se mueven juntas dos medidas, de 0 (nada) a 1 (por completo); .19 es una relación débil: saber cómo le fue a un chico en las pruebas dice poco sobre cómo lo califican sus padres o sus docentes. Los autores concluyen que cada familia capta un nivel distinto: las pruebas, la eficiencia de los procesos cognitivos; las escalas, el éxito para perseguir metas en la vida real.
+                Uno esperaría que ambas familias coincidan. No pasa. Toplak, West y Stanovich (2013) revisaron 20 estudios —13 con niños y 7 con adultos— que habían aplicado los dos tipos de medida a las mismas personas. De las 286 correlaciones que informaban, sólo el 24 % fue estadísticamente significativo, y la correlación mediana fue de 0,19. Una correlación indica cuánto se mueven juntas dos medidas, de 0 (nada) a 1 (por completo); 0,19 es una relación débil: saber cómo le fue a un chico en las pruebas dice poco sobre cómo lo califican sus padres o sus docentes. Los autores concluyen que cada familia capta un nivel distinto: las pruebas, la eficiencia de los procesos cognitivos; las escalas, el éxito para perseguir metas en la vida real.
             </p>
 
             <h3 class="font-display text-2xl font-semibold text-primary-600">El problema de la validez ecológica</h3>
@@ -237,7 +485,7 @@ __NAV__
             <h3 class="font-display text-2xl font-semibold text-primary-600">¿Entonces las escalas son más fieles a la realidad?</h3>
 
             <p>
-                Tampoco conviene idealizarlas. En un estudio longitudinal —que sigue a las mismas personas durante años— con chicos hiperactivos evaluados otra vez a los 27 años en promedio, los autoinformes de funcionamiento ejecutivo predijeron las dificultades laborales mejor que los tests (Barkley &amp; Fischer, 2011). Con 136 chicos de 8 a 13 años —muchos de ellos con TDAH u otras dificultades—, en cambio, Soto et al. (2020) encontraron que las pruebas predecían el rendimiento académico mejor que las escalas, y que la asociación entre ambos métodos era modesta (r = .30). Además, una escala recoge la mirada de quien la completa, con sus expectativas y su umbral de tolerancia, y no sólo la conducta del chico (heurístico clínico).
+                Tampoco conviene idealizarlas. En un estudio longitudinal —que sigue a las mismas personas durante años— con chicos hiperactivos evaluados otra vez a los 27 años en promedio, los autoinformes de funcionamiento ejecutivo predijeron las dificultades laborales mejor que los tests (Barkley &amp; Fischer, 2011). Con 136 chicos de 8 a 13 años —muchos de ellos con TDAH u otras dificultades—, en cambio, Soto et al. (2020) encontraron que las pruebas predecían el rendimiento académico mejor que las escalas, y que la asociación entre ambos métodos era modesta (r = 0,30). Además, una escala recoge la mirada de quien la completa, con sus expectativas y su umbral de tolerancia, y no sólo la conducta del chico (heurístico clínico).
             </p>
 
             <p>
@@ -253,9 +501,316 @@ __NAV__
                 </ul>
             </div>
 
-<!-- __INSTRUMENTOS__ -->
+            <!-- Section 4 -->
+            <h2 id="tabla" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
+                3. Los tests de funciones ejecutivas, uno al lado del otro
+            </h2>
 
-<!-- __TABLA__ -->
+            <p>
+                Antes del detalle, el panorama. La tabla reúne los instrumentos que se describen uno por uno en la sección siguiente, y cada fila indica de dónde sale el dato: el manual o el estudio citado y la ficha pública del editor, consultadas en noviembre de 2026. En el celular, deslizá la tabla hacia los costados para ver todas las columnas.
+            </p>
+
+            <div class="table-scroll my-8 overflow-x-auto" role="region" aria-labelledby="tabla-caption" tabindex="0">
+                <table class="min-w-full text-sm" style="min-width: 980px;">
+                    <caption id="tabla-caption" class="sr-only">Comparación de instrumentos para evaluar funciones ejecutivas de 6 a 12 años: función, edad, tiempo, nivel del editor, baremos y fuente</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-left font-display">Instrumento</th>
+                            <th scope="col" class="text-left font-display">Qué mide</th>
+                            <th scope="col" class="text-left font-display">Edad</th>
+                            <th scope="col" class="text-left font-display">Tiempo</th>
+                            <th scope="col" class="text-left font-display">Nivel del editor*</th>
+                            <th scope="col" class="text-left font-display">Baremos</th>
+                            <th scope="col" class="text-left font-display">Fuente</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">ENFEN</th>
+                            <td>Fluidez, alternancia, planificación e interferencia</td>
+                            <td>6-12 años</td>
+                            <td>~20 min</td>
+                            <td>C (Hogrefe TEA)</td>
+                            <td>España (837 escolares); Colombia, Tunja (367)</td>
+                            <td>Portellano et al. (2009); Rodríguez Barreto et al. (2018); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/ENFEN--EVALUACION-NEUROPSICOLOGICA-DE-LAS-FUNCIONES-EJECUTIVAS-EN-NINOS" target="_blank" rel="noopener">ficha del ENFEN</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">BRIEF-2 (Familia y Escuela)</th>
+                            <td>Conducta ejecutiva en la vida diaria: 9 escalas, 3 índices y un índice global</td>
+                            <td>5-18 años</td>
+                            <td>~10 min</td>
+                            <td>B (Hogrefe TEA); interpreta un profesional titulado</td>
+                            <td>España (1.756 familia; 1.633 escuela)</td>
+                            <td>Gioia et al. (2017); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/brief-2-evaluacion-conductual-de-la-funcion-ejecutiva-2" target="_blank" rel="noopener">ficha del BRIEF-2</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Stroop (edición revisada)</th>
+                            <td>Control de la interferencia</td>
+                            <td>6-85 años</td>
+                            <td>~5 min</td>
+                            <td>B (Hogrefe TEA)</td>
+                            <td>España (escolares y adultos); 9 países de América Latina y España, 6-17 años (4.373)</td>
+                            <td>Golden (2020); Rivera et al. (2017); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/stroop-test-de-colores-y-palabras-edicion-revisada" target="_blank" rel="noopener">ficha del Stroop</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Trail Making Test (A y B)</th>
+                            <td>Velocidad y exploración visual (A); alternancia (B)</td>
+                            <td>6-17 años (normas pediátricas)</td>
+                            <td>Pocos minutos<sup>†</sup></td>
+                            <td>Sin editor único</td>
+                            <td>9 países de América Latina y España (3.337)</td>
+                            <td>Reitan (1958); Arango-Lasprilla, Rivera, Ramos-Usuga et al. (2017)</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Children's Color Trails Test</th>
+                            <td>Alternancia sin depender de las letras</td>
+                            <td>8-16 años</td>
+                            <td>10-14 min</td>
+                            <td>C (PAR)</td>
+                            <td>Muestra del editor: 678 chicos sanos (país no verificado)</td>
+                            <td><a href="https://www.parinc.com/products/CCTT" target="_blank" rel="noopener">ficha del CCTT (PAR)</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Torre de Londres (TOL-DX, 2.ª ed.)</th>
+                            <td>Planificación</td>
+                            <td>7-15 años (forma infantil)</td>
+                            <td>10-15 min</td>
+                            <td>C (MHS)</td>
+                            <td>América del Norte (~1.000, de 7 a 80 años); sin baremos en español identificados</td>
+                            <td>Culbertson &amp; Zillmer (2005); <a href="https://storefront.mhs.com/collections/toldx-2nd-ed" target="_blank" rel="noopener">ficha de la TOL-DX (MHS)</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Dígitos y Span de dibujos (WISC-V)</th>
+                            <td>Memoria de trabajo auditiva y visual</td>
+                            <td>6-16:11 años</td>
+                            <td>65 min la batería principal</td>
+                            <td>C (Pearson España)</td>
+                            <td>España; Chile; México (edición 2024, muestra no verificada). Argentina: sin WISC-V local; WISC-IV sí</td>
+                            <td>Wechsler (2015); Rosas et al. (2022); Taborda et al. (2011); <a href="https://www.pearsonclinical.es/wisc-v-escala-de-inteligencia-de-wechsler-para-ninos-v" target="_blank" rel="noopener">ficha del WISC-V (Pearson)</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">Wisconsin (WCST)</th>
+                            <td>Flexibilidad, formación de categorías y perseveración</td>
+                            <td>6½-89 años</td>
+                            <td>Variable</td>
+                            <td>C (Hogrefe TEA)</td>
+                            <td>Argentina, 7-12 años (359); M-WCST: 9 países de América Latina y España (4.373); población de los baremos de TEA no verificada</td>
+                            <td>Heaton et al. (1993); Krumm &amp; Arán Filippetti (2024); Arango-Lasprilla, Rivera, Nicholls et al. (2017); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/wcst-test-de-clasificacion-de-tarjetas-de-wisconsin" target="_blank" rel="noopener">ficha del WCST</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">CUMANES</th>
+                            <td>Madurez neuropsicológica, con una subescala ejecutiva</td>
+                            <td>7-11 años</td>
+                            <td>40-50 min</td>
+                            <td>C (Hogrefe TEA)</td>
+                            <td>España (~800)</td>
+                            <td>Portellano et al. (2012); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/CUMANES-Cuestionario-de-Madurez-Neuropsicologica-para-Escolares" target="_blank" rel="noopener">ficha del CUMANES</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">CUMANIN-2</th>
+                            <td>Madurez neuropsicológica</td>
+                            <td>3:0-6:11 años</td>
+                            <td>~50 min</td>
+                            <td>C (Hogrefe TEA)</td>
+                            <td>Más de 1.100 casos</td>
+                            <td>Portellano et al. (2021); <a href="https://www.hogrefe-tea.com/public/catalogo/producto/CUMANIN-2-Cuestionario-de-Madurez-Neuropsicologica-Infantil-2" target="_blank" rel="noopener">ficha del CUMANIN-2</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">ENI-2 (dominio ejecutivo)</th>
+                            <td>Fluidez, flexibilidad y planificación</td>
+                            <td>5-16 años</td>
+                            <td>~3 h la batería completa</td>
+                            <td>No visible en la ficha pública</td>
+                            <td>Colombia y México (1.ª edición); 2.ª edición no verificada</td>
+                            <td>Matute et al. (2013); Ardila et al. (2005); <a href="https://store.hogrefe.mx/eni-2.html" target="_blank" rel="noopener">ficha de la ENI-2 (Hogrefe México)</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">BANFE-3</th>
+                            <td>15 procesos ejecutivos</td>
+                            <td>6-90 años</td>
+                            <td>50-60 min</td>
+                            <td>B (Hogrefe México)</td>
+                            <td>Desarrollada para población hispanohablante; muestra no verificada</td>
+                            <td>Flores Lázaro et al. (2020); <a href="https://store.hogrefe.mx/122-100-banfe-3.html" target="_blank" rel="noopener">ficha de la BANFE-3 (Hogrefe México)</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="table-note italic">
+                * Letra con que el editor clasifica la prueba según la formación que exige para venderla; quién puede administrarla e interpretarla depende también de la regulación profesional de cada país. † Heurístico clínico: el editor no informa un tiempo. «No verificado» indica que no pudimos confirmar el dato en una fuente primaria.
+            </p>
+
+            <!-- Section 3 -->
+            <h2 id="instrumentos" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
+                4. ¿Qué mide cada instrumento?
+            </h2>
+
+            <p>
+                Estos son los instrumentos que conviene conocer para evaluar funciones ejecutivas entre los 6 y los 12 años. Para cada uno van cinco datos: qué mide, para qué edad está pensado, cuánto tarda, quién lo administra y con qué baremos se interpreta. Sobre el «quién», una aclaración que vale para toda la lista: las editoriales clasifican sus pruebas con letras —A, B o C— según la formación que exigen para venderlas, pero qué profesión puede administrar e interpretar cada test lo define también la regulación de cada país y de cada jurisdicción. La ficha del editor no reemplaza a esa normativa.
+            </p>
+
+            <p>
+                Y sobre los baremos, otra que conviene tener presente desde el principio. La mayoría de las pruebas comerciales que circulan en la región se tipificaron en España. Entre las de esta lista, los únicos baremos argentinos publicados que pudimos identificar son los del Wisconsin (Krumm &amp; Arán Filippetti, 2024) y los del WISC-IV, la versión anterior del WISC-V. México, Chile y Colombia tienen algunos más.
+            </p>
+
+            <!-- 3.1 ENFEN -->
+            <h3 id="enfen" class="font-display text-2xl font-semibold text-primary-600">4.1 ENFEN: Evaluación Neuropsicológica de las Funciones Ejecutivas en Niños</h3>
+
+            <p>
+                Es una batería breve, desarrollada en España y en español por Portellano, Martínez Arias y Zumárraga (2009), que reúne cuatro pruebas en una sola sesión. Su atractivo clínico está en que cada prueba apunta a un componente distinto, de modo que el perfil se puede leer como un conjunto y no sólo como un puntaje total.
+            </p>
+
+            <ul class="activity-list space-y-2 my-4">
+                <li><strong>Fluidez:</strong> fonológica (decir palabras que empiecen con una letra) y semántica (palabras de una categoría). Exige iniciar, buscar y sostener una estrategia de recuperación.</li>
+                <li><strong>Senderos:</strong> un sendero gris, de secuencia simple, y otro a color, que obliga a alternar. Es la tarea más parecida al Trail Making.</li>
+                <li><strong>Anillas:</strong> reproducir un modelo moviendo anillas entre varillas, con la menor cantidad de movimientos posible. Pide anticipar y planificar, como las torres.</li>
+                <li><strong>Interferencia:</strong> nombrar el color de la tinta en palabras de colores escritas en un color que no coincide, al estilo del Stroop.</li>
+            </ul>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edad:</strong> de 6 a 12 años.</li>
+                <li><strong>Tiempo:</strong> variable; unos 20 minutos, según el editor.</li>
+                <li><strong>Quién lo administra:</strong> nivel C en el catálogo de Hogrefe TEA. El manual lo destina a «psicólogos y otros profesionales cualificados».</li>
+                <li><strong>Baremos:</strong> España, con 837 escolares de 6 a 12 años, en decatipos por edad. En Colombia hay baremos para zonas urbanas y rurales de Tunja, obtenidos con 367 chicos de la misma franja (Rodríguez Barreto et al., 2018). No identificamos baremos argentinos publicados.</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> la prueba de Interferencia supone que el chico lee las palabras de manera automática. En un nene de 6 años, o en un chico con una <a href="dislexia-evaluacion-intervencion-psicopedagogia.html">dislexia</a>, la lectura todavía no «interfiere» como en un lector fluido, y un buen resultado puede no significar lo mismo (heurístico clínico). Un aviso para no confundirse de catálogo: el TESEN, de los mismos autores y también basado en senderos, está pensado para mayores de 16 años.
+            </p>
+
+            <!-- 3.2 BRIEF-2 -->
+            <h3 id="brief-2" class="font-display text-2xl font-semibold text-primary-600">4.2 BRIEF-2: Evaluación Conductual de la Función Ejecutiva</h3>
+
+            <p>
+                Es la única escala de calificación de esta lista. La crearon Gioia, Isquith, Guy y Kenworthy (2015) en Estados Unidos, y su adaptación española es de 2017. No le pide nada al chico: le pregunta a la familia y a los docentes con qué frecuencia aparecen 63 conductas, con tres opciones de respuesta (nunca, a veces, frecuentemente).
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Qué mide:</strong> nueve escalas clínicas —Inhibición, Supervisión de sí mismo, Flexibilidad, Control emocional, Iniciativa, Memoria de trabajo, Planificación y organización, Supervisión de la tarea y Organización de materiales— agrupadas en índices de regulación conductual, emocional y cognitiva, más un índice global de función ejecutiva. Incluye escalas de validez para detectar patrones de respuesta poco fiables.</li>
+                <li><strong>Formas:</strong> Familia y Escuela, de 63 ítems cada una; 57 son comunes a ambas. La edición española no incluye el autoinforme que la versión original ofrece de 11 a 18 años.</li>
+                <li><strong>Edad:</strong> de 5 a 18 años.</li>
+                <li><strong>Tiempo:</strong> unos 10 minutos por cuestionario.</li>
+                <li><strong>Quién lo administra:</strong> nivel B en el catálogo de Hogrefe TEA. El manual admite que la aplicación y la corrección las haga personal formado, pero reserva la interpretación a profesionales titulados con formación específica en funciones ejecutivas.</li>
+                <li><strong>Baremos:</strong> España, en puntuaciones T diferenciadas por sexo, edad e informante, con muestras de tipificación de 1.756 cuestionarios de familia y 1.633 de escuela. No identificamos baremos latinoamericanos publicados.</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> lo más informativo del BRIEF-2 suele estar en la comparación entre informantes. Si la maestra ve dificultades que la familia no ve, o al revés, la pregunta clínica es qué tiene ese contexto que no tiene el otro (heurístico clínico).
+            </p>
+
+            <!-- 3.3 Stroop -->
+            <h3 id="stroop" class="font-display text-2xl font-semibold text-primary-600">4.3 Stroop: Test de Colores y Palabras</h3>
+
+            <p>
+                El efecto que le da nombre lo describió Stroop (1935): cuesta más nombrar el color de la tinta cuando la palabra escrita nombra otro color. La versión de Golden, que es la que edita TEA, tiene tres láminas de 45 segundos —leer palabras, nombrar colores y nombrar el color de la tinta en palabras incongruentes— y de la comparación entre ellas surge un índice de interferencia. Mide, sobre todo, la capacidad de frenar una respuesta automática para dar otra.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edad:</strong> de 6 a 85 años en la edición revisada de TEA (Golden, 2020).</li>
+                <li><strong>Tiempo:</strong> unos 5 minutos.</li>
+                <li><strong>Quién lo administra:</strong> nivel B en el catálogo de Hogrefe TEA.</li>
+                <li><strong>Baremos:</strong> España, para escolares y adultos; los baremos mexicanos de esa edición cubren de 15 a 89 años, así que no sirven para chicos. Para 6 a 17 años hay normas pediátricas de nueve países de América Latina —Chile, Cuba, Ecuador, Guatemala, Honduras, México, Paraguay, Perú y Puerto Rico— y de España, obtenidas con 4.373 chicos sanos (Rivera et al., 2017). Argentina no está incluida.</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> antes de interpretar, asegurate de que el chico distingue bien los colores y de que lee con cierta fluidez. Sin esas dos condiciones, el índice de interferencia pierde sentido (heurístico clínico).
+            </p>
+
+            <!-- 3.4 TMT -->
+            <h3 id="tmt" class="font-display text-2xl font-semibold text-primary-600">4.4 Trail Making Test y sus versiones para chicos</h3>
+
+            <p>
+                Es una prueba clásica de la neuropsicología, cuya validez estudió Reitan (1958). En la parte A el chico une números en orden; en la parte B alterna números y letras (1-A-2-B…). La parte A depende sobre todo de la velocidad y de la exploración visual; la B agrega la alternancia, que es lo que interesa desde lo ejecutivo. Por eso la comparación entre ambas dice más que cualquiera de las dos por separado.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edad:</strong> las normas pediátricas en español cubren de 6 a 17 años.</li>
+                <li><strong>Tiempo:</strong> breve; en general, pocos minutos (heurístico clínico).</li>
+                <li><strong>Quién lo administra:</strong> no tiene un editor único ni un nivel de compra asignado; requiere formación en evaluación (heurístico clínico).</li>
+                <li><strong>Baremos:</strong> normas para los mismos nueve países de América Latina y España del estudio anterior, con 3.337 chicos de 6 a 17 años y ajustadas por edad, sexo y nivel educativo de los padres (Arango-Lasprilla, Rivera, Ramos-Usuga et al., 2017). Argentina no está incluida.</li>
+            </ul>
+
+            <p>
+                <strong>Versiones para chicos:</strong> la parte B supone conocer bien el abecedario, algo que no se puede dar por sentado a los 6 o 7 años ni en un chico con dificultades de lectura. Hay dos alternativas. Los Senderos del ENFEN cumplen la misma función con baremos españoles. El Children's Color Trails Test reemplaza las letras por colores y puede administrarse con consignas no verbales; está pensado para chicos de 8 a 16 años, lleva entre 10 y 14 minutos y su editor estadounidense lo clasifica en el nivel C, con una muestra normativa de 678 chicos sanos.
+            </p>
+
+            <!-- 3.5 Torres -->
+            <h3 id="torres" class="font-display text-2xl font-semibold text-primary-600">4.5 Torre de Londres y Torre de Hanoi</h3>
+
+            <p>
+                Shallice (1982) diseñó la Torre de Londres para estudiar las dificultades de planificación: hay que pasar unas bolas de colores entre varillas de distinta altura hasta reproducir un modelo, con un número limitado de movimientos. La Torre de Hanoi plantea un problema parecido con discos de distintos tamaños y una regla adicional: nunca un disco grande sobre uno chico. Las dos piden algo que el chico no puede resolver por ensayo y error rápido: anticipar varios pasos antes de mover. Krikorian, Bartok y Gay (1994) propusieron un procedimiento estándar de la Torre de Londres y lo aplicaron a 205 escolares: los puntajes aumentaban con la edad de manera lineal, y los de sexto a octavo grado ya no se diferenciaban de los de adultos jóvenes.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edición comercial con baremos infantiles:</strong> la Tower of London–Drexel University, 2.ª edición (TOL-DX; Culbertson &amp; Zillmer, 2005), con una forma para chicos de 7 a 15 años.</li>
+                <li><strong>Tiempo:</strong> de 10 a 15 minutos, según el editor.</li>
+                <li><strong>Quién lo administra:</strong> nivel C del editor (MHS).</li>
+                <li><strong>Baremos:</strong> unas 1.000 personas de 7 a 80 años de América del Norte. No encontramos una edición en español con baremos propios, ni una edición comercial de la Torre de Hanoi con baremos infantiles en español.</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> en las baterías en español, la planificación de tipo «torre» aparece dentro de otras pruebas: las Anillas del ENFEN y la Pirámide de México de la ENI-2. Más allá del puntaje, mirá cuánto tiempo se toma el chico antes del primer movimiento. El que empieza a mover sin mirar el modelo y el que se queda paralizado obtienen a veces el mismo resultado por caminos opuestos (heurístico clínico).
+            </p>
+
+            <!-- 3.6 WISC-V -->
+            <h3 id="wisc-v" class="font-display text-2xl font-semibold text-primary-600">4.6 Dígitos y Span de dibujos del WISC-V</h3>
+
+            <p>
+                No son pruebas ejecutivas en sentido estricto, sino las dos subpruebas principales del Índice de Memoria de Trabajo del WISC-V. Dígitos tiene tres tareas: repetir series en el mismo orden, en orden inverso y ordenadas de menor a mayor. La primera pide sobre todo retener; las otras dos, manipular lo que se retiene. Span de dibujos hace un trabajo parecido por la vía visual: el chico ve una serie de imágenes y tiene que reconocerlas en el orden en que aparecieron. En la edición española, Letras y números es una prueba opcional.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edad:</strong> de 6 a 16 años y 11 meses.</li>
+                <li><strong>Tiempo:</strong> el editor estima 65 minutos para las 10 pruebas principales de la batería completa.</li>
+                <li><strong>Quién lo administra:</strong> clasificación C en el catálogo de Pearson España.</li>
+                <li><strong>Baremos:</strong> España (Wechsler, 2015). Chile tiene una estandarización propia (Rosas et al., 2022). En México se comercializa una edición de 2024, pero no pudimos verificar su muestra normativa. Para Argentina no identificamos un WISC-V con baremos locales: la última versión adaptada que encontramos es el WISC-IV, con una muestra de Buenos Aires y el conurbano (Taborda et al., 2011).</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> dos comparaciones valen más que el índice. La primera, entre el orden directo y los órdenes inverso y creciente. La segunda, entre Dígitos, que entra por el oído, y Span de dibujos, que entra por la vista. Un chico que falla en lo auditivo y rinde bien en lo visual merece, antes que un diagnóstico, una audiometría (heurístico clínico).
+            </p>
+
+            <!-- 3.7 WCST -->
+            <h3 id="wcst" class="font-display text-2xl font-semibold text-primary-600">4.7 Test de Clasificación de Tarjetas de Wisconsin (WCST)</h3>
+
+            <p>
+                El chico tiene que descubrir con qué criterio clasificar unas tarjetas —color, forma o número— a partir de una sola pista: el evaluador le dice si cada respuesta es correcta o incorrecta. Cuando lo descubre, el criterio cambia sin aviso. El editor lo describe como una medida de razonamiento abstracto, formación de categorías, solución de problemas y perseveración, que es la tendencia a seguir usando una regla que ya no funciona.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>Edad:</strong> de 6 años y medio a 89 años en la edición de TEA, adaptada por M. V. de la Cruz a partir del manual de Heaton et al. (1993).</li>
+                <li><strong>Tiempo:</strong> variable, según el desempeño.</li>
+                <li><strong>Quién lo administra:</strong> nivel C en el catálogo de Hogrefe TEA.</li>
+                <li><strong>Baremos:</strong> la ficha de TEA no aclara de qué población son sus baremos y no pudimos verificarlo. En Argentina hay baremos para chicos de 7 a 12 años, en versión manual y computarizada, obtenidos con 359 chicos (Krumm &amp; Arán Filippetti, 2024). La versión modificada y más breve (M-WCST) tiene normas pediátricas de los nueve países de América Latina y España, con 4.373 chicos de 6 a 17 años (Arango-Lasprilla, Rivera, Nicholls et al., 2017).</li>
+            </ul>
+
+            <p>
+                <strong>Para tener en cuenta:</strong> Krumm y Arán Filippetti (2024) encontraron que la versión manual y la computarizada no deberían considerarse intercambiables en chicos. Si usás una, comparala con los baremos de esa misma versión.
+            </p>
+
+            <!-- 3.8 CUMANIN / CUMANES -->
+            <h3 id="cumanes" class="font-display text-2xl font-semibold text-primary-600">4.8 CUMANIN y CUMANES: madurez neuropsicológica</h3>
+
+            <p>
+                Son cuestionarios de madurez neuropsicológica: baterías amplias que recorren lenguaje, percepción, memoria y otras áreas para trazar un mapa general del desarrollo. Incluyen algo de funcionamiento ejecutivo, pero no lo evalúan en profundidad, y conviene usarlos para lo que son: una primera mirada de conjunto.
+            </p>
+
+            <ul class="activity-list instrument-facts space-y-1 my-4 text-base">
+                <li><strong>CUMANES:</strong> de 7 a 11 años; entre 40 y 50 minutos; nivel C en Hogrefe TEA. Tiene 12 subescalas agrupadas en seis áreas: Lenguaje, Visopercepción, Funcionamiento ejecutivo, Memoria, Lateralidad y Ritmo. La subescala ejecutiva consiste en unir números del 1 al 20 alternando dos colores, y se puntúa por tiempo y errores. Baremos españoles con cerca de 800 casos (Portellano et al., 2012); la edición revisada de 2022 actualizó el sistema de corrección y mantuvo las características esenciales de la primera.</li>
+                <li><strong>CUMANIN-2:</strong> de 3 años a 6 años y 11 meses; unos 50 minutos; nivel C. Es la versión que hoy ofrece el editor, sucesora del CUMANIN del año 2000, con baremos de más de 1.100 casos (Portellano et al., 2021). Dentro de la franja de esta nota, sólo sirve a los 6 años.</li>
+            </ul>
+
+            <!-- 3.9 ENI-2 / BANFE-3 -->
+            <h3 id="mexico" class="font-display text-2xl font-semibold text-primary-600">4.9 Dos baterías desarrolladas en México: ENI-2 y BANFE-3</h3>
+
+            <p>
+                Para quien trabaja en México o en Colombia, hay dos baterías con origen latinoamericano que conviene conocer. La <strong>ENI-2</strong> (Evaluación Neuropsicológica Infantil; Matute et al., 2013) es una batería neuropsicológica completa para chicos de 5 a 16 años, que lleva unas tres horas si se aplica entera, aunque sus subescalas pueden usarse por separado. Su dominio ejecutivo incluye fluidez verbal y gráfica, una tarea de clasificación de tarjetas y una de planificación, la Pirámide de México. Ardila et al. (2005) usaron esas pruebas con 622 chicos de Colombia y México. La primera edición se tipificó con chicos de esos dos países; no pudimos verificar la muestra de la segunda.
+            </p>
+
+            <p>
+                La <strong>BANFE-3</strong> (Batería Neuropsicológica de Funciones Ejecutivas y Lóbulos Frontales; Flores Lázaro et al., 2020) evalúa 15 procesos ejecutivos desde los 6 hasta los 90 años y fue desarrollada para población hispanohablante. El editor mexicano estima unos 50 minutos de aplicación —la ficha estadounidense dice 60— y la ubica en la clasificación B. No pudimos verificar la composición de su muestra normativa.
+            </p>
 
             <!-- Section 5 -->
             <h2 id="integrar" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
@@ -288,13 +843,74 @@ __NAV__
                 Una batería armada «por las dudas» cansa al chico y llena el informe de números que nadie sabe leer. Es más útil partir de lo que la familia y la escuela describen y traducirlo en hipótesis.
             </p>
 
-__TABLA_HIPOTESIS__
+            <div class="table-scroll my-8 overflow-x-auto" role="region" aria-labelledby="hipotesis-caption" tabindex="0">
+                <table class="min-w-full text-sm" style="min-width: 640px;">
+                    <caption id="hipotesis-caption" class="sr-only">Orientación para elegir pruebas según lo que describen la familia y la escuela (heurístico clínico)</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-left font-display">Lo que se describe</th>
+                            <th scope="col" class="text-left font-display">Componente a explorar</th>
+                            <th scope="col" class="text-left font-display">Pruebas de desempeño</th>
+                            <th scope="col" class="text-left font-display">Escala del BRIEF-2</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">«Se olvida las consignas de varios pasos»</th>
+                            <td>Memoria de trabajo</td>
+                            <td>Dígitos (orden inverso y creciente) y Span de dibujos</td>
+                            <td>Memoria de trabajo</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">«Contesta antes de que termine la pregunta»</th>
+                            <td>Control inhibitorio</td>
+                            <td>Stroop o Interferencia del ENFEN</td>
+                            <td>Inhibición</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">«Se traba cuando cambia la rutina»</th>
+                            <td>Flexibilidad</td>
+                            <td>Wisconsin; Sendero a color del ENFEN o parte B del Trail Making</td>
+                            <td>Flexibilidad</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">«No sabe por dónde empezar un trabajo»</th>
+                            <td>Planificación</td>
+                            <td>Torre de Londres o Anillas del ENFEN</td>
+                            <td>Planificación y organización</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="text-left font-semibold">«Empieza bien y abandona a la mitad»</th>
+                            <td>Iniciativa y supervisión de la tarea</td>
+                            <td>Fluidez del ENFEN y observación en tareas largas</td>
+                            <td>Iniciativa; Supervisión de la tarea</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="table-note italic">
+                La correspondencia entre conductas, componentes y pruebas es un heurístico clínico para orientar la selección, no una regla validada. Cada componente conviene explorarlo con más de una medida.
+            </p>
 
             <p>
                 Al integrar, dale más peso a lo que converge. Un hallazgo que aparece en una prueba, en la escala y en la observación es mucho más sólido que cualquiera de ellos por separado. Una discrepancia, en cambio, obliga a preguntarse qué condición del contexto la explica: el ruido del aula, el tipo de consigna, la hora del día, el vínculo con quien completa la escala (heurístico clínico).
             </p>
 
-__CASO_MEDIO__
+            <!-- Case Box: Camila -->
+            <div class="case-box rounded-lg p-6 my-8">
+                <p class="fiction-notice">[ Caso clínico ficticio con fines educativos ]</p>
+                <h3 class="font-display text-lg font-bold text-primary-700 mb-2 mt-0">📋 Volviendo a Camila: lo que dijeron los números y lo que dijeron los contextos</h3>
+                <p class="text-gray-800">
+                    Las escalas llegaron primero. En el BRIEF-2 de la escuela, la maestra marcó una elevación clara en Memoria de trabajo y en Supervisión de la tarea; en el de la familia, las puntuaciones fueron más moderadas, y la más alta estaba en Organización de materiales. En el consultorio, en cambio, Camila rindió dentro de lo esperado para su edad en casi todo: las cuatro pruebas del ENFEN y el Span de dibujos del WISC-V. La excepción fue Dígitos, sobre todo en orden directo. Y hubo un detalle que no figura en ningún protocolo: pedía que le repitiera las consignas, se inclinaba hacia adelante y me miraba la boca cuando le hablaba.
+                </p>
+                <p class="text-gray-800">
+                    La entrevista completó el cuadro. Camila ronca desde chica, duerme con la boca abierta y se levanta cansada; el invierno anterior había tenido tres otitis seguidas, y la última audiometría era de sala de cinco. En el aula se sentaba en el último banco, junto a una ventana que da al patio, y casi todas las consignas se daban en voz alta.
+                </p>
+                <p class="text-gray-800 mb-0">
+                    <strong>Formulación:</strong> el perfil no era compatible con un déficit ejecutivo generalizado. Las dificultades se concentraban en la información que entra por el oído, en un contexto ruidoso, con una debilidad organizativa más leve en casa. Antes de cualquier conclusión diagnóstica se derivó a pediatría y a otorrinolaringología: la audiometría mostró una hipoacusia conductiva leve, y el especialista encontró una hipertrofia de adenoides que explicaba también los ronquidos. Mientras tanto, se acordaron con la escuela tres ajustes: sentarla cerca de la maestra, dar las consignas también por escrito y confirmar que las entendió antes de empezar.
+                </p>
+            </div>
 
             <!-- Section 6 -->
             <h2 id="errores" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
@@ -313,7 +929,7 @@ __CASO_MEDIO__
                     <strong>Confundir una atención baja con un déficit ejecutivo.</strong> Un chico puede desconectarse en clase por sueño, por ansiedad, porque no escucha bien, porque no entiende el idioma de la consigna o porque la tarea lo supera. En un metaanálisis —un estudio que combina estadísticamente los resultados de muchas investigaciones— de 83 estudios, Willcutt et al. (2005) encontraron que los grupos con TDAH rinden peor en todas las tareas ejecutivas, con efectos de tamaño mediano, pero que las debilidades ejecutivas no son ni necesarias ni suficientes para explicar todos los casos. Kofler et al. (2019) agregan un matiz: con varias pruebas por componente, el 89 % de los chicos con TDAH de su muestra mostró dificultades en al menos una función ejecutiva, frente al 33 % a 50 % que solían informar los estudios basados en tareas únicas. La lección doble es que el TDAH no se diagnostica con tests ejecutivos, y que una sola tarea mide mal.
                 </li>
                 <li>
-                    <strong>No descartar lo sensorial ni el sueño.</strong> Una hipoacusia leve o un problema visual sin corregir pueden imitar casi cualquier perfil de desatención; pedir audiometría y control visual antes de interpretar es un heurístico clínico de bajo costo y alto rendimiento. Con el sueño hay datos: en un metaanálisis de 86 estudios con 35.936 chicos de 5 a 12 años, dormir menos se asoció con un peor funcionamiento ejecutivo (Astill et al., 2012). La asociación promedio fue pequeña (r = .07), pero en un chico concreto que duerme mal todas las noches puede pesar mucho más.
+                    <strong>No descartar lo sensorial ni el sueño.</strong> Una hipoacusia leve o un problema visual sin corregir pueden imitar casi cualquier perfil de desatención; pedir audiometría y control visual antes de interpretar es un heurístico clínico de bajo costo y alto rendimiento. Con el sueño hay datos: en un metaanálisis de 86 estudios con 35.936 chicos de 5 a 12 años, dormir menos se asoció con un peor funcionamiento ejecutivo (Astill et al., 2012). La asociación promedio fue pequeña (r = 0,07), pero en un chico concreto que duerme mal todas las noches puede pesar mucho más.
                 </li>
                 <li>
                     <strong>Pasar por alto lo emocional.</strong> Diamond (2013) recuerda que el estrés, la falta de sueño o la soledad deterioran las funciones ejecutivas, y la ansiedad es un buen ejemplo. Un metaanálisis de 177 muestras, con más de 22.000 personas, mostró que la ansiedad se asocia con un rendimiento más bajo en memoria de trabajo, también en tareas simples de amplitud como los dígitos (Moran, 2016). Un chico que llega asustado a la evaluación, o que atraviesa una separación, puede rendir poco por razones que ninguna prueba ejecutiva va a nombrar.
@@ -326,14 +942,45 @@ __CASO_MEDIO__
                 </li>
             </ul>
 
-__PDF_BOX__
+            <div class="warning-box rounded-lg p-6 my-8">
+                <h3 class="font-display text-lg font-bold text-amber-900 mb-2 mt-0">⚠️ ¿Sirven los tests de funciones ejecutivas «en PDF»?</h3>
+                <p class="text-amber-900">
+                    Circulan en internet protocolos escaneados, cuestionarios sin autor y listas de «señales» que se presentan como tests. Las pruebas estandarizadas de esta nota son materiales con derechos de autor y, sin el manual y los baremos, el puntaje directo no se puede interpretar: no hay contra qué compararlo.
+                </p>
+                <p class="text-amber-900 mb-0">
+                    Existen alternativas de libre uso pensadas para la investigación. La batería PEBL, por ejemplo, reúne alrededor de 70 tareas abiertas, entre ellas versiones del Trail Making, de la Torre de Londres y de una clasificación de tarjetas inspirada en el Wisconsin (Mueller &amp; Piper, 2014). Sirven para la docencia y la investigación, pero no reemplazan a una prueba con manual y baremos de referencia cuando hay que firmar un informe clínico.
+                </p>
+            </div>
 
             <!-- Section 7: FAQ -->
             <h2 id="preguntas" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
                 7. Preguntas frecuentes
             </h2>
 
-__FAQ_HTML__
+            <h3 class="font-display text-xl font-semibold text-primary-600">¿Cuál es el mejor test para evaluar funciones ejecutivas en niños?</h3>
+            <p>
+                No hay uno. Las funciones ejecutivas son un conjunto de procesos relacionados pero separables, y cada prueba mide una parte, mezclada con otros procesos como el lenguaje, la percepción o la velocidad. Lo recomendable es combinar pruebas de desempeño (por ejemplo, ENFEN, Stroop, Trail Making, Torre de Londres, Wisconsin o los Dígitos del WISC-V) con una escala que completen la familia y la escuela, como el BRIEF-2, además de la entrevista y la observación, y elegir las pruebas según la pregunta clínica.
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-primary-600">¿Qué mide el ENFEN y a qué edad se aplica?</h3>
+            <p>
+                El ENFEN (Evaluación Neuropsicológica de las Funciones Ejecutivas en Niños; Portellano, Martínez Arias y Zumárraga, TEA Ediciones, 2009) se aplica entre los 6 y los 12 años y lleva unos 20 minutos. Tiene cuatro pruebas: Fluidez (fonológica y semántica), Senderos (uno gris y otro a color, que obliga a alternar), Anillas (planificación) e Interferencia (control inhibitorio, al estilo del Stroop). Sus baremos se obtuvieron con 837 escolares españoles; en Colombia hay además baremos para zonas urbanas y rurales de Tunja.
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-primary-600">¿El BRIEF-2 sirve para diagnosticar TDAH?</h3>
+            <p>
+                No por sí solo. El BRIEF-2 es una escala en la que la familia, los docentes y, desde cierta edad, el propio chico califican conductas cotidianas vinculadas con las funciones ejecutivas. Una elevación describe cómo ven al chico quienes lo rodean y orienta la evaluación, pero el diagnóstico de TDAH requiere una evaluación clínica completa, con la historia del desarrollo, información de varios contextos y el descarte de otras condiciones, como problemas de sueño, ansiedad o dificultades sensoriales.
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-primary-600">¿Hay tests de funciones ejecutivas para niños en PDF?</h3>
+            <p>
+                Los tests estandarizados son materiales con derechos de autor que se adquieren a través de sus editoriales, y un protocolo descargado sin el manual ni los baremos no permite interpretar los resultados. Existen baterías de libre uso pensadas para la investigación, como PEBL, con versiones abiertas de tareas clásicas, pero no reemplazan a una prueba con manual y baremos en un informe clínico.
+            </p>
+
+            <h3 class="font-display text-xl font-semibold text-primary-600">¿Quién puede administrar las pruebas de funciones ejecutivas?</h3>
+            <p>
+                Depende del instrumento y del país. Las editoriales clasifican sus pruebas con letras (A, B o C) según la formación que exigen para venderlas: Hogrefe TEA, por ejemplo, ubica el BRIEF-2 y el Stroop en el nivel B, y el ENFEN y el Wisconsin en el C. Pero quién puede administrar e interpretar cada test lo define también la regulación profesional de cada país o jurisdicción. En el caso del BRIEF-2, el manual admite que la aplicación la haga personal formado y reserva la interpretación a profesionales titulados con formación específica.
+            </p>
 
             <!-- Section 8 -->
             <h2 id="antes-del-proximo-test" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
@@ -359,16 +1006,171 @@ __FAQ_HTML__
                 </ul>
             </div>
 
-__CASO_FINAL__
+            <!-- Closing Case -->
+            <div class="case-box rounded-lg p-6 my-8">
+                <p class="fiction-notice">[ Caso clínico ficticio con fines educativos ]</p>
+                <p class="text-gray-800 mb-4">
+                    Cuatro meses después, con el tratamiento indicado por el otorrinolaringólogo y los ajustes del aula en marcha, la maestra volvió a completar el BRIEF-2: Memoria de trabajo había bajado al rango esperado. Camila terminaba la mayoría de las consignas y ya no pedía que se las repitieran a cada rato. La organización en casa seguía costando —los lunes, la carpeta de Ciencias se quedaba en la mesa del comedor—, y para eso trabajamos con una lista de la mochila que ella misma diseñó. En la última sesión lo resumió mejor que cualquier informe: «Ahora escucho lo que dice la seño. Lo que todavía no me sale es acordarme de todo».
+                </p>
+                <p class="text-xl font-display font-bold text-primary-700 text-center mb-0">
+                    Un test responde una pregunta. Evaluar es saber cuál hacer.
+                </p>
+            </div>
 
             <!-- Legal notice -->
             <div class="bg-gray-50 border border-gray-200 rounded-lg p-5 my-8 text-sm text-gray-700">
                 <p class="mb-0"><strong>⚠ Aviso importante:</strong> este artículo tiene fines exclusivamente informativos y educativos. No sustituye la evaluación, el diagnóstico ni el tratamiento por parte de un profesional calificado. Los datos de cada instrumento corresponden a la información pública de sus editores a noviembre de 2026; antes de usar una prueba, consultá su manual vigente.</p>
             </div>
 
-__GLOSARIO__
+            <!-- Glossary -->
+            <h2 id="glosario" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
+                Glosario
+            </h2>
 
-__REFERENCIAS__
+            <dl class="space-y-4 my-6">
+                <div>
+                    <dt class="font-semibold text-primary-600">Funciones ejecutivas</dt>
+                    <dd class="ml-4">Procesos que permiten dirigir la conducta hacia una meta: sostener y actualizar información en mente, frenar respuestas automáticas, cambiar de estrategia y planificar.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Prueba de desempeño</dt>
+                    <dd class="ml-4">Tarea estandarizada que el chico resuelve frente al evaluador, en condiciones controladas; mide la eficiencia de un proceso.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Escala de calificación</dt>
+                    <dd class="ml-4">Cuestionario que completa un adulto que conoce al chico, o el propio chico, sobre la frecuencia de conductas de la vida diaria.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Validez ecológica</dt>
+                    <dd class="ml-4">Grado en que una prueba refleja las demandas que la persona enfrenta en su vida cotidiana y permite predecir cómo funciona en ella.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Baremo</dt>
+                    <dd class="ml-4">Tabla que permite comparar el puntaje de un chico con el de una muestra de referencia de su edad; vale para la población de la que se obtuvo.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Decatipo</dt>
+                    <dd class="ml-4">Puntuación estandarizada que va de 1 a 10, con un promedio de 5,5; la usan, entre otras pruebas, el ENFEN y el CUMANES.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Puntuación T</dt>
+                    <dd class="ml-4">Puntuación estandarizada con media 50 y desviación típica 10; en escalas como el BRIEF-2, los valores altos indican más dificultades.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Percentil</dt>
+                    <dd class="ml-4">Porcentaje de chicos de la muestra de referencia que obtuvo un puntaje igual o menor; un percentil 10 indica que el 90 % puntuó más alto.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Impureza de la tarea</dt>
+                    <dd class="ml-4">Problema por el cual toda prueba ejecutiva depende también de procesos no ejecutivos, como el lenguaje, la percepción o la velocidad motora.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Interferencia</dt>
+                    <dd class="ml-4">Costo en tiempo o en errores que aparece cuando hay que frenar una respuesta automática, como leer la palabra en lugar de nombrar el color de la tinta.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Amplitud (span)</dt>
+                    <dd class="ml-4">Cantidad máxima de elementos que una persona puede retener y repetir en una tarea, como una serie de dígitos.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Perseveración</dt>
+                    <dd class="ml-4">Tendencia a repetir una respuesta o una estrategia que ya dejó de funcionar; es uno de los indicadores centrales del Wisconsin.</dd>
+                </div>
+                <div>
+                    <dt class="font-semibold text-primary-600">Metaanálisis</dt>
+                    <dd class="ml-4">Estudio que combina estadísticamente los resultados de muchas investigaciones sobre una misma pregunta.</dd>
+                </div>
+            </dl>
+
+            <!-- References -->
+            <h2 id="referencias" class="font-display text-3xl font-bold text-primary-700 border-b-2 border-accent pb-2">
+                Referencias
+            </h2>
+
+            <div class="text-sm space-y-3 my-6">
+                <p class="reference-item">Arango-Lasprilla, J. C., Rivera, D., Nicholls, E., Aguayo Arelis, A., García de la Cadena, C., Peñalver Guia, A. I., Vergara-Moragues, E., Rodriguez-Lorenzana, A., Marín-Morales, A., Soto-Añari, M., Lara, L., Rodríguez-Agudelo, Y., Alcazar Tebar, C., Galarza-del-Angel, J., Rodriguez-Irizarry, W., Ibañéz-Alfonso, J. A., García-Guerrero, C. E., Delgado-Mejía, I. D., Pohlenz Amador, S., &amp; Sánchez-SanSegundo, M. (2017). Modified Wisconsin Card Sorting Test (M-WCST): Normative data for Spanish-speaking pediatric population. <em>NeuroRehabilitation, 41</em>(3), 617-626. <a href="https://doi.org/10.3233/NRE-172242" target="_blank" rel="noopener">https://doi.org/10.3233/NRE-172242</a></p>
+
+                <p class="reference-item">Arango-Lasprilla, J. C., Rivera, D., Ramos-Usuga, D., Vergara-Moragues, E., Montero-López, E., Adana Díaz, L. A., Aguayo Arelis, A., García-Guerrero, C. E., García de la Cadena, C., Llerena Espezúa, X., Lara, L., Padilla-López, A., Rodriguez-Irizarry, W., Alcazar Tebar, C., Irías Escher, M. J., Llibre Guerra, J. J., Torales Cabrera, N., Rodríguez-Agudelo, Y., &amp; Ferrer-Cascales, R. (2017). Trail Making Test: Normative data for the Latin American Spanish-speaking pediatric population. <em>NeuroRehabilitation, 41</em>(3), 627-637. <a href="https://doi.org/10.3233/NRE-172247" target="_blank" rel="noopener">https://doi.org/10.3233/NRE-172247</a></p>
+
+                <p class="reference-item">Ardila, A., Rosselli, M., Matute, E., &amp; Guajardo, S. (2005). The influence of the parents' educational level on the development of executive functions. <em>Developmental Neuropsychology, 28</em>(1), 539-560. <a href="https://doi.org/10.1207/s15326942dn2801_5" target="_blank" rel="noopener">https://doi.org/10.1207/s15326942dn2801_5</a></p>
+
+                <p class="reference-item">Astill, R. G., Van der Heijden, K. B., Van IJzendoorn, M. H., &amp; Van Someren, E. J. W. (2012). Sleep, cognition, and behavioral problems in school-age children: A century of research meta-analyzed. <em>Psychological Bulletin, 138</em>(6), 1109-1138. <a href="https://doi.org/10.1037/a0028204" target="_blank" rel="noopener">https://doi.org/10.1037/a0028204</a></p>
+
+                <p class="reference-item">Barkley, R. A., &amp; Fischer, M. (2011). Predicting impairment in major life activities and occupational functioning in hyperactive children as adults: Self-reported executive function (EF) deficits versus EF tests. <em>Developmental Neuropsychology, 36</em>(2), 137-161. <a href="https://doi.org/10.1080/87565641.2010.549877" target="_blank" rel="noopener">https://doi.org/10.1080/87565641.2010.549877</a></p>
+
+                <p class="reference-item">Brooks, B. L., Sherman, E. M. S., &amp; Iverson, G. L. (2010). Healthy children get low scores too: Prevalence of low scores on the NEPSY-II in preschoolers, children, and adolescents. <em>Archives of Clinical Neuropsychology, 25</em>(3), 182-190. <a href="https://doi.org/10.1093/arclin/acq005" target="_blank" rel="noopener">https://doi.org/10.1093/arclin/acq005</a></p>
+
+                <p class="reference-item">Burgess, P. W., Alderman, N., Forbes, C., Costello, A., Coates, L. M.-A., Dawson, D. R., Anderson, N. D., Gilbert, S. J., Dumontheil, I., &amp; Channon, S. (2006). The case for the development and use of "ecologically valid" measures of executive function in experimental and clinical neuropsychology. <em>Journal of the International Neuropsychological Society, 12</em>(2), 194-209. <a href="https://doi.org/10.1017/S1355617706060310" target="_blank" rel="noopener">https://doi.org/10.1017/S1355617706060310</a></p>
+
+                <p class="reference-item">Chaytor, N., &amp; Schmitter-Edgecombe, M. (2003). The ecological validity of neuropsychological tests: A review of the literature on everyday cognitive skills. <em>Neuropsychology Review, 13</em>(4), 181-197. <a href="https://doi.org/10.1023/B:NERV.0000009483.91468.fb" target="_blank" rel="noopener">https://doi.org/10.1023/B:NERV.0000009483.91468.fb</a></p>
+
+                <p class="reference-item">Culbertson, W. C., &amp; Zillmer, E. A. (2005). <em>Tower of London–Drexel University (TOL-DX): Technical manual</em> (2nd ed.). Multi-Health Systems.</p>
+
+                <p class="reference-item">Diamond, A. (2013). Executive functions. <em>Annual Review of Psychology, 64</em>, 135-168. <a href="https://doi.org/10.1146/annurev-psych-113011-143750" target="_blank" rel="noopener">https://doi.org/10.1146/annurev-psych-113011-143750</a></p>
+
+                <p class="reference-item">Flores Lázaro, J. C., Ostrosky Shejet, F., &amp; Lozano Gutiérrez, A. (2020). <em>BANFE-3: Batería Neuropsicológica de Funciones Ejecutivas y Lóbulos Frontales</em> (3.ª ed.). Manual Moderno.</p>
+
+                <p class="reference-item">Gioia, G. A., Isquith, P. K., Guy, S. C., &amp; Kenworthy, L. (2015). <em>Behavior Rating Inventory of Executive Function, Second Edition (BRIEF-2)</em>. Psychological Assessment Resources.</p>
+
+                <p class="reference-item">Gioia, G. A., Isquith, P. K., Guy, S. C., &amp; Kenworthy, L. (2017). <em>BRIEF-2. Evaluación Conductual de la Función Ejecutiva-2</em> (M. J. Maldonado Belmonte, M. C. Fournier del Castillo, R. Martínez Arias, J. González Marqués, J. M. Espejo-Saavedra Roca, &amp; P. Santamaría, adaptadores). TEA Ediciones. (Trabajo original publicado en 2015)</p>
+
+                <p class="reference-item">Golden, C. J. (2020). <em>STROOP. Test de Colores y Palabras – Edición revisada</em> (B. Ruiz-Fernández, T. Luque, &amp; F. Sánchez-Sánchez, adaptadores). TEA Ediciones. (Trabajo original publicado en 1978)</p>
+
+                <p class="reference-item">Heaton, R. K., Chelune, G. J., Talley, J. L., Kay, G. G., &amp; Curtiss, G. (1993). <em>Wisconsin Card Sorting Test manual: Revised and expanded</em>. Psychological Assessment Resources.</p>
+
+                <p class="reference-item">Isquith, P. K., Roth, R. M., &amp; Gioia, G. (2013). Contribution of rating scales to the assessment of executive functions. <em>Applied Neuropsychology: Child, 2</em>(2), 125-132. <a href="https://doi.org/10.1080/21622965.2013.748389" target="_blank" rel="noopener">https://doi.org/10.1080/21622965.2013.748389</a></p>
+
+                <p class="reference-item">Kofler, M. J., Irwin, L. N., Soto, E. F., Groves, N. B., Harmon, S. L., &amp; Sarver, D. E. (2019). Executive functioning heterogeneity in pediatric ADHD. <em>Journal of Abnormal Child Psychology, 47</em>(2), 273-286. <a href="https://doi.org/10.1007/s10802-018-0438-2" target="_blank" rel="noopener">https://doi.org/10.1007/s10802-018-0438-2</a></p>
+
+                <p class="reference-item">Krikorian, R., Bartok, J., &amp; Gay, N. (1994). Tower of London procedure: A standard method and developmental data. <em>Journal of Clinical and Experimental Neuropsychology, 16</em>(6), 840-850. <a href="https://doi.org/10.1080/01688639408402697" target="_blank" rel="noopener">https://doi.org/10.1080/01688639408402697</a></p>
+
+                <p class="reference-item">Krumm, G., &amp; Arán Filippetti, V. (2024). Validez y baremos del Test de Clasificación de Tarjetas de Wisconsin (WCST) en sus versiones computarizada y manual en niños. <em>Interdisciplinaria. Revista de Psicología y Ciencias Afines, 41</em>(1). <a href="https://doi.org/10.16888/interd.2024.41.1.18" target="_blank" rel="noopener">https://doi.org/10.16888/interd.2024.41.1.18</a></p>
+
+                <p class="reference-item">Lawson, G. M., Hook, C. J., &amp; Farah, M. J. (2018). A meta-analysis of the relationship between socioeconomic status and executive function performance among children. <em>Developmental Science, 21</em>(2), Article e12529. <a href="https://doi.org/10.1111/desc.12529" target="_blank" rel="noopener">https://doi.org/10.1111/desc.12529</a></p>
+
+                <p class="reference-item">Matute, E., Rosselli, M., Ardila, A., &amp; Ostrosky, F. (2013). <em>ENI-2: Evaluación Neuropsicológica Infantil</em> (2.ª ed.). Manual Moderno.</p>
+
+                <p class="reference-item">Miyake, A., &amp; Friedman, N. P. (2012). The nature and organization of individual differences in executive functions: Four general conclusions. <em>Current Directions in Psychological Science, 21</em>(1), 8-14. <a href="https://doi.org/10.1177/0963721411429458" target="_blank" rel="noopener">https://doi.org/10.1177/0963721411429458</a></p>
+
+                <p class="reference-item">Miyake, A., Friedman, N. P., Emerson, M. J., Witzki, A. H., Howerter, A., &amp; Wager, T. D. (2000). The unity and diversity of executive functions and their contributions to complex "frontal lobe" tasks: A latent variable analysis. <em>Cognitive Psychology, 41</em>(1), 49-100. <a href="https://doi.org/10.1006/cogp.1999.0734" target="_blank" rel="noopener">https://doi.org/10.1006/cogp.1999.0734</a></p>
+
+                <p class="reference-item">Moran, T. P. (2016). Anxiety and working memory capacity: A meta-analysis and narrative review. <em>Psychological Bulletin, 142</em>(8), 831-864. <a href="https://doi.org/10.1037/bul0000051" target="_blank" rel="noopener">https://doi.org/10.1037/bul0000051</a></p>
+
+                <p class="reference-item">Mueller, S. T., &amp; Piper, B. J. (2014). The Psychology Experiment Building Language (PEBL) and PEBL Test Battery. <em>Journal of Neuroscience Methods, 222</em>, 250-259. <a href="https://doi.org/10.1016/j.jneumeth.2013.10.024" target="_blank" rel="noopener">https://doi.org/10.1016/j.jneumeth.2013.10.024</a></p>
+
+                <p class="reference-item">Portellano, J. A., Martínez Arias, R., &amp; Zumárraga, L. (2009). <em>ENFEN. Evaluación Neuropsicológica de las Funciones Ejecutivas en Niños</em>. TEA Ediciones.</p>
+
+                <p class="reference-item">Portellano, J. A., Mateos, R., &amp; Martínez Arias, R. (2012). <em>CUMANES. Cuestionario de Madurez Neuropsicológica para Escolares</em>. TEA Ediciones.</p>
+
+                <p class="reference-item">Portellano, J. A., Mateos, R., Martínez Arias, R., &amp; Sánchez-Sánchez, F. (2021). <em>CUMANIN-2. Cuestionario de Madurez Neuropsicológica Infantil-2</em>. Hogrefe TEA Ediciones.</p>
+
+                <p class="reference-item">Reitan, R. M. (1958). Validity of the Trail Making Test as an indicator of organic brain damage. <em>Perceptual and Motor Skills, 8</em>(3), 271-276. <a href="https://doi.org/10.2466/pms.1958.8.3.271" target="_blank" rel="noopener">https://doi.org/10.2466/pms.1958.8.3.271</a></p>
+
+                <p class="reference-item">Rivera, D., Morlett-Paredes, A., Peñalver Guia, A. I., Irías Escher, M. J., Soto-Añari, M., Aguayo Arelis, A., Rute-Pérez, S., Rodríguez-Lorenzana, A., Rodríguez-Agudelo, Y., Albaladejo-Blázquez, N., García de la Cadena, C., Ibáñez-Alfonso, J. A., Rodriguez-Irizarry, W., García-Guerrero, C. E., Delgado-Mejía, I. D., Padilla-López, A., Vergara-Moragues, E., Barrios Nevado, M. D., Saracostti Schwartzman, M., &amp; Arango-Lasprilla, J. C. (2017). Stroop Color-Word Interference Test: Normative data for Spanish-speaking pediatric population. <em>NeuroRehabilitation, 41</em>(3), 605-616. <a href="https://doi.org/10.3233/NRE-172246" target="_blank" rel="noopener">https://doi.org/10.3233/NRE-172246</a></p>
+
+                <p class="reference-item">Rodríguez Barreto, L. C., Parra Pulido, J. H., Chinome Torres, J. D., &amp; Fonseca Estupiñán, G. P. (2018). Propiedades psicométricas y baremación de la prueba ENFEN en zonas rurales y urbanas de Tunja (Colombia). <em>Diversitas: Perspectivas en Psicología, 14</em>(2), 339-350. <a href="https://doi.org/10.15332/1794-9998.2018.0014.10" target="_blank" rel="noopener">https://doi.org/10.15332/1794-9998.2018.0014.10</a></p>
+
+                <p class="reference-item">Rosas, R., Pizarro, M., Grez, O., Navarro, V., Tapia, D., Arancibia, S., Muñoz-Quezada, M. T., Lucero, B., Pérez-Salas, C. P., Oliva, K., Vizcarra, B., Rodríguez-Cancino, M., &amp; von Fredeen, P. (2022). Estandarización chilena de la Escala Wechsler de Inteligencia para Niños - Quinta Edición. <em>Psykhe, 31</em>(1), 1-23. <a href="https://doi.org/10.7764/psykhe.2020.21793" target="_blank" rel="noopener">https://doi.org/10.7764/psykhe.2020.21793</a></p>
+
+                <p class="reference-item">Shallice, T. (1982). Specific impairments of planning. <em>Philosophical Transactions of the Royal Society of London. B, Biological Sciences, 298</em>(1089), 199-209. <a href="https://doi.org/10.1098/rstb.1982.0082" target="_blank" rel="noopener">https://doi.org/10.1098/rstb.1982.0082</a></p>
+
+                <p class="reference-item">Snyder, H. R., Miyake, A., &amp; Hankin, B. L. (2015). Advancing understanding of executive function impairments and psychopathology: Bridging the gap between clinical and cognitive approaches. <em>Frontiers in Psychology, 6</em>, Article 328. <a href="https://doi.org/10.3389/fpsyg.2015.00328" target="_blank" rel="noopener">https://doi.org/10.3389/fpsyg.2015.00328</a></p>
+
+                <p class="reference-item">Soto, E. F., Kofler, M. J., Singh, L. J., Wells, E. L., Irwin, L. N., Groves, N. B., &amp; Miller, C. E. (2020). Executive functioning rating scales: Ecologically valid or construct invalid? <em>Neuropsychology, 34</em>(6), 605-619. <a href="https://doi.org/10.1037/neu0000681" target="_blank" rel="noopener">https://doi.org/10.1037/neu0000681</a></p>
+
+                <p class="reference-item">Stroop, J. R. (1935). Studies of interference in serial verbal reactions. <em>Journal of Experimental Psychology, 18</em>(6), 643-662. <a href="https://doi.org/10.1037/h0054651" target="_blank" rel="noopener">https://doi.org/10.1037/h0054651</a></p>
+
+                <p class="reference-item">Taborda, A. R., Brenlla, M. E., &amp; Barbenza, C. (2011). Adaptación argentina de la Escala de Inteligencia de Wechsler para Niños IV (WISC-IV). En D. Wechsler, <em>Escala de Inteligencia de Wechsler para Niños IV (WISC-IV)</em>. Paidós.</p>
+
+                <p class="reference-item">Toplak, M. E., West, R. F., &amp; Stanovich, K. E. (2013). Practitioner review: Do performance-based measures and ratings of executive function assess the same construct? <em>Journal of Child Psychology and Psychiatry, 54</em>(2), 131-143. <a href="https://doi.org/10.1111/jcpp.12001" target="_blank" rel="noopener">https://doi.org/10.1111/jcpp.12001</a></p>
+
+                <p class="reference-item">Wechsler, D. (2015). <em>WISC-V. Escala de Inteligencia de Wechsler para Niños-V</em> (Departamento de I+D de Pearson Clinical &amp; Talent Assessment, adaptadores). Pearson.</p>
+
+                <p class="reference-item">Willcutt, E. G., Doyle, A. E., Nigg, J. T., Faraone, S. V., &amp; Pennington, B. F. (2005). Validity of the executive function theory of attention-deficit/hyperactivity disorder: A meta-analytic review. <em>Biological Psychiatry, 57</em>(11), 1336-1346. <a href="https://doi.org/10.1016/j.biopsych.2005.02.006" target="_blank" rel="noopener">https://doi.org/10.1016/j.biopsych.2005.02.006</a></p>
+
+                <p class="reference-item">Wolraich, M. L., Hagan, J. F., Allan, C., Chan, E., Davison, D., Earls, M., Evans, S. W., Flinn, S. K., Froehlich, T., Frost, J., Holbrook, J. R., Lehmann, C. U., Lessin, H. R., Okechukwu, K., Pierce, K. L., Winner, J. D., Zurhellen, W., &amp; Subcommittee on Children and Adolescents with Attention-Deficit/Hyperactive Disorder. (2019). Clinical practice guideline for the diagnosis, evaluation, and treatment of attention-deficit/hyperactivity disorder in children and adolescents. <em>Pediatrics, 144</em>(4), Article e20192528. <a href="https://doi.org/10.1542/peds.2019-2528" target="_blank" rel="noopener">https://doi.org/10.1542/peds.2019-2528</a></p>
+
+            </div>
         </article>
 
         <!-- Related -->
@@ -383,4 +1185,193 @@ __REFERENCIAS__
         </aside>
     </main>
 
-__TAIL__
+    <!-- Author Bio -->
+    <section class="bg-gray-50 py-12" aria-labelledby="author-title">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-6 items-start">
+                <img src="/nicolas-nobg.webp" alt="Dr. Nicolás Genise" width="896" height="1260" loading="lazy" class="w-24 h-24 rounded-full object-cover object-top border-4 border-accent">
+                <div>
+                    <h2 id="author-title" class="font-display text-2xl font-bold text-primary-700 mb-2">Dr. Nicolás Genise</h2>
+                    <p class="text-gray-600 mb-4">
+                        Doctor en Psicología y Licenciado en Psicopedagogía. Director de la Especialización en Psicopedagogía Clínica de la Universidad de Flores (UFLO). Psicoterapeuta en Gandara Center (Boston, EE.UU.). Formación internacional en Ackerman Institute (New York). Autor de múltiples libros sobre psicoterapia infantil y adolescente.
+                    </p>
+                    <a href="/#contacto" class="inline-flex items-center text-primary-600 hover:text-primary-800 font-semibold underline underline-offset-2 transition-colors">
+                        Contactar
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-16" aria-labelledby="cta-title">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 id="cta-title" class="font-display text-3xl md:text-4xl font-bold mb-4">
+                Especialización en Psicopedagogía Clínica
+            </h2>
+            <p class="text-xl text-blue-100 mb-8">
+                408 horas · 100% Virtual · Acreditación CONEAU · Próxima cohorte
+            </p>
+            <div class="flex flex-wrap justify-center gap-6 mb-8">
+                <a href="https://www.uflouniversidad.edu.ar/carrera/especializacion-en-psicopedagogia-clinica/" target="_blank" rel="noopener noreferrer" class="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all hover:-translate-y-1">
+                    <img src="/logo-uflo.webp" alt="Universidad de Flores" width="512" height="512" loading="lazy" class="h-14 md:h-20 w-auto object-contain">
+                </a>
+                <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all hover:-translate-y-1">
+                    <img src="/logo-tcm.webp" alt="TCM Terapia Cognitiva" width="2000" height="1906" loading="lazy" class="h-16 md:h-24 w-auto object-contain">
+                </a>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/especializacion-psicopedagogia-clinica-uflo.html" class="inline-block px-8 py-4 bg-highlight text-primary-900 font-bold rounded-lg hover:bg-highlight/90 transition-colors text-lg">
+                    Ver detalles del programa
+                </a>
+                <a href="/#contacto" class="inline-block px-8 py-4 border-2 border-white/40 text-white font-bold rounded-lg hover:bg-white/10 transition-colors text-lg">
+                    Solicitar información
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Subscription -->
+    <section class="py-16 bg-white" aria-labelledby="newsletter-title">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl p-8 md:p-12 text-center shadow-xl">
+                <div class="mb-6">
+                    <svg class="w-12 h-12 mx-auto text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <h2 id="newsletter-title" class="text-2xl md:text-3xl font-bold text-white mb-3">
+                    Recibí artículos sobre psicopedagogía clínica
+                </h2>
+                <p class="text-primary-100 mb-8 max-w-xl mx-auto">
+                    Contenido basado en evidencia, casos clínicos y herramientas prácticas para tu práctica profesional. Sin spam, solo contenido de valor.
+                </p>
+                <form
+                    action="https://7c43a905.sibforms.com/serve/MUIFAPNG21YS2bSAFGBn-ITUxxp0mpZSBmKniXOq7ra2RgfybgqiRMvO68RqV49BDEmTUfSqj9fVSnp6a5Ttt9YV1HGwUhRaoS9Z3VK__9BwiTZe6i81tG5vhvlpMdIK1nG3xHnzLs8MDKDgaYkWI1bTmOcEcFToJ_v0a6H9LBAwokeijF39HVrnXQ_4ZvexGTAInEHLI7TOAyBBYw=="
+                    method="POST"
+                    class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+                    id="newsletter-form"
+                >
+                    <label for="newsletter-email" class="sr-only">Email profesional</label>
+                    <input
+                        id="newsletter-email"
+                        type="email"
+                        name="EMAIL"
+                        required
+                        autocomplete="email"
+                        placeholder="Tu email profesional"
+                        class="flex-1 px-5 py-4 rounded-lg text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-highlight"
+                    >
+                    <button
+                        type="submit"
+                        class="px-8 py-4 bg-highlight hover:bg-highlight/90 text-primary-900 font-bold rounded-lg transition-colors whitespace-nowrap"
+                    >
+                        Suscribirme
+                    </button>
+                </form>
+                <p class="text-primary-200 text-sm mt-4">
+                    Podés darte de baja cuando quieras. Tu privacidad es importante.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary-800 text-primary-200 py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-1">
+                    <img src="../logo_fondo_oscuro.webp" alt="Dr. Nicolás Genise" width="2000" height="2000" loading="lazy" class="h-32 w-auto mb-4">
+                    <p class="text-sm text-primary-200">Doctor en Psicología · Psicopedagogo · Investigador · BCBAar</p>
+                </div>
+                <div>
+                    <h2 class="font-display text-white font-semibold mb-4">Enlaces</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="../index.html#sobre-mi" class="hover:text-white transition-colors">Sobre mí</a></li>
+                        <li><a href="../especializacion-psicopedagogia-clinica-uflo.html" class="hover:text-white transition-colors">Especialización</a></li>
+                        <li><a href="index.html" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="../faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="../index.html#recursos" class="hover:text-white transition-colors">Recursos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-display text-white font-semibold mb-4">Contacto</h2>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:contacto@nicolasgenise.org" class="hover:text-white transition-colors">contacto@nicolasgenise.org</a></li>
+                        <li>Buenos Aires, Argentina</li>
+                        <li>Boston, USA</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2 class="font-display text-white font-semibold mb-4">Seguime</h2>
+                    <a href="https://www.linkedin.com/in/nicolasgenise/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm hover:text-white transition-colors">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-primary-700 pt-6 text-center text-sm text-primary-200">
+                <p>&copy; 2026 Dr. Nicolás Genise. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Dark Mode + Mobile Menu JS -->
+    <script>
+        const html = document.documentElement;
+        const toggle = document.getElementById('dark-mode-toggle');
+        const mobileToggle = document.getElementById('mobile-dark-toggle');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        const mobileSun = document.querySelector('.mobile-sun-icon');
+        const mobileMoon = document.querySelector('.mobile-moon-icon');
+        const mobileLabel = document.querySelector('.mobile-theme-label');
+
+        function setDark(isDark) {
+            html.classList.toggle('dark', isDark);
+            try { localStorage.setItem('darkMode', isDark ? 'true' : 'false'); } catch (e) {}
+            if (sunIcon && moonIcon) { sunIcon.classList.toggle('hidden', !isDark); moonIcon.classList.toggle('hidden', isDark); }
+            if (mobileSun && mobileMoon) { mobileSun.classList.toggle('hidden', !isDark); mobileMoon.classList.toggle('hidden', isDark); }
+            if (mobileLabel) mobileLabel.textContent = isDark ? 'Modo claro' : 'Modo oscuro';
+        }
+
+        let saved = null;
+        try { saved = localStorage.getItem('darkMode'); } catch (e) {}
+        if (saved === 'true' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) setDark(true);
+
+        if (toggle) toggle.addEventListener('click', () => setDark(!html.classList.contains('dark')));
+        if (mobileToggle) mobileToggle.addEventListener('click', () => setDark(!html.classList.contains('dark')));
+
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const backdrop = document.getElementById('mobile-menu-backdrop');
+
+        function openMenu() {
+            menu.classList.remove('translate-x-full');
+            menu.removeAttribute('inert');
+            backdrop.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            if (menuBtn) menuBtn.setAttribute('aria-expanded', 'true');
+            if (closeBtn) closeBtn.focus();
+        }
+        function closeMenu() {
+            menu.classList.add('translate-x-full');
+            menu.setAttribute('inert', '');
+            backdrop.classList.remove('active');
+            document.body.style.overflow = '';
+            if (menuBtn) { menuBtn.setAttribute('aria-expanded', 'false'); menuBtn.focus(); }
+        }
+
+        if (menuBtn) menuBtn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (backdrop) backdrop.addEventListener('click', closeMenu);
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !menu.classList.contains('translate-x-full')) closeMenu();
+        });
+    </script>
+</body>
+</html>
