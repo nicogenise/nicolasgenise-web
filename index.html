@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Nicolás Genise — Psicopedagogía Clínica y Evaluación | Especialización UFLO</title>
-    <meta name="description" content="Dr. Nicolás Genise: psicólogo clínico, doctor en Psicología y director de la Especialización en Psicopedagogía Clínica (UFLO). Blog clínico, charlas y consulta profesional.">
+    <title>Dr. Nicolás Genise — Psicopedagogía Clínica y Posgrado UFLO</title>
+    <meta name="description" content="Dr. Nicolás Genise: psicólogo clínico, doctor en Psicología y director de la Especialización en Psicopedagogía Clínica (UFLO). Blog clínico y charlas.">
     
     <!-- SEO Técnico -->
     <meta name="robots" content="index, follow">
@@ -14,8 +14,8 @@
     
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dr. Nicolás Genise — Psicopedagogía Clínica y Evaluación | Especialización UFLO">
-    <meta property="og:description" content="Dr. Nicolás Genise: psicólogo clínico, doctor en Psicología y director de la Especialización en Psicopedagogía Clínica (UFLO). Blog clínico, charlas y consulta profesional.">
+    <meta property="og:title" content="Dr. Nicolás Genise — Psicopedagogía Clínica y Posgrado UFLO">
+    <meta property="og:description" content="Dr. Nicolás Genise: psicólogo clínico, doctor en Psicología y director de la Especialización en Psicopedagogía Clínica (UFLO). Blog clínico y charlas.">
     <meta property="og:url" content="https://nicolasgenise.org/">
     <meta property="og:site_name" content="Dr. Nicolás Genise">
     <meta property="og:locale" content="es_AR">
@@ -25,7 +25,7 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Dr. Nicolás Genise — Psicopedagogía Clínica y Evaluación | Especialización UFLO">
+    <meta name="twitter:title" content="Dr. Nicolás Genise — Psicopedagogía Clínica y Posgrado UFLO">
     <meta name="twitter:description" content="Psicopedagogía clínica, evaluación neuropsicológica infantil y Especialización UFLO 100% virtual con acreditación CONEAU.">
     <meta name="twitter:image" content="https://nicolasgenise.org/og-image.webp">
     
@@ -48,7 +48,9 @@
         },
         "instructor": {
             "@type": "Person",
-            "name": "Dr. Nicolás Genise",
+            "@id": "https://nicolasgenise.org/#person",
+            "name": "Nicolás Genise",
+            "honorificPrefix": "Dr.",
             "jobTitle": "Director de la Especialización",
             "description": "Doctor en Psicología, Psicoterapeuta en Gandara Center (Boston), Director de TCM Cognitiva"
         },
@@ -73,41 +75,57 @@
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Dr. Nicolás Genise",
-        "jobTitle": "Director, Especialización en Psicopedagogía Clínica",
-        "description": "Doctor en Psicología y Licenciado en Psicopedagogía con 15+ años de experiencia clínica. Formación en Ackerman Institute (NYC) y práctica en Gandara Center (Boston).",
-        "url": "https://nicolasgenise.org",
-        "image": "https://nicolasgenise.org/logo_transparente.webp",
-        "worksFor": [
+        "@graph": [
             {
-                "@type": "Organization",
-                "name": "Universidad de Flores (UFLO)",
-                "url": "https://www.uflouniversidad.edu.ar"
+                "@type": "Person",
+                "@id": "https://nicolasgenise.org/#person",
+                "name": "Nicolás Genise",
+                "honorificPrefix": "Dr.",
+                "givenName": "Nicolás",
+                "familyName": "Genise",
+                "alternateName": ["Dr. Nicolás Genise", "Nicolas Genise"],
+                "jobTitle": "Director de la Especialización en Psicopedagogía Clínica",
+                "description": "Doctor en Psicología y Licenciado en Psicopedagogía con más de 15 años de experiencia clínica. Director de la Especialización en Psicopedagogía Clínica de la Universidad de Flores (UFLO), psicoterapeuta en Gandara Center (Boston) y director de TCM Cognitiva.",
+                "url": "https://nicolasgenise.org/",
+                "image": "https://nicolasgenise.org/nicolas-nobg.webp",
+                "affiliation": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "Universidad de Flores (UFLO)",
+                    "url": "https://www.uflouniversidad.edu.ar/"
+                },
+                "worksFor": [
+                    {
+                        "@type": "CollegeOrUniversity",
+                        "name": "Universidad de Flores (UFLO)",
+                        "url": "https://www.uflouniversidad.edu.ar/"
+                    },
+                    {
+                        "@type": "Organization",
+                        "name": "Gandara Center",
+                        "address": {"@type": "PostalAddress", "addressLocality": "Boston", "addressCountry": "US"}
+                    },
+                    {
+                        "@type": "Organization",
+                        "name": "TCM Cognitiva",
+                        "url": "https://tcmcognitiva.com/"
+                    }
+                ],
+                "alumniOf": [
+                    {"@type": "Organization", "name": "Ackerman Institute for the Family"},
+                    {"@type": "Organization", "name": "MIDAP"}
+                ],
+                "knowsAbout": ["Psicopedagogía Clínica", "Neuropsicología", "Terapia Cognitivo-Conductual", "TDAH", "Dificultades de Aprendizaje", "Funciones ejecutivas", "Dislexia", "Evaluación psicopedagógica"],
+                "sameAs": ["https://www.linkedin.com/in/nicolasgenise/"]
             },
             {
-                "@type": "Organization",
-                "name": "Gandara Center",
-                "address": {"@type": "PostalAddress", "addressLocality": "Boston", "addressCountry": "US"}
+                "@type": "WebSite",
+                "@id": "https://nicolasgenise.org/#website",
+                "url": "https://nicolasgenise.org/",
+                "name": "Dr. Nicolás Genise",
+                "alternateName": ["Nicolás Genise", "nicolasgenise.org"],
+                "inLanguage": "es",
+                "publisher": {"@id": "https://nicolasgenise.org/#person"}
             }
-        ],
-        "alumniOf": [
-            {"@type": "Organization", "name": "Ackerman Institute for the Family"},
-            {"@type": "Organization", "name": "MIDAP"}
-        ],
-        "knowsAbout": ["Psicopedagogía Clínica", "Neuropsicología", "Terapia Cognitivo-Conductual", "TDAH", "Dificultades de Aprendizaje"]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://nicolasgenise.org/"},
-            {"@type": "ListItem", "position": 2, "name": "Especialización", "item": "https://nicolasgenise.org/#especializacion"},
-            {"@type": "ListItem", "position": 3, "name": "Blog", "item": "https://nicolasgenise.org/#blog"},
-            {"@type": "ListItem", "position": 4, "name": "Charlas", "item": "https://nicolasgenise.org/#charlas"},
-            {"@type": "ListItem", "position": 5, "name": "Contacto", "item": "https://nicolasgenise.org/#contacto"}
         ]
     }
     </script>
@@ -1064,12 +1082,12 @@
                 <article class="card-hover bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm">
                     <a href="blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html" class="block">
                         <div class="aspect-video overflow-hidden relative">
-                            <img src="blog/images/funciones-ejecutivas-thumbnail.webp" alt="Funciones Ejecutivas: Evaluación e Intervención desde la Psicopedagogía Clínica" class="w-full h-full object-cover" width="800" height="450">
+                            <img src="blog/images/funciones-ejecutivas-thumbnail.webp" alt="Funciones ejecutivas en niños de 6 a 12 años: evaluación e intervención psicopedagógica" class="w-full h-full object-cover" width="800" height="450">
                         </div>
                     </a>
                     <div class="p-6">
                         <p class="text-sm text-highlight font-medium mb-2">Psicopedagogía Clínica</p>
-                        <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">Funciones Ejecutivas: Evaluación e Intervención Clínica</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3 line-clamp-2">Funciones Ejecutivas en Niños: Evaluación e Intervención</h3>
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">Guía práctica para entender, evaluar e intervenir en las funciones ejecutivas de niños y adolescentes. Instrumentos validados y estrategias con respaldo empírico.</p>
                         <a href="blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html" class="text-primary-600 font-medium text-sm hover:text-primary-700 inline-flex items-center group">
                             Leer artículo
@@ -1100,6 +1118,13 @@
                 </article>
 
             </div>
+
+            <p class="mt-8 text-gray-600">
+                También en el blog:
+                <a href="blog/dislexia-evaluacion-intervencion-psicopedagogia.html" class="text-primary-600 font-medium underline underline-offset-2 hover:text-primary-700">Dislexia en niños: evaluación e intervención</a> ·
+                <a href="blog/tdah-adultos-diagnostico-tardio.html" class="text-primary-600 font-medium underline underline-offset-2 hover:text-primary-700">TDAH en adultos: cuando el diagnóstico llega tarde</a> ·
+                <a href="blog/fenomeno-impostor-estudiantes-universitarios.html" class="text-primary-600 font-medium underline underline-offset-2 hover:text-primary-700">El fenómeno del impostor en estudiantes universitarios</a>
+            </p>
         </div>
     </section>
     
