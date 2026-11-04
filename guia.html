@@ -71,10 +71,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (compiled) -->
-    <link rel="stylesheet" href="/dist/styles.css">
+    <link rel="stylesheet" href="/dist/styles.css?v=20261105">
 
     <!-- Preload critical resources -->
-    <link rel="preload" href="/dist/styles.css" as="style">
+    <link rel="preload" href="/dist/styles.css?v=20261105" as="style">
     <link rel="preload" href="/logo_transparente.webp" as="image" type="image/webp">
 
     <style>
@@ -127,8 +127,17 @@
         .dark .text-gray-800 {
             color: #E0E7EF !important;
         }
-        .dark .text-gray-600 {
+        .dark .text-gray-600, .dark .text-gray-500 {
             color: #8892A4 !important;
+        }
+        .dark .text-gray-700 {
+            color: #E0E7EF !important;
+        }
+        .dark .text-primary-700 {
+            color: #5DADE2 !important;
+        }
+        .dark .bg-primary-50, .dark .bg-accent\/10 {
+            background-color: #0B1929 !important;
         }
         .dark .border-gray-200 {
             border-color: #1E3A5F !important;
@@ -247,7 +256,7 @@
                             </div>
                             <div class="bg-accent/10 rounded-xl p-5">
                                 <h3 class="font-semibold text-primary-700 mb-3 flex items-center">
-                                    <span class="w-8 h-8 bg-accent text-white rounded-full flex items-center justify-center text-sm mr-3">6</span>
+                                    <span class="w-8 h-8 bg-primary-500 text-white rounded-full flex items-center justify-center text-sm mr-3">6</span>
                                     Competencias Clínicas
                                 </h3>
                                 <ul class="text-sm text-gray-600 space-y-1">
