@@ -318,12 +318,18 @@
         .dark table tr:nth-child(even) { background-color: #0E2F44; }
         .dark .bg-gray-50.rounded-lg { background-color: #0E2F44 !important; }
         .dark .bg-blue-50, .dark .bg-green-50, .dark .bg-purple-50 { background-color: #0E2F44 !important; }
-        .dark .toc-link a { color: #8892A4; }
+        /* Índice: #8892A4 daba 4,43:1 sobre el recuadro (#0E2F44); mismo color que el índice de dislexia */
+        .dark .toc-link a { color: #E0E7EF; }
         .dark .toc-link:hover a { color: #48c9b0; }
         .dark .reference-item { color: #8892A4 !important; }
         .dark .reference-item a { color: #5DADE2; }
         .dark dt { color: #5DADE2 !important; }
         .dark dd { color: #C8D6E5 !important; }
+        /* Miga de pan en modo oscuro: también es un <nav>, así que la regla «.dark nav» de la barra
+           le ponía una franja oscura y el gris #8892A4. Queda como en modo claro (#bfdbfe, 6,1:1 sobre el degradé). */
+        .dark nav[aria-label="Ruta de navegación"] { background-color: transparent !important; border-color: transparent !important; }
+        .dark nav[aria-label="Ruta de navegación"] a { color: #bfdbfe; }
+        .dark nav[aria-label="Ruta de navegación"] a:hover { color: #ffffff; }
     </style>
 </head>
 <body class="bg-white">

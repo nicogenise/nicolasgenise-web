@@ -279,6 +279,11 @@
         .dark .bg-gradient-to-br {
             background: linear-gradient(135deg, #0E2F44 0%, #112240 100%) !important;
         }
+        /* Miga de pan en modo oscuro: también es un <nav>, así que la regla «.dark nav» de la barra
+           le ponía una franja oscura y el gris #8892A4. Queda como en modo claro (#bfdbfe, 6,1:1 sobre el degradé). */
+        .dark nav[aria-label="Ruta de navegación"] { background-color: transparent !important; border-color: transparent !important; }
+        .dark nav[aria-label="Ruta de navegación"] a { color: #bfdbfe; }
+        .dark nav[aria-label="Ruta de navegación"] a:hover { color: #ffffff; }
     </style>
 </head>
 <body class="bg-white">
