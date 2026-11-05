@@ -57,6 +57,14 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Blog: Funciones ejecutivas, actividades y programas (NUEVO 2026-11) -->
+  <url>
+    <loc>https://nicolasgenise.org/blog/actividades-programa-funciones-ejecutivas-ninos.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Blog: Evaluación Psicopedagógica (2026-04) -->
   <url>
     <loc>https://nicolasgenise.org/blog/evaluacion-psicopedagogica-guia-clinica.html</loc>
