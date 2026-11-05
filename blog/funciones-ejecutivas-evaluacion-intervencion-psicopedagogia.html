@@ -291,6 +291,14 @@
         .dark .reference-item { color: #8892A4 !important; }
         .dark dt { color: #5DADE2 !important; }
         .dark dd { color: #C8D6E5 !important; }
+
+        /* URLs largas en referencias, tablas desplazables con teclado y contraste en modo oscuro */
+        .reference-item { overflow-wrap: anywhere; }
+        .overflow-x-auto[tabindex]:focus-visible { outline: 2px solid #2874A6; outline-offset: 2px; }
+        .dark .toc-link a { color: #E0E7EF; }
+        .dark header nav { background-color: transparent !important; border-color: transparent !important; }
+        .dark header nav a { color: #AED6F1; }
+        .dark header nav a:hover { color: #ffffff; }
     </style>
 </head>
 <body class="bg-white">
@@ -424,7 +432,7 @@
             </p>
             
             <!-- Components Table -->
-            <div class="my-8 overflow-x-auto">
+            <div class="my-8 overflow-x-auto" tabindex="0" role="region" aria-label="Tabla: componentes de las funciones ejecutivas">
                 <table class="min-w-full">
                     <thead>
                         <tr>
@@ -528,7 +536,7 @@
             
             <h3 class="font-display text-2xl font-semibold text-primary-600">Instrumentos validados en población hispanohablante</h3>
             
-            <div class="my-8 overflow-x-auto">
+            <div class="my-8 overflow-x-auto" tabindex="0" role="region" aria-label="Tabla: instrumentos validados en población hispanohablante">
                 <table class="min-w-full text-sm">
                     <thead>
                         <tr>
