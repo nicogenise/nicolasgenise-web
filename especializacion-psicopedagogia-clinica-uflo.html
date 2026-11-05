@@ -214,6 +214,11 @@
         .section-transition-top {
             background: linear-gradient(180deg, rgba(248, 250, 252, 0.5) 0%, white 80px);
         }
+        /* El logo mide 160-256 px de alto dentro de una barra de 64-96 px: su margen transparente sobresalía
+           por debajo de la barra y se llevaba los toques (por ejemplo, en la miga de pan). El enlace queda
+           del alto de la barra y la imagen no recibe toques; se ve igual. */
+        nav a:has(> img[src*="logo_transparente"]) { height: 100%; }
+        nav img[src*="logo_transparente"] { pointer-events: none; }
     </style>
 </head>
 <body class="antialiased text-gray-700">

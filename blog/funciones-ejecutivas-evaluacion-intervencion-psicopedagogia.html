@@ -337,6 +337,11 @@
         .dark nav[aria-label="Ruta de navegación"] a:hover { color: #ffffff; }
         /* Fondo blanco del menú móvil en CSS y no en un style inline con !important, que le ganaba a .dark #mobile-menu */
         #mobile-menu { background-color: #ffffff; }
+        /* El logo mide 160-256 px de alto dentro de una barra de 64-96 px: su margen transparente sobresalía
+           por debajo de la barra y se llevaba los toques (por ejemplo, en la miga de pan). El enlace queda
+           del alto de la barra y la imagen no recibe toques; se ve igual. */
+        nav a:has(> img[src*="logo_transparente"]) { height: 100%; }
+        nav img[src*="logo_transparente"] { pointer-events: none; }
     </style>
 </head>
 <body class="bg-white">
