@@ -242,6 +242,8 @@
             font-weight: bold;
         }
         .reference-item {
+            /* Las URL y DOI largos se cortan: a 320 px desbordaban la página */
+            overflow-wrap: anywhere;
             text-indent: -2rem;
             padding-left: 2rem;
         }
