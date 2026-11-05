@@ -281,10 +281,11 @@
         .dark #mobile-menu {
             background-color: #112240 !important;
         }
-        .dark #mobile-menu a {
+        /* Los botones del menú (Contacto, Especialización) conservan su propio color de texto */
+        .dark #mobile-menu a:not([class*="bg-"]) {
             color: #8892A4;
         }
-        .dark #mobile-menu a:hover {
+        .dark #mobile-menu a:not([class*="bg-"]):hover {
             color: #5DADE2;
         }
         .dark .nav-link::after {

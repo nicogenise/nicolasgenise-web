@@ -269,8 +269,9 @@
         .dark .prose strong { color: #E0E7EF; }
         .dark footer { background-color: #071B28 !important; }
         .dark #mobile-menu { background-color: #112240 !important; }
-        .dark #mobile-menu a { color: #8892A4; }
-        .dark #mobile-menu a:hover { color: #5DADE2; }
+        /* Los botones del menú (Contacto, Especialización) conservan su propio color de texto */
+        .dark #mobile-menu a:not([class*="bg-"]) { color: #8892A4; }
+        .dark #mobile-menu a:not([class*="bg-"]):hover { color: #5DADE2; }
         .dark input, .dark textarea { background-color: #0E2F44 !important; border-color: #1E3A5F !important; color: #E0E7EF !important; }
         .dark .info-box { background: #0E2F44 !important; }
         .dark nav.info-box a { color: #E0E7EF; }
@@ -291,6 +292,8 @@
         .dark nav[aria-label="Ruta de navegación"] { background-color: transparent !important; border-color: transparent !important; }
         .dark nav[aria-label="Ruta de navegación"] a { color: #bfdbfe; }
         .dark nav[aria-label="Ruta de navegación"] a:hover { color: #ffffff; }
+        /* Fondo blanco del menú móvil en CSS y no en un style inline con !important, que le ganaba a .dark #mobile-menu */
+        #mobile-menu { background-color: #ffffff; }
     </style>
 </head>
 <body class="bg-white">
@@ -322,7 +325,7 @@
 
     <!-- Mobile Menu (inert mientras está cerrado: no recibe foco ni lo lee el lector de pantalla) -->
     <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
-    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" style="background-color: #ffffff !important;" inert>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" inert>
         <div class="p-6">
             <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600" aria-label="Cerrar menú">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
