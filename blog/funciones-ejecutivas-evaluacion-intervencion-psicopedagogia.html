@@ -228,9 +228,11 @@
             background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
             border-left: 4px solid #f39c12;
         }
+        /* Recuadro del caso con colores de la paleta, como en la nota de dislexia (antes, degradé violeta) */
         .case-box {
-            background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
-            border-left: 4px solid #8b5cf6;
+            background: #F8FAFC;
+            border: 1px solid #E2E8F0;
+            border-left: 4px solid #2874A6;
         }
         .activity-list li {
             position: relative;
@@ -316,13 +318,13 @@
         .dark .info-box { background: linear-gradient(135deg, #0E2F44 0%, #112240 100%) !important; border-left-color: #48c9b0 !important; }
         .dark .warning-box { background: linear-gradient(135deg, #1a1a0a 0%, #2a2a0a 100%) !important; border-left-color: #d4a017 !important; }
         .dark .warning-box h4, .dark .warning-box p { color: #E0E7EF !important; }
-        .dark .case-box { background: linear-gradient(135deg, #1a0a2a 0%, #2a1a3a 100%) !important; border-left-color: #8b5cf6 !important; }
+        .dark .case-box { background: #112240 !important; border-color: #1E3A5F !important; border-left-color: #5DADE2 !important; }
         .dark .case-box h4, .dark .case-box p { color: #E0E7EF !important; }
         .dark table th { background-color: #0E2F44; }
         .dark table td, .dark table th { border-color: #1E3A5F; }
         .dark table tr:nth-child(even) { background-color: #0E2F44; }
         .dark .bg-gray-50.rounded-lg { background-color: #0E2F44 !important; }
-        .dark .bg-blue-50, .dark .bg-green-50, .dark .bg-purple-50 { background-color: #0E2F44 !important; }
+        .dark .bg-blue-50, .dark .bg-green-50, .dark .bg-primary-50 { background-color: #0E2F44 !important; }
         /* Índice: #8892A4 daba 4,43:1 sobre el recuadro (#0E2F44); mismo color que el índice de dislexia */
         .dark .toc-link a { color: #E0E7EF; }
         .dark .toc-link:hover a { color: #48c9b0; }
@@ -675,8 +677,8 @@
             
             <!-- Case Box: Martín -->
             <div class="case-box rounded-lg p-6 my-8">
-                <h4 class="font-display text-lg font-bold text-purple-800 mb-2">📋 Volviendo a Martín: de la evaluación a la intervención (ejemplo ilustrativo)</h4>
-                <p class="text-purple-900 mb-0">
+                <h4 class="font-display text-lg font-bold text-primary-700 mb-2">📋 Volviendo a Martín: de la evaluación a la intervención (ejemplo ilustrativo)</h4>
+                <p class="text-gray-800 mb-0">
                     La evaluación de Martín mostró una discrepancia reveladora: en las pruebas de consultorio (Dígitos, TMT-B) obtuvo puntajes en rango promedio-bajo, pero el BRIEF-2 parental arrojó elevaciones clínicas en los índices de Memoria de Trabajo y Planificación/Organización. El BRIEF-2 docente confirmó el patrón. Esta brecha entre capacidad y funcionamiento cotidiano orientó la intervención: más que entrenar la capacidad "en abstracto", el foco sería enseñar a Martín <em>cuándo</em> y <em>cómo</em> usar estrategias compensatorias en situaciones reales.
                 </p>
             </div>
@@ -780,8 +782,8 @@
             
             <!-- Case Box: Sofía -->
             <div class="case-box rounded-lg p-6 my-8">
-                <h4 class="font-display text-lg font-bold text-purple-800 mb-2">📋 Ejemplo clínico ilustrativo: Sofía, 8 años, TEA</h4>
-                <p class="text-purple-900 mb-0">
+                <h4 class="font-display text-lg font-bold text-primary-700 mb-2">📋 Ejemplo clínico ilustrativo: Sofía, 8 años, TEA</h4>
+                <p class="text-gray-800 mb-0">
                     Sofía presentaba crisis intensas ante cualquier cambio de rutina escolar. La intervención siguió tres pasos: (1) <strong>anticipación</strong> — usar calendario visual para mostrar el cambio un día antes; (2) <strong>ensayo guiado</strong> — practicar la nueva situación en consultorio con role-play; (3) <strong>exposición en contexto natural</strong> — implementar el cambio real con apoyo inicial del docente. En este caso, las crisis se redujeron de 4/semana a 1/semana tras 6 semanas; <em>los resultados individuales varían según características del niño y contexto.</em>
                 </p>
             </div>
@@ -886,7 +888,7 @@
                         <li>• Resúmenes de conceptos clave</li>
                     </ul>
                 </div>
-                <div class="bg-purple-50 rounded-lg p-4">
+                <div class="bg-primary-50 rounded-lg p-4">
                     <h4 class="font-semibold text-primary-700 mb-2">Temporales</h4>
                     <ul class="text-sm space-y-1">
                         <li>• Tareas largas → submetas con fechas</li>
@@ -950,7 +952,7 @@
             
             <!-- Closing Case -->
             <div class="case-box rounded-lg p-6 my-8">
-                <p class="text-purple-900 mb-4">
+                <p class="text-gray-800 mb-4">
                     Volviendo a Martín, el niño del inicio: después de seis meses de intervención —trabajando memoria de trabajo y planificación en sesión, implementando sistemas de organización en casa y coordinando adaptaciones con la escuela— su mochila seguía siendo algo caótica. Pero ahora sabía dónde estaban sus cosas, entregaba las tareas a tiempo la mayoría de las veces, y cuando algo cambiaba en el plan del día, podía tomarse unos segundos para reorganizarse en lugar de estallar.
                 </p>
                 <p class="text-xl font-display font-bold text-primary-700 text-center mb-0">
