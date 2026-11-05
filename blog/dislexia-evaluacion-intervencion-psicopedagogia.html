@@ -26,10 +26,9 @@
     <meta property="og:url" content="https://nicolasgenise.org/blog/dislexia-evaluacion-intervencion-psicopedagogia.html">
     <meta property="og:title" content="Dislexia en Niños: Evaluación e Intervención Psicopedagógica">
     <meta property="og:description" content="Cómo evaluar e intervenir la dislexia en niños hispanohablantes: señales por edad, instrumentos (LEE, PROLEC-R), caso clínico y estrategias con evidencia.">
-    <meta property="og:image" content="https://nicolasgenise.org/og-image.webp">
+    <meta property="og:image" content="https://nicolasgenise.org/blog/images/dislexia-thumbnail.webp">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <!-- PENDIENTE: cuando exista blog/images/dislexia-thumbnail.webp (1200x675), reemplazar og:image, twitter:image y "image" del JSON-LD y volver a poner height 675 -->
+    <meta property="og:image:height" content="675">
     <meta property="og:locale" content="es_AR">
     <meta property="article:author" content="Dr. Nicolás Genise">
     <meta property="article:published_time" content="2026-11-04">
@@ -42,7 +41,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Dislexia en Niños: Evaluación e Intervención Psicopedagógica">
     <meta name="twitter:description" content="Guía clínica: cómo se manifiesta la dislexia en español, cómo evaluarla y qué intervenciones tienen respaldo empírico.">
-    <meta name="twitter:image" content="https://nicolasgenise.org/og-image.webp">
+    <meta name="twitter:image" content="https://nicolasgenise.org/blog/images/dislexia-thumbnail.webp">
 
     <!-- Schema.org Article Markup -->
     <script type="application/ld+json">
@@ -51,7 +50,7 @@
         "@type": "Article",
         "headline": "Dislexia en Niños: Evaluación e Intervención Psicopedagógica",
         "description": "Cómo evaluar e intervenir la dislexia en niños hispanohablantes: señales por edad, instrumentos (LEE, PROLEC-R), caso clínico y estrategias con evidencia.",
-        "image": "https://nicolasgenise.org/og-image.webp",
+        "image": "https://nicolasgenise.org/blog/images/dislexia-thumbnail.webp",
         "author": {
             "@type": "Person",
             "name": "Dr. Nicolás Genise",
@@ -102,7 +101,7 @@
                 "name": "¿A qué edad se puede diagnosticar la dislexia?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Las señales de riesgo pueden observarse desde el nivel inicial (dificultades del lenguaje oral, de la conciencia fonológica o para aprender las letras, y antecedentes familiares). El diagnóstico formal requiere que el niño haya recibido enseñanza de la lectura y que las dificultades persistan al menos seis meses a pesar de una intervención dirigida. Esperar al diagnóstico para intervenir, sin embargo, no tiene justificación: ante señales de riesgo conviene empezar a trabajar cuanto antes."
+                    "text": "Las señales de riesgo pueden observarse desde el nivel inicial: dificultades del lenguaje oral, de la conciencia fonológica o para aprender las letras, y antecedentes familiares. El diagnóstico formal requiere que el niño haya recibido enseñanza de la lectura y que las dificultades persistan al menos seis meses a pesar de una intervención dirigida. Esperar al diagnóstico para intervenir, sin embargo, no tiene justificación: ante señales de riesgo conviene empezar a trabajar cuanto antes."
                 }
             },
             {
@@ -152,12 +151,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (compiled). El parámetro ?v= evita que un navegador con la versión vieja en caché la reutilice. -->
-    <link rel="stylesheet" href="/dist/styles.css?v=20261104">
+    <link rel="stylesheet" href="/dist/styles.css?v=20261105c">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/logo_transparente.webp">
 
     <style>
+        /* La barra fija no tapa el destino de los enlaces internos (índice, «Ir al contenido principal») */
+        html { scroll-padding-top: 6rem; }
         body {
             font-family: 'Source Sans 3', sans-serif;
             color: #4a5568;
@@ -213,6 +214,8 @@
             font-weight: bold;
         }
         .reference-item {
+            /* Las URL y DOI largos se cortan: a 320 px desbordaban la página */
+            overflow-wrap: anywhere;
             text-indent: -2rem;
             padding-left: 2rem;
         }
@@ -265,10 +268,12 @@
         .dark .prose strong { color: #E0E7EF; }
         .dark footer { background-color: #071B28 !important; }
         .dark #mobile-menu { background-color: #112240 !important; }
-        .dark #mobile-menu a { color: #8892A4; }
-        .dark #mobile-menu a:hover { color: #5DADE2; }
+        /* Los botones del menú (Contacto, Especialización) conservan su propio color de texto */
+        .dark #mobile-menu a:not([class*="bg-"]) { color: #8892A4; }
+        .dark #mobile-menu a:not([class*="bg-"]):hover { color: #5DADE2; }
         .dark input, .dark textarea { background-color: #0E2F44 !important; border-color: #1E3A5F !important; color: #E0E7EF !important; }
         .dark .info-box { background: #0E2F44 !important; }
+        .dark nav.info-box a { color: #E0E7EF; }
         .dark .warning-box { background: #2a2410 !important; border-left-color: #d4a017 !important; }
         .dark .warning-box h3, .dark .warning-box p, .dark .warning-box li { color: #E0E7EF !important; }
         .dark .case-box { background: #112240 !important; border-color: #1E3A5F !important; border-left-color: #5DADE2 !important; }
@@ -281,6 +286,18 @@
         .dark .reference-item { color: #8892A4 !important; }
         .dark dt { color: #5DADE2 !important; }
         .dark dd { color: #C8D6E5 !important; }
+        /* Miga de pan en modo oscuro: también es un <nav>, así que la regla «.dark nav» de la barra
+           le ponía una franja oscura y el gris #8892A4. Queda como en modo claro (#bfdbfe, 6,1:1 sobre el degradé). */
+        .dark nav[aria-label="Ruta de navegación"] { background-color: transparent !important; border-color: transparent !important; }
+        .dark nav[aria-label="Ruta de navegación"] a { color: #bfdbfe; }
+        .dark nav[aria-label="Ruta de navegación"] a:hover { color: #ffffff; }
+        /* Fondo blanco del menú móvil en CSS y no en un style inline con !important, que le ganaba a .dark #mobile-menu */
+        #mobile-menu { background-color: #ffffff; }
+        /* El logo mide 160-256 px de alto dentro de una barra de 64-96 px: su margen transparente sobresalía
+           por debajo de la barra y se llevaba los toques (por ejemplo, en la miga de pan). El enlace queda
+           del alto de la barra y la imagen no recibe toques; se ve igual. */
+        nav a:has(> img[src*="logo_transparente"]) { height: 100%; }
+        nav img[src*="logo_transparente"] { pointer-events: none; }
     </style>
 </head>
 <body class="bg-white">
@@ -291,7 +308,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 md:h-20">
                 <a href="/" class="flex items-center" aria-label="Inicio — Dr. Nicolás Genise">
-                    <img src="/logo_transparente.webp" alt="Dr. Nicolás Genise" width="2000" height="2000" class="nav-logo-light h-40 md:h-48 w-auto" loading="eager">
+                    <img src="/logo_transparente.webp" alt="Dr. Nicolás Genise" width="512" height="512" class="nav-logo-light h-40 md:h-48 w-auto" loading="eager">
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="/" class="text-gray-600 hover:text-primary-600 transition-colors font-medium">Inicio</a>
@@ -312,7 +329,7 @@
 
     <!-- Mobile Menu (inert mientras está cerrado: no recibe foco ni lo lee el lector de pantalla) -->
     <div id="mobile-menu-backdrop" class="mobile-menu-backdrop md:hidden"></div>
-    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" style="background-color: #ffffff !important;" inert>
+    <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full shadow-xl md:hidden transform translate-x-full transition-transform duration-300 z-[9999]" inert>
         <div class="p-6">
             <button id="close-menu-btn" class="absolute top-4 right-4 p-2 text-gray-600" aria-label="Cerrar menú">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -359,7 +376,7 @@
             <!-- Author & Meta -->
             <div class="flex flex-wrap items-center gap-4 text-sm text-blue-200">
                 <div class="flex items-center gap-2">
-                    <img src="/nicolas-nobg.webp" alt="" width="896" height="1260" class="w-14 h-14 rounded-full object-cover object-top border-2 border-accent">
+                    <img src="/nicolas-avatar-256.webp" alt="" width="256" height="256" class="w-14 h-14 rounded-full object-cover object-top border-2 border-accent">
                     <span class="font-medium text-white">Dr. Nicolás Genise</span>
                 </div>
                 <span aria-hidden="true">•</span>
@@ -440,7 +457,7 @@
 
             <h3 class="font-display text-2xl font-semibold text-primary-600">Lo que la dislexia no es</h3>
 
-            <div class="my-8 overflow-x-auto">
+            <div class="my-8 overflow-x-auto" tabindex="0" role="region" aria-label="Tabla: creencias frecuentes sobre la dislexia y lo que indica la evidencia">
                 <table class="min-w-full">
                     <caption class="sr-only">Creencias frecuentes sobre la dislexia y lo que indica la evidencia</caption>
                     <thead>
@@ -577,7 +594,7 @@
 
             <h3 class="font-display text-2xl font-semibold text-primary-600">Instrumentos de uso frecuente en población hispanohablante</h3>
 
-            <div class="my-8 overflow-x-auto">
+            <div class="my-8 overflow-x-auto" tabindex="0" role="region" aria-label="Tabla: instrumentos para evaluar lectura y escritura en español">
                 <table class="min-w-full text-sm">
                     <caption class="sr-only">Instrumentos para evaluar lectura y escritura en español</caption>
                     <thead>
@@ -1045,6 +1062,7 @@
             <ul class="space-y-2">
                 <li><a href="evaluacion-psicopedagogica-guia-clinica.html" class="text-primary-600 underline underline-offset-2 hover:text-primary-800">Evaluación psicopedagógica: lo que revela cuando sabemos mirar</a></li>
                 <li><a href="funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html" class="text-primary-600 underline underline-offset-2 hover:text-primary-800">Funciones ejecutivas en niños: guía clínica de evaluación e intervención</a></li>
+                <li><a href="funciones-ejecutivas-lectura-comprension-ninos.html" class="text-primary-600 underline underline-offset-2 hover:text-primary-800">Funciones ejecutivas y lectura: qué cambia entre los 6 y los 12 años</a></li>
                 <li><a href="tdah-inatento-ninas-diagnostico-tardio.html" class="text-primary-600 underline underline-offset-2 hover:text-primary-800">TDAH inatento en niñas: el diagnóstico que llega tarde</a></li>
             </ul>
         </aside>
@@ -1054,7 +1072,7 @@
     <section class="bg-gray-50 py-12" aria-labelledby="author-title">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row gap-6 items-start">
-                <img src="/nicolas-nobg.webp" alt="Dr. Nicolás Genise" width="896" height="1260" loading="lazy" class="w-24 h-24 rounded-full object-cover object-top border-4 border-accent">
+                <img src="/nicolas-avatar-256.webp" alt="Dr. Nicolás Genise" width="256" height="256" loading="lazy" class="w-24 h-24 rounded-full object-cover object-top border-4 border-accent">
                 <div>
                     <h2 id="author-title" class="font-display text-2xl font-bold text-primary-700 mb-2">Dr. Nicolás Genise</h2>
                     <p class="text-gray-600 mb-4">
@@ -1078,14 +1096,14 @@
                 Especialización en Psicopedagogía Clínica
             </h2>
             <p class="text-xl text-blue-100 mb-8">
-                408 horas · 100% Virtual · Acreditación CONEAU · Próxima cohorte
+                408 horas · A distancia · Acreditación CONEAU · Próxima cohorte
             </p>
             <div class="flex flex-wrap justify-center gap-6 mb-8">
                 <a href="https://www.uflouniversidad.edu.ar/carrera/especializacion-en-psicopedagogia-clinica/" target="_blank" rel="noopener noreferrer" class="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all hover:-translate-y-1">
-                    <img src="/logo-uflo.webp" alt="Universidad de Flores" width="512" height="512" loading="lazy" class="h-14 md:h-20 w-auto object-contain">
+                    <img src="/logo-uflo-160.webp" alt="Universidad de Flores" width="160" height="160" loading="lazy" class="h-14 md:h-20 w-auto object-contain">
                 </a>
                 <a href="https://tcmcognitiva.com/" target="_blank" rel="noopener noreferrer" class="bg-white/10 rounded-xl p-4 hover:bg-white/20 transition-all hover:-translate-y-1">
-                    <img src="/logo-tcm.webp" alt="TCM Terapia Cognitiva" width="2000" height="1906" loading="lazy" class="h-16 md:h-24 w-auto object-contain">
+                    <img src="/logo-tcm-200.webp" alt="TCM Terapia Cognitiva" width="200" height="191" loading="lazy" class="h-16 md:h-24 w-auto object-contain">
                 </a>
             </div>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
@@ -1148,7 +1166,7 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <div class="md:col-span-1">
-                    <img src="../logo_fondo_oscuro.webp" alt="Dr. Nicolás Genise" width="2000" height="2000" loading="lazy" class="h-32 w-auto mb-4">
+                    <img src="/logo_fondo_oscuro-448.webp" alt="Dr. Nicolás Genise" width="448" height="448" loading="lazy" class="h-32 w-auto mb-4">
                     <p class="text-sm text-primary-200">Doctor en Psicología · Psicopedagogo · Investigador · BCBAar</p>
                 </div>
                 <div>

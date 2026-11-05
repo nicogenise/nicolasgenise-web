@@ -101,7 +101,7 @@ components:
     padding: "{spacing.4xl}"
   cta-primary:
     backgroundColor: "{colors.highlight}"
-    textColor: "{colors.surface-light}"
+    textColor: "{colors.primary-darkest}"
     typography: "{typography.ui-base}"
     rounded: "{rounded.md}"
     padding: "{spacing.md}"
@@ -184,7 +184,7 @@ Bordes redondeados moderados: `rounded.md (8px)` para cards y CTAs, `rounded.ful
 | **Section header** | Línea decorativa 60×3px highlight + label uppercase + título Playfair. **Patrón canónico** del sitio. |
 | **Card hover** | `translateY(-4px)` + box-shadow. Nunca scale, nunca rotate. |
 | **Stat cards (glass)** | `rgba(255,255,255,0.12)` + backdrop-blur. Solo en hero/dark sections. |
-| **CTA primary** | Naranja `#FF9900`, texto blanco, `rounded.md`. Único color que dispara acción. |
+| **CTA primary** | Naranja `#FF9900`, texto `#071B28` (primary-darkest, 8,2:1), `rounded.md`. Único color que dispara acción. Hover: el mismo naranja al 90 %. |
 | **Newsletter form** | Input + botón naranja, validación con shake animation suave. |
 | **Footer** | primary-darkest, 4 columnas (brand, enlaces, contacto, LinkedIn). |
 | **Back to top** | Circular fijo, aparece después de 600px scroll. |
@@ -211,5 +211,7 @@ Bordes redondeados moderados: `rounded.md (8px)` para cards y CTAs, `rounded.ful
 - ❌ Iconos cuadrados 48×48 apilados encima de h3 (`icon-tile-stack` — patrón AI feature-card).
 - ❌ Texto blanco sobre celeste `#5DADE2` (no pasa WCAG AA).
 - ❌ Naranja `#FF9900` sobre blanco `#FFFFFF` para texto (no pasa WCAG AA, contrast 2.1:1).
+- ❌ Texto blanco sobre naranja `#FF9900` en botones, badges o CTAs (2,14:1, no pasa WCAG AA). Usar `#071B28`.
+- ❌ Amarillos de Tailwind (`yellow-400`, `yellow-500`) en botones u hover: están fuera de la paleta.
 - ❌ All-caps en cuerpo de párrafo (reservar para labels cortos).
 - ❌ Animaciones sobre `width`, `height`, `padding`, `margin` (layout thrash).

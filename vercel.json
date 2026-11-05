@@ -74,6 +74,15 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/blog/funciones-ejecutivasevaluacion-intervencion-psicopedagogia.html", "destination": "/blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html", "permanent": true },
+    { "source": "/blog/funciones-ejecutiva-evaluacion-intervencion-psicopedagogia.html", "destination": "/blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html", "permanent": true },
+    { "source": "/blog/funciones-evaluacion-intervencion-psicopedagogia.html", "destination": "/blog/funciones-ejecutivas-evaluacion-intervencion-psicopedagogia.html", "permanent": true },
+    { "source": "/blog/images/evaluacion-psicopedagogica-thumbnail.png", "destination": "/blog/images/evaluacion-psicopedagogica-thumbnail.webp", "permanent": true },
+    { "source": "/guia-thumbnail.jpg", "destination": "/og-image.webp", "permanent": true },
+    { "source": "/:slug(uflo|UFLO|Uflo){/}?", "destination": "/especializacion-psicopedagogia-clinica-uflo.html", "permanent": true },
+    { "source": "/api/:name.js", "destination": "/api/:name", "permanent": false }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/faq", "destination": "/faq.html" },
