@@ -460,5 +460,15 @@
     <!-- Track download -->
     <script>
         document.getElementById('download-btn').addEventListener('click', function() {
-            // GA4 event
-            gt
+            // GA4: evento recomendado file_download, con los mismos parámetros que usa la medición mejorada
+            var url = new URL(this.href, location.href);
+            gtag('event', 'file_download', {
+                file_name: url.pathname,
+                file_extension: 'pdf',
+                link_url: url.href,
+                link_text: this.textContent.trim()
+            });
+        });
+    </script>
+</body>
+</html>
