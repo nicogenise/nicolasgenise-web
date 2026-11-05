@@ -1,0 +1,8 @@
+# Archivos internos que no se suben ni se publican en Vercel.
+# CLAUDE.md, PRODUCT.md, DESIGN.md, README.md y cualquier otro .md:
+*.md
+/docs
+#
+# NO agregar src/, api/, package.json, package-lock.json, tailwind.config.js,
+# postcss.config.js ni vercel.json: sin ellos el CSS no compila o se caen
+# los formularios (/api/contact y /api/subscribe).
