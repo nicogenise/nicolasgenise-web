@@ -28,6 +28,8 @@
     <link rel="icon" type="image/png" href="/logo_transparente.webp">
 
     <style>
+        /* La barra fija no tapa el destino de los enlaces internos (índice, «Ir al contenido principal») */
+        html { scroll-padding-top: 6rem; }
         .decorative-rule { width: 60px; height: 3px; background-color: #FF9900; }
         .destino { transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 1px 3px rgba(7, 27, 40, 0.08); }
         .destino:hover { transform: translateY(-4px); box-shadow: 0 10px 25px -5px rgba(7, 27, 40, 0.15); }
