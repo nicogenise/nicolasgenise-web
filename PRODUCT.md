@@ -4,7 +4,7 @@
 
 Sitio personal/profesional del **Dr. Nicolás Genise** (psicólogo clínico, doctor en psicología, director académico). Cumple dos funciones simultáneas:
 
-1. **Captar estudiantes** para la **Especialización en Psicopedagogía Clínica** (Universidad de Flores — UFLO), cohorte Abril 2026, 30 cupos. Posgrado de 408 horas, 12 meses, 100% virtual, acreditación CONEAU.
+1. **Captar estudiantes** para la **Especialización en Psicopedagogía Clínica** (Universidad de Flores — UFLO), próxima cohorte a comienzos de 2027 (la primera empezó en abril de 2026), 30 cupos. Posgrado de 408 horas, tres cuatrimestres, a distancia con prácticas presenciales supervisadas (96 h), acreditación CONEAU. Ingreso exclusivo para licenciados/as en Psicopedagogía.
 2. **Construir autoridad profesional** del Dr. Genise como referente clínico-académico, vía blog editorial, charlas y material descargable.
 
 ## Register
@@ -39,7 +39,7 @@ Lo que el sitio **NO debe parecerse a**:
 ## Strategic principles
 
 1. **Autoridad sin solemnidad.** Académico pero accesible. El Dr. Genise tiene credenciales (Ackerman NYC, Gandara Boston, doctorado, dirección académica) — el sitio las muestra sin pomposidad. Tono profesional con calidez humana.
-2. **Confianza por sustancia, no por adornos.** Datos concretos: 408 horas, CONEAU, 12 meses, prácticas supervisadas, claustro real con CV en vivo. Cero buzzwords.
+2. **Confianza por sustancia, no por adornos.** Datos concretos: 408 horas, CONEAU, tres cuatrimestres, prácticas supervisadas, claustro real con CV en vivo. Cero buzzwords.
 3. **Lectura larga como diferencial.** El blog es académico-editorial — artículos de 1500-3000 palabras con citas, referencias, casos. Gente que lee acá, lee en serio. La tipografía Playfair refuerza esa expectativa.
 4. **Conversión sin urgencia falsa.** Sin countdown timers, sin "solo 3 cupos", sin pop-ups agresivos. CTA primarios claros (`#FF9900`), pero la decisión se invita, no se presiona.
 5. **Accesibilidad ética y técnica.** WCAG AA mínimo. Audiencia incluye profesionales clínicos que pueden tener pacientes con baja visión — exclusión visual del propio sitio sería contradicción ética.
