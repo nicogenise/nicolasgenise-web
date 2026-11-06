@@ -211,14 +211,14 @@
             background-color: #0B1929;
             color: #E0E7EF;
         }
-        .dark nav {
+        .dark nav:where(.fixed) {
             background-color: rgba(11, 25, 41, 0.95) !important;
             border-color: rgba(30, 58, 95, 0.5) !important;
         }
-        .dark nav a:not([class*="bg-highlight"]) {
+        .dark nav:where(.fixed) a:not([class*="bg-highlight"]) {
             color: #8892A4;
         }
-        .dark nav a:not([class*="bg-highlight"]):hover {
+        .dark nav:where(.fixed) a:not([class*="bg-highlight"]):hover {
             color: #5DADE2;
         }
         .dark #dark-mode-toggle {
@@ -336,7 +336,7 @@
     </div>
 
     <!-- Page Header -->
-    <header class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-16 md:py-24">
+    <header class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white pt-32 pb-16 md:pb-24">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Breadcrumb -->
             <nav class="mb-6 text-sm text-blue-200">

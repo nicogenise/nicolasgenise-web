@@ -252,9 +252,9 @@
         /* Dark Mode */
         .dark body { background-color: #0B1929; color: #E0E7EF; }
         .dark header { background: linear-gradient(135deg, #0E2F44 0%, #071B28 100%) !important; }
-        .dark nav { background-color: rgba(11, 25, 41, 0.95) !important; border-color: rgba(30, 58, 95, 0.5) !important; }
-        .dark nav a { color: #8892A4; }
-        .dark nav a:hover { color: #5DADE2; }
+        .dark nav:where(.fixed) { background-color: rgba(11, 25, 41, 0.95) !important; border-color: rgba(30, 58, 95, 0.5) !important; }
+        .dark nav:where(.fixed) a { color: #8892A4; }
+        .dark nav:where(.fixed) a:hover { color: #5DADE2; }
         .dark #dark-mode-toggle { color: #8892A4; }
         .dark #dark-mode-toggle:hover { color: #5DADE2; background-color: rgba(93, 173, 226, 0.1); }
         .dark .nav-logo-light { filter: brightness(0) invert(1); }
