@@ -74,6 +74,9 @@
       ]
     }
   ],
+  "redirects": [
+    { "source": "/:slug(uflo|UFLO|Uflo){/}?", "destination": "/especializacion-psicopedagogia-clinica-uflo.html", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/blog", "destination": "/blog/index.html" },
     { "source": "/faq", "destination": "/faq.html" },
